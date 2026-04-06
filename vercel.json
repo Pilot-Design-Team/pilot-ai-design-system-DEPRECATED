@@ -1,0 +1,5 @@
+{
+  "rewrites": [
+    { "source": "/", "destination": "/pilot-design-system-visualizer.html" }
+  ]
+}
