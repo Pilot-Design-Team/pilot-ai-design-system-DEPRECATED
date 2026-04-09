@@ -306,8 +306,8 @@ Webflow default fallbacks (before overrides):
 
 | Name | CSS Variable | Hex | Usage |
 |------|-------------|-----|-------|
-| Error Red | `--error-red` | `#ce1836` | Form validation errors |
-| CTA Green | `--cta-green` | `#47bfa4` | Green CTA links |
+| Error Red | `--error-red` | `#ce1836` | Form validation errors · **Product only — not for marketing** |
+| CTA Green | `--cta-green` | `#47bfa4` | Green CTA links · **Product only — not for marketing** |
 | Teal/Aqua | — | `#3da291` | Accent color |
 | Bright Blue | `--bright-blue` | `#4f9bf3` | Informational blue |
 | Supernova Yellow | `--supernova` | `#ffcc00` | Attention/highlight |
