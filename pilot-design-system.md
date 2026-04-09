@@ -80,8 +80,18 @@ All variables are defined in `:root` and used throughout the Webflow CSS:
 
 Three primary font families are used, all self-hosted via Webflow CDN:
 
-#### Primary: Euclid Circular B
-The main brand/UI font. Used for headings, body text, and UI elements.
+#### Primary: Euclid Circular B (Web Alternative: Poppins)
+
+**Euclid B Circular is our default. The web-friendly alternative is Poppins.**
+
+H2, subtitle, body copy, use this.
+
+It's geometric, warm, friendly, and unfussy. When bolded, commanding. Otherwise, it invites a conversation.
+
+Euclid B works across all audiences and financial maturity levels.
+
+- [**EUCLID CIRCULAR B LICENSE →**](#)
+- [**WEB FONT: DOWNLOAD POPPINS →**](https://fonts.google.com/specimen/Poppins)
 
 ```css
 @font-face {
