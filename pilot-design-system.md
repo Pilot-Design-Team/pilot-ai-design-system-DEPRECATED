@@ -1391,24 +1391,20 @@ Each accent color represents a pillar or promise. All selected because they pair
 | **ACCESS** | `#FCF3D6` | Warm cream/yellow | — |
 | **CLARITY** | `#FBEDFF` | Light lavender | — |
 | **TRUST** | `#E7F9FF` | Light sky blue | — |
-| **GROWTH** | `#ECFED8` | Light lime green | — |
 | **ACCESS+** | `#FFD967` | Bright gold/amber | Accent only, use sparingly |
 | **CLARITY+** | `#F891FF` | Bright pink/magenta | Accent only, use sparingly |
 | **TRUST+** | `#8EECFF` | Bright cyan | Accent only, use sparingly |
-| **GROWTH+** | `#C5EA6D` | Bright lime | Accent only, use sparingly |
 
 ```css
 /* Secondary spread — subdued */
 --color-access:   #FCF3D6;
 --color-clarity:  #FBEDFF;
 --color-trust:    #E7F9FF;
---color-growth:   #ECFED8;
 
 /* Secondary spread — vivid (accent use only) */
 --color-access-plus:  #FFD967;
 --color-clarity-plus: #F891FF;
 --color-trust-plus:   #8EECFF;
---color-growth-plus:  #C5EA6D;
 ```
 
 ---
@@ -1475,16 +1471,16 @@ background: linear-gradient(135deg, #FCF3D6, #FFD967);
 /* Pink/lavender vertical */
 background: linear-gradient(180deg, #F891FF, #FBEDFF);
 
-/* Lime/green vertical */
-background: linear-gradient(180deg, #C5EA6D, #ECFED8);
+/* Purple highlight vertical */
+background: linear-gradient(180deg, #5931DC, #DECEFF);
 ```
 
 ### Multi-directional (Ambient / Blurred Orb) Examples
 
 ```css
-/* Purple to lime ambient */
+/* Purple to gold ambient */
 background: radial-gradient(ellipse at 20% 80%, #5931DC 0%, transparent 60%),
-            radial-gradient(ellipse at 80% 20%, #C5EA6D 0%, transparent 60%);
+            radial-gradient(ellipse at 80% 20%, #FFD967 0%, transparent 60%);
 filter: blur(0); /* applied to inner orb element */
 
 /* Pink to cyan ambient */
@@ -1812,11 +1808,9 @@ Traditional finance relies on grids and rigid spreadsheets — many of our clien
   --color-access:        #FCF3D6;  /* ACCESS — warm cream */
   --color-clarity:       #FBEDFF;  /* CLARITY — light lavender */
   --color-trust:         #E7F9FF;  /* TRUST — light sky blue */
-  --color-growth:        #ECFED8;  /* GROWTH — light lime */
   --color-access-plus:   #FFD967;  /* ACCESS+ — bright gold (accent only) */
   --color-clarity-plus:  #F891FF;  /* CLARITY+ — bright pink (accent only) */
   --color-trust-plus:    #8EECFF;  /* TRUST+ — bright cyan (accent only) */
-  --color-growth-plus:   #C5EA6D;  /* GROWTH+ — bright lime (accent only) */
 
   /* ─── Webflow/CSS Live Site Variables ─── */
   --pilot-black:               #3f3c3d;   /* Body text */

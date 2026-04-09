@@ -21,11 +21,9 @@ html{scroll-behavior:smooth;font-size:16px}
   --p-access:   #FCF3D6;
   --p-clarity:  #FBEDFF;
   --p-trust:    #E7F9FF;
-  --p-growth:   #ECFED8;
   --p-access-plus:  #FFD967;
   --p-clarity-plus: #F891FF;
   --p-trust-plus:   #8EECFF;
-  --p-growth-plus:  #C5EA6D;
   --p-black:    #3f3c3d;
   --p-deep:     #3c2d89;
   --p-white:    #ffffff;
@@ -262,7 +260,7 @@ pre::-webkit-scrollbar-thumb { background:rgba(255,255,255,.12); }
 /* ── BADGES ── */
 .badge { display:inline-block; font-family:var(--font-body); font-size:9.5px; font-weight:700; text-transform:uppercase; letter-spacing:1px; padding:2px 7px; border-radius:3px; }
 .b-purple { background:var(--p-highlight); color:var(--p-profit); }
-.b-green  { background:var(--p-growth); color:#166534; }
+.b-green  { background:#e8f5e9; color:#166534; }
 .b-yellow { background:var(--p-access); color:#78350f; }
 .b-blue   { background:var(--p-trust); color:#0c4a6e; }
 .b-red    { background:#fff1f2; color:#9f1239; }
@@ -433,7 +431,6 @@ pre::-webkit-scrollbar-thumb { background:rgba(255,255,255,.12); }
       <div class="sw" onclick="cpColor('#FCF3D6',this)"><div class="sw-body" style="background:#FCF3D6;border-bottom:1px solid #e0e0e0"><div class="sw-ck" style="color:#78350f">✓</div></div><div class="sw-info"><span class="sw-name">ACCESS</span><span class="sw-hex">#FCF3D6</span><span class="sw-desc">Warm cream</span></div></div>
       <div class="sw" onclick="cpColor('#FBEDFF',this)"><div class="sw-body" style="background:#FBEDFF;border-bottom:1px solid #e0e0e0"><div class="sw-ck" style="color:#5931DC">✓</div></div><div class="sw-info"><span class="sw-name">CLARITY</span><span class="sw-hex">#FBEDFF</span><span class="sw-desc">Light lavender</span></div></div>
       <div class="sw" onclick="cpColor('#E7F9FF',this)"><div class="sw-body" style="background:#E7F9FF;border-bottom:1px solid #e0e0e0"><div class="sw-ck" style="color:#0c4a6e">✓</div></div><div class="sw-info"><span class="sw-name">TRUST</span><span class="sw-hex">#E7F9FF</span><span class="sw-desc">Light sky blue</span></div></div>
-      <div class="sw" onclick="cpColor('#ECFED8',this)"><div class="sw-body" style="background:#ECFED8;border-bottom:1px solid #e0e0e0"><div class="sw-ck" style="color:#166534">✓</div></div><div class="sw-info"><span class="sw-name">GROWTH</span><span class="sw-hex">#ECFED8</span><span class="sw-desc">Light lime green</span></div></div>
     </div>
   </div>
 
@@ -443,7 +440,6 @@ pre::-webkit-scrollbar-thumb { background:rgba(255,255,255,.12); }
       <div class="sw" onclick="cpColor('#FFD967',this)"><div class="sw-body" style="background:#FFD967"><div class="sw-ck" style="color:#78350f">✓</div></div><div class="sw-info"><span class="sw-name">ACCESS+</span><span class="sw-hex">#FFD967</span><span class="sw-desc">Bright gold</span></div></div>
       <div class="sw" onclick="cpColor('#F891FF',this)"><div class="sw-body" style="background:#F891FF"><div class="sw-ck">✓</div></div><div class="sw-info"><span class="sw-name">CLARITY+</span><span class="sw-hex">#F891FF</span><span class="sw-desc">Bright pink</span></div></div>
       <div class="sw" onclick="cpColor('#8EECFF',this)"><div class="sw-body" style="background:#8EECFF"><div class="sw-ck" style="color:#0c4a6e">✓</div></div><div class="sw-info"><span class="sw-name">TRUST+</span><span class="sw-hex">#8EECFF</span><span class="sw-desc">Bright cyan</span></div></div>
-      <div class="sw" onclick="cpColor('#C5EA6D',this)"><div class="sw-body" style="background:#C5EA6D"><div class="sw-ck" style="color:#166534">✓</div></div><div class="sw-info"><span class="sw-name">GROWTH+</span><span class="sw-hex">#C5EA6D</span><span class="sw-desc">Bright lime</span></div></div>
     </div>
   </div>
 
@@ -643,7 +639,6 @@ pre::-webkit-scrollbar-thumb { background:rgba(255,255,255,.12); }
       <div class="gs"><div class="gs-prev" style="background:linear-gradient(135deg,#5931DC,#825BEB)"></div><div class="gs-info"><span class="gs-name">Purple Scale</span><span class="gs-css">PILOT → BRILLIANT</span></div></div>
       <div class="gs"><div class="gs-prev" style="background:linear-gradient(135deg,#E7F9FF,#8EECFF)"></div><div class="gs-info"><span class="gs-name">Cyan</span><span class="gs-css">TRUST → TRUST+</span></div></div>
       <div class="gs"><div class="gs-prev" style="background:linear-gradient(135deg,#FCF3D6,#FFD967)"></div><div class="gs-info"><span class="gs-name">Gold</span><span class="gs-css">ACCESS → ACCESS+</span></div></div>
-      <div class="gs"><div class="gs-prev" style="background:linear-gradient(135deg,#ECFED8,#C5EA6D)"></div><div class="gs-info"><span class="gs-name">Lime</span><span class="gs-css">GROWTH → GROWTH+</span></div></div>
     </div>
   </div>
 
@@ -651,7 +646,6 @@ pre::-webkit-scrollbar-thumb { background:rgba(255,255,255,.12); }
     <div class="sub-title">Vertical (180°)</div>
     <div class="gg">
       <div class="gs"><div class="gs-prev" style="background:linear-gradient(180deg,#F891FF,#FBEDFF)"></div><div class="gs-info"><span class="gs-name">Pink</span><span class="gs-css">CLARITY+ → CLARITY</span></div></div>
-      <div class="gs"><div class="gs-prev" style="background:linear-gradient(180deg,#C5EA6D,#ECFED8)"></div><div class="gs-info"><span class="gs-name">Lime</span><span class="gs-css">GROWTH+ → GROWTH</span></div></div>
       <div class="gs"><div class="gs-prev" style="background:linear-gradient(180deg,#5931DC,#DECEFF)"></div><div class="gs-info"><span class="gs-name">Purple Light</span><span class="gs-css">PILOT → HIGHLIGHT</span></div></div>
     </div>
   </div>
@@ -659,7 +653,7 @@ pre::-webkit-scrollbar-thumb { background:rgba(255,255,255,.12); }
   <div class="sub">
     <div class="sub-title">Multi-directional Ambient (Blurred Orbs)</div>
     <div class="gg">
-      <div class="gs"><div class="gs-prev" style="background:radial-gradient(ellipse at 20% 80%,rgba(89,49,220,.7) 0%,transparent 60%),radial-gradient(ellipse at 80% 20%,rgba(197,234,109,.7) 0%,transparent 60%),#f3f5fa"></div><div class="gs-info"><span class="gs-name">Purple + Lime</span><span class="gs-css">Ambient orbs</span></div></div>
+      <div class="gs"><div class="gs-prev" style="background:radial-gradient(ellipse at 20% 80%,rgba(89,49,220,.7) 0%,transparent 60%),radial-gradient(ellipse at 80% 20%,rgba(255,217,103,.7) 0%,transparent 60%),#f3f5fa"></div><div class="gs-info"><span class="gs-name">Purple + Gold</span><span class="gs-css">Ambient orbs</span></div></div>
       <div class="gs"><div class="gs-prev" style="background:radial-gradient(ellipse at 30% 70%,rgba(248,145,255,.7) 0%,transparent 60%),radial-gradient(ellipse at 70% 30%,rgba(142,236,255,.7) 0%,transparent 60%),#f9fafc"></div><div class="gs-info"><span class="gs-name">Pink + Cyan</span><span class="gs-css">Ambient orbs</span></div></div>
       <div class="gs"><div class="gs-prev" style="background:radial-gradient(ellipse at 50% 50%,rgba(130,91,235,.5) 0%,transparent 70%),radial-gradient(ellipse at 0% 100%,rgba(255,217,103,.5) 0%,transparent 50%),#F6F3FF"></div><div class="gs-info"><span class="gs-name">Purple + Gold</span><span class="gs-css">Multi-directional</span></div></div>
     </div>
@@ -1273,13 +1267,11 @@ pre::-webkit-scrollbar-thumb { background:rgba(255,255,255,.12); }
   <span class="tp">--color-access</span>:        <span class="th">#FCF3D6</span>;  <span class="tc">/* ACCESS — warm cream */</span>
   <span class="tp">--color-clarity</span>:       <span class="th">#FBEDFF</span>;  <span class="tc">/* CLARITY — light lavender */</span>
   <span class="tp">--color-trust</span>:         <span class="th">#E7F9FF</span>;  <span class="tc">/* TRUST — light sky blue */</span>
-  <span class="tp">--color-growth</span>:        <span class="th">#ECFED8</span>;  <span class="tc">/* GROWTH — light lime */</span>
 
   <span class="tc">/* Secondary — Vivid (accent use only) */</span>
   <span class="tp">--color-access-plus</span>:   <span class="th">#FFD967</span>;  <span class="tc">/* ACCESS+ — bright gold */</span>
   <span class="tp">--color-clarity-plus</span>:  <span class="th">#F891FF</span>;  <span class="tc">/* CLARITY+ — bright pink */</span>
   <span class="tp">--color-trust-plus</span>:    <span class="th">#8EECFF</span>;  <span class="tc">/* TRUST+ — bright cyan */</span>
-  <span class="tp">--color-growth-plus</span>:   <span class="th">#C5EA6D</span>;  <span class="tc">/* GROWTH+ — bright lime */</span>
 
   <span class="tc">/* ── Webflow Live Site Variables ── */</span>
   <span class="tp">--pilot-black</span>:               <span class="th">#3f3c3d</span>;
