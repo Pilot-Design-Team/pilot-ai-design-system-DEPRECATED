@@ -1423,7 +1423,7 @@
       <a class="nl" href="#typography"><span class="nl-dot"></span>Typography</a>
       <a class="nl" href="#spacing"><span class="nl-dot"></span>Spacing &amp; Layout</a>
       <a class="nl" href="#gradients"><span class="nl-dot"></span>Gradients</a>
-      <a class="nl" href="#shapes"><span class="nl-dot"></span>Shapes</a>
+      <a class="nl" href="#shapes"><span class="nl-dot"></span>Grids &amp; Shapes</a>
       <a class="nl" href="#corners"><span class="nl-dot"></span>Corners &amp; Radius</a>
       <div class="ng-label">Components</div>
       <a class="nl" href="#buttons"><span class="nl-dot"></span>Buttons</a>
@@ -2144,10 +2144,78 @@
      ═══════════════════════════════════════ -->
       <section class="sec" id="shapes">
         <span class="sec-tag">Foundations</span>
-        <h2 class="sec-title">Shapes</h2>
-        <p class="sec-desc">Two core shapes. Lines create structure and separate sections. The circle is the Pilot
-          "rising sun" — it anchors subjects, adds warmth, and can appear in every brand color.</p>
+        <h2 class="sec-title">Grids and Shapes</h2>
+        <p class="sec-desc">Our content is anchored by a 12-column grid. Lines and circles add structure and warmth — but only when they earn their place.</p>
 
+        <!-- ── Grids & Pin Lines ── -->
+        <div class="sub">
+          <div class="sub-title">12-Column Grid & Pin Lines</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-bottom:28px;">
+            <!-- Left: visual examples -->
+            <div>
+              <!-- 12-col grid overlay demo -->
+              <div style="position:relative;border-radius:8px;overflow:hidden;margin-bottom:16px;height:200px;background:linear-gradient(135deg,#fce4ec 0%,#ffecd2 100%);">
+                <div style="position:absolute;inset:0;display:grid;grid-template-columns:repeat(12,1fr);gap:0;">
+                  <div style="border-right:1px solid rgba(89,49,220,0.12);height:100%"></div>
+                  <div style="border-right:1px solid rgba(89,49,220,0.12);height:100%"></div>
+                  <div style="border-right:1px solid rgba(89,49,220,0.12);height:100%"></div>
+                  <div style="border-right:1px solid rgba(89,49,220,0.12);height:100%"></div>
+                  <div style="border-right:1px solid rgba(89,49,220,0.12);height:100%"></div>
+                  <div style="border-right:1px solid rgba(89,49,220,0.12);height:100%"></div>
+                  <div style="border-right:1px solid rgba(89,49,220,0.12);height:100%"></div>
+                  <div style="border-right:1px solid rgba(89,49,220,0.12);height:100%"></div>
+                  <div style="border-right:1px solid rgba(89,49,220,0.12);height:100%"></div>
+                  <div style="border-right:1px solid rgba(89,49,220,0.12);height:100%"></div>
+                  <div style="border-right:1px solid rgba(89,49,220,0.12);height:100%"></div>
+                  <div style="height:100%"></div>
+                </div>
+                <div style="position:absolute;top:24px;left:20px;max-width:45%;">
+                  <p style="font-family:var(--font-body);font-size:11px;font-weight:600;color:#281350;line-height:1.4;">Whether you're scaling from 2 to 20 people or preparing for your exit — Pilot works for growing businesses.</p>
+                </div>
+              </div>
+              <!-- Pin lines visual -->
+              <div style="position:relative;border-radius:8px;overflow:hidden;height:120px;background:linear-gradient(180deg,#281350,#3c2069);display:flex;align-items:center;padding:0 20px;">
+                <div style="position:absolute;inset:0;display:grid;grid-template-columns:repeat(12,1fr);gap:0;">
+                  <div style="border-right:1px solid rgba(200,182,252,0.15);height:100%"></div>
+                  <div style="border-right:1px solid rgba(200,182,252,0.15);height:100%"></div>
+                  <div style="border-right:1px solid rgba(200,182,252,0.15);height:100%"></div>
+                  <div style="border-right:1px solid rgba(200,182,252,0.15);height:100%"></div>
+                  <div style="border-right:1px solid rgba(200,182,252,0.15);height:100%"></div>
+                  <div style="border-right:1px solid rgba(200,182,252,0.15);height:100%"></div>
+                  <div style="border-right:1px solid rgba(200,182,252,0.15);height:100%"></div>
+                  <div style="border-right:1px solid rgba(200,182,252,0.15);height:100%"></div>
+                  <div style="border-right:1px solid rgba(200,182,252,0.15);height:100%"></div>
+                  <div style="border-right:1px solid rgba(200,182,252,0.15);height:100%"></div>
+                  <div style="border-right:1px solid rgba(200,182,252,0.15);height:100%"></div>
+                  <div style="height:100%"></div>
+                </div>
+                <div style="position:relative;z-index:1;">
+                  <p style="font-family:var(--font-body);font-size:16px;font-weight:700;color:#fff;margin-bottom:6px;">Didn't set up your business right?</p>
+                  <span style="font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:1px;background:#5931DC;color:#fff;padding:4px 10px;border-radius:999px;">GET THE OPS CHECKLIST →</span>
+                </div>
+              </div>
+            </div>
+            <!-- Right: guidelines text -->
+            <div style="display:flex;flex-direction:column;justify-content:center;">
+              <!-- Mini 12-col grid icon -->
+              <div style="width:120px;height:80px;border:1px solid var(--p-border);border-radius:6px;display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-bottom:24px;overflow:hidden;">
+                <div style="border-right:1px solid var(--p-border);height:100%;display:flex;align-items:flex-end;padding:4px;">
+                  <div style="width:100%;height:30%;background:#e0e0e0;border-radius:2px;"></div>
+                </div>
+                <div style="border-right:1px solid var(--p-border);height:100%;display:flex;align-items:flex-start;padding:4px;">
+                  <div style="width:100%;height:50%;background:#e0e0e0;border-radius:2px;"></div>
+                </div>
+                <div style="border-right:1px solid var(--p-border);height:100%;"></div>
+                <div style="height:100%;"></div>
+              </div>
+              <p style="font-family:var(--font-body);font-size:16px;font-weight:400;color:#000;margin-bottom:20px;line-height:1.6;">Our content should always snap to a 12-column grid to ensure perfect alignment and precision.</p>
+              <p style="font-family:var(--font-body);font-size:16px;font-weight:400;color:#000;margin-bottom:20px;line-height:1.6;">Pin lines help emphasize the grid and anchor content.</p>
+              <p style="font-family:var(--font-body);font-size:16px;font-weight:400;color:#000;line-height:1.6;">However, if you can delete them and the design works without, do without. The underlying column grid anchors the text regardless.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Circles ── -->
         <div class="sub">
           <div class="sub-title">Circles — The Rising Sun</div>
           <div class="callout c-warn">
@@ -2193,6 +2261,7 @@
           </div>
         </div>
 
+        <!-- ── Lines ── -->
         <div class="sub">
           <div class="sub-title">Lines — Structure &amp; Section Dividers</div>
           <div class="callout c-info"><span class="ci-icon">ℹ</span>If you can delete a line and the design still works
