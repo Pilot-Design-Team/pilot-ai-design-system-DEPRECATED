@@ -1303,6 +1303,21 @@ The homepage (`/`) is a Webflow-built page with these major sections in order:
 | Pilot logo (black) | `https://cdn.prod.website-files.com/60a5136f2c6c8e4fb3a130d9/60a6655502236d57ba0dc64f_pilot-logo-black.svg` |
 | Logo dimensions | `width: 65px, height: 35px` |
 
+### Media Kit
+
+The complete media kit — including all logo variants (full logo, lettermark) in SVG, PNG, and PDF formats — is maintained in Google Drive:
+
+**[→ Pilot Media Kit (Google Drive)](https://drive.google.com/drive/folders/1h5BirEATWxpMydrbScK5M-YV8zKhRJmP)**
+
+Available formats and variants:
+
+| Variant | Colorways |
+|---------|-----------|
+| **Full logo** | Black, Purple, Purple Fill, White, White Fill |
+| **Lettermark** | Black, Purple, Purple Fill, White, White Fill |
+
+Formats: SVG, PNG, PDF. Download-ready `.zip` archives are also available in the Drive folder.
+
 ---
 
 ## 21. Key Design Patterns Summary
