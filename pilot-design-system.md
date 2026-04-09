@@ -1500,17 +1500,22 @@ background: linear-gradient(180deg, #F891FF, #FBEDFF);
 background: linear-gradient(180deg, #5931DC, #DECEFF);
 ```
 
-### Multi-directional (Ambient / Blurred Orb) Examples
+### Multi-directional / Ambient Examples
+
+Ambient gradients using blurred orbes.
 
 ```css
-/* Purple to gold ambient */
-background: radial-gradient(ellipse at 20% 80%, #5931DC 0%, transparent 60%),
-            radial-gradient(ellipse at 80% 20%, #FFD967 0%, transparent 60%);
-filter: blur(0); /* applied to inner orb element */
+/* Purple orb */
+background: radial-gradient(circle at 80% 80%, #b193fc 0%, transparent 70%), #5931dc;
 
-/* Pink to cyan ambient */
-background: radial-gradient(ellipse at 30% 70%, #F891FF 0%, transparent 60%),
-            radial-gradient(ellipse at 70% 30%, #8EECFF 0%, transparent 60%);
+/* Yellow orb */
+background: radial-gradient(circle at 20% 80%, #ffebb3 0%, transparent 70%), #ffd967;
+
+/* Pink orb */
+background: radial-gradient(circle at 80% 80%, #f8bdf8 0%, transparent 70%), #fdf0fc;
+
+/* Cyan orb */
+background: radial-gradient(circle at 80% 80%, #aaeaff 0%, transparent 70%), #e8fbff;
 ```
 
 **Rule:** Use gradients within the same tonal family. A purple gradient should move through the purple scale. Don't mix warm and cool families (e.g., orange + purple) unless you are intentionally creating an ambient/orb effect.
