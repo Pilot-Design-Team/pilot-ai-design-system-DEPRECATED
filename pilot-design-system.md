@@ -80,8 +80,18 @@ All variables are defined in `:root` and used throughout the Webflow CSS:
 
 Three primary font families are used, all self-hosted via Webflow CDN:
 
-#### Primary: Euclid Circular B
-The main brand/UI font. Used for headings, body text, and UI elements.
+#### Primary: Euclid Circular B (Web Alternative: Poppins)
+
+**Euclid B Circular is our default. The web-friendly alternative is Poppins.**
+
+H2, subtitle, body copy, use this.
+
+It's geometric, warm, friendly, and unfussy. When bolded, commanding. Otherwise, it invites a conversation.
+
+Euclid B works across all audiences and financial maturity levels.
+
+- [**EUCLID CIRCULAR B LICENSE →**](#)
+- [**WEB FONT: DOWNLOAD POPPINS →**](https://fonts.google.com/specimen/Poppins)
 
 ```css
 @font-face {
@@ -306,8 +316,8 @@ Webflow default fallbacks (before overrides):
 
 | Name | CSS Variable | Hex | Usage |
 |------|-------------|-----|-------|
-| Error Red | `--error-red` | `#ce1836` | Form validation errors |
-| CTA Green | `--cta-green` | `#47bfa4` | Green CTA links |
+| Error Red | `--error-red` | `#ce1836` | Form validation errors · **Product only — not for marketing** |
+| CTA Green | `--cta-green` | `#47bfa4` | Green CTA links · **Product only — not for marketing** |
 | Teal/Aqua | — | `#3da291` | Accent color |
 | Bright Blue | `--bright-blue` | `#4f9bf3` | Informational blue |
 | Supernova Yellow | `--supernova` | `#ffcc00` | Attention/highlight |
@@ -1303,6 +1313,21 @@ The homepage (`/`) is a Webflow-built page with these major sections in order:
 | Pilot logo (black) | `https://cdn.prod.website-files.com/60a5136f2c6c8e4fb3a130d9/60a6655502236d57ba0dc64f_pilot-logo-black.svg` |
 | Logo dimensions | `width: 65px, height: 35px` |
 
+### Media Kit
+
+The complete media kit — including all logo variants (full logo, lettermark) in SVG, PNG, and PDF formats — is maintained in Google Drive:
+
+**[→ Pilot Media Kit (Google Drive)](https://drive.google.com/drive/folders/1h5BirEATWxpMydrbScK5M-YV8zKhRJmP)**
+
+Available formats and variants:
+
+| Variant | Colorways |
+|---------|-----------|
+| **Full logo** | Black, Purple, Purple Fill, White, White Fill |
+| **Lettermark** | Black, Purple, Purple Fill, White, White Fill |
+
+Formats: SVG, PNG, PDF. Download-ready `.zip` archives are also available in the Drive folder.
+
 ---
 
 ## 21. Key Design Patterns Summary
@@ -1391,24 +1416,20 @@ Each accent color represents a pillar or promise. All selected because they pair
 | **ACCESS** | `#FCF3D6` | Warm cream/yellow | — |
 | **CLARITY** | `#FBEDFF` | Light lavender | — |
 | **TRUST** | `#E7F9FF` | Light sky blue | — |
-| **GROWTH** | `#ECFED8` | Light lime green | — |
 | **ACCESS+** | `#FFD967` | Bright gold/amber | Accent only, use sparingly |
 | **CLARITY+** | `#F891FF` | Bright pink/magenta | Accent only, use sparingly |
 | **TRUST+** | `#8EECFF` | Bright cyan | Accent only, use sparingly |
-| **GROWTH+** | `#C5EA6D` | Bright lime | Accent only, use sparingly |
 
 ```css
 /* Secondary spread — subdued */
 --color-access:   #FCF3D6;
 --color-clarity:  #FBEDFF;
 --color-trust:    #E7F9FF;
---color-growth:   #ECFED8;
 
 /* Secondary spread — vivid (accent use only) */
 --color-access-plus:  #FFD967;
 --color-clarity-plus: #F891FF;
 --color-trust-plus:   #8EECFF;
---color-growth-plus:  #C5EA6D;
 ```
 
 ---
@@ -1475,21 +1496,26 @@ background: linear-gradient(135deg, #FCF3D6, #FFD967);
 /* Pink/lavender vertical */
 background: linear-gradient(180deg, #F891FF, #FBEDFF);
 
-/* Lime/green vertical */
-background: linear-gradient(180deg, #C5EA6D, #ECFED8);
+/* Purple highlight vertical */
+background: linear-gradient(180deg, #5931DC, #DECEFF);
 ```
 
-### Multi-directional (Ambient / Blurred Orb) Examples
+### Multi-directional / Ambient Examples
+
+Ambient gradients using blurred orbes.
 
 ```css
-/* Purple to lime ambient */
-background: radial-gradient(ellipse at 20% 80%, #5931DC 0%, transparent 60%),
-            radial-gradient(ellipse at 80% 20%, #C5EA6D 0%, transparent 60%);
-filter: blur(0); /* applied to inner orb element */
+/* Purple orb */
+background: radial-gradient(circle at 80% 80%, #b193fc 0%, transparent 70%), #5931dc;
 
-/* Pink to cyan ambient */
-background: radial-gradient(ellipse at 30% 70%, #F891FF 0%, transparent 60%),
-            radial-gradient(ellipse at 70% 30%, #8EECFF 0%, transparent 60%);
+/* Yellow orb */
+background: radial-gradient(circle at 20% 80%, #ffebb3 0%, transparent 70%), #ffd967;
+
+/* Pink orb */
+background: radial-gradient(circle at 80% 80%, #f8bdf8 0%, transparent 70%), #fdf0fc;
+
+/* Cyan orb */
+background: radial-gradient(circle at 80% 80%, #aaeaff 0%, transparent 70%), #e8fbff;
 ```
 
 **Rule:** Use gradients within the same tonal family. A purple gradient should move through the purple scale. Don't mix warm and cool families (e.g., orange + purple) unless you are intentionally creating an ambient/orb effect.
@@ -1812,11 +1838,9 @@ Traditional finance relies on grids and rigid spreadsheets — many of our clien
   --color-access:        #FCF3D6;  /* ACCESS — warm cream */
   --color-clarity:       #FBEDFF;  /* CLARITY — light lavender */
   --color-trust:         #E7F9FF;  /* TRUST — light sky blue */
-  --color-growth:        #ECFED8;  /* GROWTH — light lime */
   --color-access-plus:   #FFD967;  /* ACCESS+ — bright gold (accent only) */
   --color-clarity-plus:  #F891FF;  /* CLARITY+ — bright pink (accent only) */
   --color-trust-plus:    #8EECFF;  /* TRUST+ — bright cyan (accent only) */
-  --color-growth-plus:   #C5EA6D;  /* GROWTH+ — bright lime (accent only) */
 
   /* ─── Webflow/CSS Live Site Variables ─── */
   --pilot-black:               #3f3c3d;   /* Body text */
