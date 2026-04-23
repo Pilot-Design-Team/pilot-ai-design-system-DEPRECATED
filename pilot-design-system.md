@@ -1,23 +1,25 @@
 # Pilot.com Design System Reference
 
-> **Last updated:** April 2026  
-> Extracted from https://www.pilot.com and the official Pilot Brand & Marketing Design System document.  
-> Source CSS: `pilot-v2.shared.71c89cc4c.min.css` (cdn.prod.website-files.com) and `build.css` (assets.pilot.com)  
+> **Last updated:** April 2026\
+> Extracted from https://www.pilot.com and the official Pilot Brand & Marketing
+> Design System document.\
+> Source CSS: `pilot-v2.shared.71c89cc4c.min.css` (cdn.prod.website-files.com)
+> and `build.css` (assets.pilot.com)\
 > Platform: Webflow + custom CSS + Marketo forms + Swiper.js carousels
 
 ## Quick Reference
 
-| Category | Key Values |
-|----------|-----------|
-| Primary color | `#5931DC` (PILOT purple) |
-| Body font | Euclid Circular B |
-| Tech font | Space Mono (sparingly) |
-| Human accent font | La Belle Aurore (≤4 words) |
-| CTA border-radius | `999px` (full pill) |
-| Text alignment | Left only — never centered |
-| Drop shadow color | Purple family only, blur 50–100, opacity 10–20% |
-| Container max-width | `75.5rem` (1208px) |
-| Base text color | `#3f3c3d` |
+| Category            | Key Values                                      |
+| ------------------- | ----------------------------------------------- |
+| Primary color       | `#5931DC` (PILOT purple)                        |
+| Body font           | Euclid Circular B                               |
+| Tech font           | Space Mono (sparingly)                          |
+| Human accent font   | La Belle Aurore (≤4 words)                      |
+| CTA border-radius   | `999px` (full pill)                             |
+| Text alignment      | Left only — never centered                      |
+| Drop shadow color   | Purple family only, blur 50–100, opacity 10–20% |
+| Container max-width | `75.5rem` (1208px)                              |
+| Base text color     | `#3f3c3d`                                       |
 
 ---
 
@@ -28,47 +30,47 @@ All variables are defined in `:root` and used throughout the Webflow CSS:
 ```css
 :root {
   /* Core Brand Colors */
-  --pilot-black:               #3f3c3d;
-  --pilot-dark-purple:         #281350;
-  --white:                     white;
+  --pilot-black: #3f3c3d;
+  --pilot-dark-purple: #281350;
+  --white: white;
 
   /* Purple Scale */
-  --purple--1-primary-ee5:     #5f2ee5;   /* Primary CTA purple */
-  --purple--2-beb:             #825beb;   /* Medium purple */
-  --purple--3-30-6fc:          #c8b6fc;   /* Light purple */
-  --purple--x-d89:             #3c2d89;   /* Deep purple / dark accent */
-  --purple--x-c70:             #473c70;   /* Muted dark purple */
-  --purple--3-cfd:             #f0ecfd;   /* Very light purple tint */
+  --purple--1-primary-ee5: #5f2ee5; /* Primary CTA purple */
+  --purple--2-beb: #825beb; /* Medium purple */
+  --purple--3-30-6fc: #c8b6fc; /* Light purple */
+  --purple--x-d89: #3c2d89; /* Deep purple / dark accent */
+  --purple--x-c70: #473c70; /* Muted dark purple */
+  --purple--3-cfd: #f0ecfd; /* Very light purple tint */
 
   /* Light / Background Colors */
-  --light--light-5fa:          #f3f5fa;   /* Primary page background tint */
-  --light--purple-f2edff:      #f2edff;
-  --light--f8f8f8:             #f8f8f8;
-  --light--blue-gray-afc:      #f9fafc;
-  --light--light-ef5:          #edeef5;
-  --light--light-purple-afd:   #e3dafd;
-  --gray:                      #f3f5fa;
-  --gray-999:                  #999;
-  --gray-light:                #e0e0e0;
-  --dark-gray-363:             #656363;
-  --pale-periwinkle:           #f6f3ff;
-  --transparent:               #fff0;
+  --light--light-5fa: #f3f5fa; /* Primary page background tint */
+  --light--purple-f2edff: #f2edff;
+  --light--f8f8f8: #f8f8f8;
+  --light--blue-gray-afc: #f9fafc;
+  --light--light-ef5: #edeef5;
+  --light--light-purple-afd: #e3dafd;
+  --gray: #f3f5fa;
+  --gray-999: #999;
+  --gray-light: #e0e0e0;
+  --dark-gray-363: #656363;
+  --pale-periwinkle: #f6f3ff;
+  --transparent: #fff0;
 
   /* Functional Colors */
-  --bright-blue:               #4f9bf3;
-  --cta-green:                 #47bfa4;
-  --error-red:                 #ce1836;
-  --supernova:                 #ffcc00;
+  --bright-blue: #4f9bf3;
+  --cta-green: #47bfa4;
+  --error-red: #ce1836;
+  --supernova: #ffcc00;
 
   /* Accent / Illustrative Colors */
-  --light-yellow:              #fee17f;
-  --pilot-pink:                #f891ff;
-  --pilot-pink-10:             #f891ff1a;  /* Pink at 10% opacity */
-  --pilot-cyan:                #e7f9ff;
-  --pale-lavender:             #fef4ff;
-  --buttery-cream:             #fcf3d6;
-  --pastel-violet:             #fbedff;
-  --olive-green:               #6e9605;
+  --light-yellow: #fee17f;
+  --pilot-pink: #f891ff;
+  --pilot-pink-10: #f891ff1a; /* Pink at 10% opacity */
+  --pilot-cyan: #e7f9ff;
+  --pale-lavender: #fef4ff;
+  --buttery-cream: #fcf3d6;
+  --pastel-violet: #fbedff;
+  --olive-green: #6e9605;
 }
 ```
 
@@ -86,7 +88,8 @@ Three primary font families are used, all self-hosted via Webflow CDN:
 
 H2, subtitle, body copy, use this.
 
-It's geometric, warm, friendly, and unfussy. When bolded, commanding. Otherwise, it invites a conversation.
+It's geometric, warm, friendly, and unfussy. When bolded, commanding. Otherwise,
+it invites a conversation.
 
 Euclid B works across all audiences and financial maturity levels.
 
@@ -95,59 +98,62 @@ Euclid B works across all audiences and financial maturity levels.
 
 ```css
 @font-face {
-  font-family: 'Euclid Circular B';
-  src: url('...EuclidCircularB-Light-WebS.woff2') format('woff2');
+  font-family: "Euclid Circular B";
+  src: url("...EuclidCircularB-Light-WebS.woff2") format("woff2");
   font-weight: 300;
 }
 @font-face {
-  font-family: 'Euclid Circular B';
-  src: url('...EuclidCircularB-Regular-WebS.woff2') format('woff2');
+  font-family: "Euclid Circular B";
+  src: url("...EuclidCircularB-Regular-WebS.woff2") format("woff2");
   font-weight: 400;
 }
 @font-face {
-  font-family: 'Euclid Circular B';
-  src: url('...EuclidCircularB-Medium-WebS.woff2') format('woff2');
+  font-family: "Euclid Circular B";
+  src: url("...EuclidCircularB-Medium-WebS.woff2") format("woff2");
   font-weight: 500;
 }
 @font-face {
-  font-family: 'Euclid Circular B';
-  src: url('...EuclidCircularB-Semibold-WebS.woff2') format('woff2');
+  font-family: "Euclid Circular B";
+  src: url("...EuclidCircularB-Semibold-WebS.woff2") format("woff2");
   font-weight: 600;
 }
 @font-face {
-  font-family: 'Euclid Circular B';
-  src: url('...EuclidCircularB-Bold-WebS.woff2') format('woff2');
+  font-family: "Euclid Circular B";
+  src: url("...EuclidCircularB-Bold-WebS.woff2") format("woff2");
   font-weight: 700;
 }
 ```
 
 Webflow also uses shorthand aliases for this font:
+
 - `font-family: Euclid, sans-serif` — used in headings, body, footer titles
 - `font-family: Euclidcircularb Webs, sans-serif` — used in hero form
 
 #### Secondary: Space Mono
-Monospace font used for CTA buttons, labels, eyebrows, pricing tabs, and footer legal text.
+
+Monospace font used for CTA buttons, labels, eyebrows, pricing tabs, and footer
+legal text.
 
 ```css
 @font-face {
-  font-family: 'Spacemono';
-  src: url('...SpaceMono-Regular.ttf') format('truetype');
+  font-family: "Spacemono";
+  src: url("...SpaceMono-Regular.ttf") format("truetype");
   font-weight: 400;
 }
 @font-face {
-  font-family: 'Spacemono';
-  src: url('...SpaceMono-Bold.ttf') format('truetype');
+  font-family: "Spacemono";
+  src: url("...SpaceMono-Bold.ttf") format("truetype");
   font-weight: 700;
 }
 @font-face {
-  font-family: 'Spacemono';
-  src: url('...SpaceMono-Italic.ttf') format('truetype');
+  font-family: "Spacemono";
+  src: url("...SpaceMono-Italic.ttf") format("truetype");
   font-weight: 400;
   font-style: italic;
 }
 @font-face {
-  font-family: 'Spacemono';
-  src: url('...SpaceMono-BoldItalic.ttf') format('truetype');
+  font-family: "Spacemono";
+  src: url("...SpaceMono-BoldItalic.ttf") format("truetype");
   font-weight: 700;
   font-style: italic;
 }
@@ -156,14 +162,17 @@ Monospace font used for CTA buttons, labels, eyebrows, pricing tabs, and footer 
 Also referenced as `Space Mono` (the Google Fonts name).
 
 #### Accent: La Belle Aurore
-Decorative script/cursive font. Used for brand accent text (e.g., `.home_cursive` class).
+
+Decorative script/cursive font. Used for brand accent text (e.g.,
+`.home_cursive` class).
 
 ```css
 /* Loaded via WebFont.load({ google: { families: ["La Belle Aurore:300,400,500,600,700"] } }) */
-font-family: 'La Belle Aurore', sans-serif;
+font-family: "La Belle Aurore", sans-serif;
 ```
 
-Usage: `.home_cursive` — color: `#281350`, font-size: `2.5rem`, font-weight: `400`, letter-spacing: `-0.03em`, line-height: `1`.
+Usage: `.home_cursive` — color: `#281350`, font-size: `2.5rem`, font-weight:
+`400`, letter-spacing: `-0.03em`, line-height: `1`.
 
 ---
 
@@ -181,8 +190,8 @@ body {
 p {
   margin-top: 0;
   margin-bottom: 20px;
-  font-size: 1rem;         /* 16px */
-  line-height: 1.75rem;    /* 28px */
+  font-size: 1rem; /* 16px */
+  line-height: 1.75rem; /* 28px */
 }
 ```
 
@@ -190,18 +199,19 @@ p {
 
 ### Heading Scale (Webflow Defaults → Pilot Overrides)
 
-| Element | Font Size     | Font Weight | Line Height | Font Family        |
-|---------|---------------|-------------|-------------|--------------------|
-| `h1`    | `3rem` (48px) | `600`       | `115%`      | Euclid, sans-serif |
-| `h2`    | `2.5rem` (40px) | `600`     | `115%`      | Euclid, sans-serif |
-| `h3`    | `2rem` (32px) | `600`       | `125%`      | Euclid, sans-serif |
-| `h4`    | `1.5rem` (24px) | `600`     | `125%`      | Euclid, sans-serif |
-| `h5`    | `1.25rem` (20px) | `600`    | `110%`      | —                  |
-| `h6`    | `1rem` (16px) | `600`       | `120%`      | —                  |
+| Element | Font Size        | Font Weight | Line Height | Font Family        |
+| ------- | ---------------- | ----------- | ----------- | ------------------ |
+| `h1`    | `3rem` (48px)    | `600`       | `115%`      | Euclid, sans-serif |
+| `h2`    | `2.5rem` (40px)  | `600`       | `115%`      | Euclid, sans-serif |
+| `h3`    | `2rem` (32px)    | `600`       | `125%`      | Euclid, sans-serif |
+| `h4`    | `1.5rem` (24px)  | `600`       | `125%`      | Euclid, sans-serif |
+| `h5`    | `1.25rem` (20px) | `600`       | `110%`      | —                  |
+| `h6`    | `1rem` (16px)    | `600`       | `120%`      | —                  |
 
 Webflow default fallbacks (before overrides):
+
 | Element | Font Size | Line Height |
-|---------|-----------|-------------|
+| ------- | --------- | ----------- |
 | `h1`    | 38px      | 44px        |
 | `h2`    | 32px      | 36px        |
 | `h3`    | 24px      | 30px        |
@@ -214,167 +224,249 @@ Webflow default fallbacks (before overrides):
 ### Typography Utility Classes
 
 ```css
-.heading-large   { font-size: 3rem;    font-weight: 600; line-height: 3.6rem; }
-.heading-medium  { font-size: 2rem;    font-weight: 600; line-height: 2.2rem; }
-.heading-small   { font-size: 1.5rem;  font-weight: 600; line-height: 2rem; }
+.heading-large {
+  font-size: 3rem;
+  font-weight: 600;
+  line-height: 3.6rem;
+}
+.heading-medium {
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 2.2rem;
+}
+.heading-small {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 2rem;
+}
 
-.text-large         { font-size: 1.25rem;  line-height: 2rem; }
-.text-semibold      { font-size: 1rem;     font-weight: 600; line-height: 1.6rem; }
-.text-1rem          { font-size: 1rem;     line-height: 1.5rem; }
-.text-extra-large   { font-size: 2rem;     line-height: 2.8rem; }
-.text-extra-space   { line-height: 2; }
-.text-leading-1-8rem { line-height: 1.8rem; }
+.text-large {
+  font-size: 1.25rem;
+  line-height: 2rem;
+}
+.text-semibold {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.6rem;
+}
+.text-1rem {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+.text-extra-large {
+  font-size: 2rem;
+  line-height: 2.8rem;
+}
+.text-extra-space {
+  line-height: 2;
+}
+.text-leading-1-8rem {
+  line-height: 1.8rem;
+}
 
-.text-color-purple      { color: var(--purple--1-primary-ee5); }
-.text-color-dark-purple { color: var(--purple--x-d89); }
-.text-purple-dark       { color: var(--purple--x-d89); }
-.text-lighter           { color: #656363; }
-.text-center            { text-align: center; }
-.text-align-center      { text-align: center; }
-.text-link-purple-underline { text-decoration: underline; text-underline-offset: 10px; }
+.text-color-purple {
+  color: var(--purple--1-primary-ee5);
+}
+.text-color-dark-purple {
+  color: var(--purple--x-d89);
+}
+.text-purple-dark {
+  color: var(--purple--x-d89);
+}
+.text-lighter {
+  color: #656363;
+}
+.text-center {
+  text-align: center;
+}
+.text-align-center {
+  text-align: center;
+}
+.text-link-purple-underline {
+  text-decoration: underline;
+  text-underline-offset: 10px;
+}
 ```
 
 ---
 
 ### Font Weight Scale
 
-| Weight | Usage |
-|--------|-------|
+| Weight | Usage                               |
+| ------ | ----------------------------------- |
 | `300`  | Light text, Euclid Circular B Light |
-| `400`  | Body text, regular weight |
-| `500`  | Medium emphasis |
-| `600`  | Headings, semibold CTAs, nav items |
-| `700`  | Bold, strong emphasis |
-| `900`  | Rare / heavy use |
+| `400`  | Body text, regular weight           |
+| `500`  | Medium emphasis                     |
+| `600`  | Headings, semibold CTAs, nav items  |
+| `700`  | Bold, strong emphasis               |
+| `900`  | Rare / heavy use                    |
 
 ---
 
 ### Font Size Scale (pixel equivalents, base 16px)
 
-| rem Value | px Equivalent | Usage |
-|-----------|---------------|-------|
-| `0.75rem`  | 12px | Small labels, eyebrows, legal text |
-| `0.875rem` | 14px | Small body text |
-| `1rem`     | 16px | Base body text |
-| `1.125rem` | 18px | Hero form, select inputs |
-| `1.25rem`  | 20px | Footer titles, large body |
-| `1.5rem`   | 24px | H4, card headers |
-| `1.75rem`  | 28px | Medium headings |
-| `2rem`     | 32px | H3, `.heading-medium` |
-| `2.5rem`   | 40px | H2, cursive accent |
-| `3rem`     | 48px | H1, `.heading-large` |
-| `3.5rem`   | 56px | Large display |
-| `4rem`     | 64px | XL display |
-| `5rem`     | 80px | Hero display |
+| rem Value  | px Equivalent | Usage                              |
+| ---------- | ------------- | ---------------------------------- |
+| `0.75rem`  | 12px          | Small labels, eyebrows, legal text |
+| `0.875rem` | 14px          | Small body text                    |
+| `1rem`     | 16px          | Base body text                     |
+| `1.125rem` | 18px          | Hero form, select inputs           |
+| `1.25rem`  | 20px          | Footer titles, large body          |
+| `1.5rem`   | 24px          | H4, card headers                   |
+| `1.75rem`  | 28px          | Medium headings                    |
+| `2rem`     | 32px          | H3, `.heading-medium`              |
+| `2.5rem`   | 40px          | H2, cursive accent                 |
+| `3rem`     | 48px          | H1, `.heading-large`               |
+| `3.5rem`   | 56px          | Large display                      |
+| `4rem`     | 64px          | XL display                         |
+| `5rem`     | 80px          | Hero display                       |
 
 ---
 
 ## 3. Color System
 
+### Official Color Palette
+
+#### Primary Purple
+
+The **Pilot purple scale** says "We're in tech" without shouting. It ranges from
+deep (certainty) to light (trust). "Highlight" is the same color used in the
+product — it indicates a value has changed.
+
+| Name          | Hex       | CMYK             | Pantone | Role                                                    |
+| ------------- | --------- | ---------------- | ------- | ------------------------------------------------------- |
+| **Profit**    | `#281350` | C95 M100 Y41 K31 | 2695 C  | Deepest purple — certainty, authority                   |
+| **Pilot**     | `#5931DC` | C80 M98 Y0 K2    | 2725 C  | Primary brand purple                                    |
+| **Brilliant** | `#8258EB` | C46 M62 Y0 K8    | 2665 C  | Mid-range purple                                        |
+| **Highlight** | `#DECEFF` | C13 M20 Y0 K0    | 2635 C  | Product highlight color — indicates a value has changed |
+| **Margin**    | `#F6F5FF` | C5 M7 Y0 K10     | 7443 C  | Lightest purple — trust, openness                       |
+
+#### Secondary Spread
+
+**Pilot accents** help draw attention and guide the eye. They each stand for a
+pillar or promise. All selected because they pair with purple. Subdued tones are
+standard. Only use the "+" variants for accents, and sparingly.
+
+| Name         | Hex       | CMYK          | Pantone     | Role                                |
+| ------------ | --------- | ------------- | ----------- | ----------------------------------- |
+| **Access**   | `#FCF3D6` | C2 M3 Y18 K0  | 7499 C      | Subdued warm accent                 |
+| **Clarity**  | `#F8EDFF` | C2 M8 Y0 K0   | 7436 C      | Subdued cool accent                 |
+| **Trust**    | `#E7F9FF` | C10 M0 Y1 K0  | 545 C       | Subdued blue accent                 |
+| **Access+**  | `#FFD967` | C1 M13 Y67 K0 | 128 C       | Vibrant warm accent — use sparingly |
+| **Clarity+** | `#F891FF` | C19 M44 Y0 K0 | 226 C       | Vibrant pink accent — use sparingly |
+| **Trust+**   | `#88ECFF` | C39 M0 Y5 K0  | Blue 0821 C | Vibrant blue accent — use sparingly |
+
+> [!IMPORTANT]
+> **Subdued tones are standard.** Only use the "+" vibrant variants for accents,
+> and sparingly. All accent colors were selected because they pair with the
+> primary purple scale.
+
+---
+
 ### Brand Color Palette
 
-| Name | CSS Variable | Hex | Usage |
-|------|-------------|-----|-------|
-| **Pilot Purple** (Primary) | `--purple--1-primary-ee5` | `#5f2ee5` | CTA buttons, links, primary accents, borders |
-| **Pilot Black** | `--pilot-black` | `#3f3c3d` | Body text, default text color |
-| **Pilot Dark Purple** | `--pilot-dark-purple` | `#281350` | Dark backgrounds, cursive text, hero text |
-| **White** | `--white` | `#ffffff` | Backgrounds, button text on dark |
-| **Deep Purple** | `--purple--x-d89` | `#3c2d89` | Testimonial quote marks, dark accents, footer nav links |
-| **Deep Purple (alt)** | `--purple--x-c70` | `#473c70` | Text dividers |
-| **Medium Purple** | `--purple--2-beb` | `#825beb` | Secondary purple |
-| **Light Purple** | `--purple--3-30-6fc` | `#c8b6fc` | Nav banner text, light accents |
+| Name                       | CSS Variable              | Hex       | Usage                                                   |
+| -------------------------- | ------------------------- | --------- | ------------------------------------------------------- |
+| **Pilot Purple** (Primary) | `--purple--1-primary-ee5` | `#5f2ee5` | CTA buttons, links, primary accents, borders            |
+| **Pilot Black**            | `--pilot-black`           | `#3f3c3d` | Body text, default text color                           |
+| **Pilot Dark Purple**      | `--pilot-dark-purple`     | `#281350` | Dark backgrounds, cursive text, hero text               |
+| **White**                  | `--white`                 | `#ffffff` | Backgrounds, button text on dark                        |
+| **Deep Purple**            | `--purple--x-d89`         | `#3c2d89` | Testimonial quote marks, dark accents, footer nav links |
+| **Deep Purple (alt)**      | `--purple--x-c70`         | `#473c70` | Text dividers                                           |
+| **Medium Purple**          | `--purple--2-beb`         | `#825beb` | Secondary purple                                        |
+| **Light Purple**           | `--purple--3-30-6fc`      | `#c8b6fc` | Nav banner text, light accents                          |
 
 ### Extended Purple Scale
 
-| Hex | Usage |
-|-----|-------|
+| Hex       | Usage                                                     |
+| --------- | --------------------------------------------------------- |
 | `#5931dc` | Slide CTA button background, slightly darker than primary |
-| `#6a46df` | Hover/active states |
-| `#3c2d89` | Dark accent, quote marks |
-| `#322a4e` | Very dark purple |
-| `#3e2b62` | Hero section border color |
-| `#e3dafd` | `--light--light-purple-afd` — light purple backgrounds |
-| `#f0ecfd` | `--purple--3-cfd` — very light purple tint |
-| `#f2edff` | `--light--purple-f2edff` — near-white purple tint |
-| `#f6f3ff` | `--pale-periwinkle` — ultra-light purple background |
+| `#6a46df` | Hover/active states                                       |
+| `#3c2d89` | Dark accent, quote marks                                  |
+| `#322a4e` | Very dark purple                                          |
+| `#3e2b62` | Hero section border color                                 |
+| `#e3dafd` | `--light--light-purple-afd` — light purple backgrounds    |
+| `#f0ecfd` | `--purple--3-cfd` — very light purple tint                |
+| `#f2edff` | `--light--purple-f2edff` — near-white purple tint         |
+| `#f6f3ff` | `--pale-periwinkle` — ultra-light purple background       |
 
 ### Neutral / Gray Scale
 
-| Name | CSS Variable | Hex | Usage |
-|------|-------------|-----|-------|
-| Near-black | — | `#1a1b1f` | Dark text variant |
-| Body text | `--pilot-black` | `#3f3c3d` | Default text |
-| Dark gray | `--dark-gray-363` | `#656363` | Secondary text, nav links |
-| Medium gray | `--gray-999` | `#999` | Placeholder text, muted UI |
-| Light gray (border) | `--gray-light` | `#e0e0e0` | Input borders, dividers, card borders |
-| Light background | `--light--light-5fa` | `#f3f5fa` | Section backgrounds |
-| Lighter background | `--light--f8f8f8` | `#f8f8f8` | Card backgrounds |
-| Lightest background | `--light--blue-gray-afc` | `#f9fafc` | Partner sections |
-| Off-white | — | `#fafafa` | Card backgrounds |
+| Name                | CSS Variable             | Hex       | Usage                                 |
+| ------------------- | ------------------------ | --------- | ------------------------------------- |
+| Near-black          | —                        | `#1a1b1f` | Dark text variant                     |
+| Body text           | `--pilot-black`          | `#3f3c3d` | Default text                          |
+| Dark gray           | `--dark-gray-363`        | `#656363` | Secondary text, nav links             |
+| Medium gray         | `--gray-999`             | `#999`    | Placeholder text, muted UI            |
+| Light gray (border) | `--gray-light`           | `#e0e0e0` | Input borders, dividers, card borders |
+| Light background    | `--light--light-5fa`     | `#f3f5fa` | Section backgrounds                   |
+| Lighter background  | `--light--f8f8f8`        | `#f8f8f8` | Card backgrounds                      |
+| Lightest background | `--light--blue-gray-afc` | `#f9fafc` | Partner sections                      |
+| Off-white           | —                        | `#fafafa` | Card backgrounds                      |
 
 ### Functional Colors
 
-| Name | CSS Variable | Hex | Usage |
-|------|-------------|-----|-------|
-| Error Red | `--error-red` | `#ce1836` | Form validation errors · **Product only — not for marketing** |
-| CTA Green | `--cta-green` | `#47bfa4` | Green CTA links · **Product only — not for marketing** |
-| Teal/Aqua | — | `#3da291` | Accent color |
-| Bright Blue | `--bright-blue` | `#4f9bf3` | Informational blue |
-| Supernova Yellow | `--supernova` | `#ffcc00` | Attention/highlight |
-| Olive Green | `--olive-green` | `#6e9605` | Growth eyebrow labels |
+| Name             | CSS Variable    | Hex       | Usage                                                         |
+| ---------------- | --------------- | --------- | ------------------------------------------------------------- |
+| Error Red        | `--error-red`   | `#ce1836` | Form validation errors · **Product only — not for marketing** |
+| CTA Green        | `--cta-green`   | `#47bfa4` | Green CTA links · **Product only — not for marketing**        |
+| Teal/Aqua        | —               | `#3da291` | Accent color                                                  |
+| Bright Blue      | `--bright-blue` | `#4f9bf3` | Informational blue                                            |
+| Supernova Yellow | `--supernova`   | `#ffcc00` | Attention/highlight                                           |
+| Olive Green      | `--olive-green` | `#6e9605` | Growth eyebrow labels                                         |
 
 ### Illustrative / Accent Colors
 
-| Name | CSS Variable | Hex | Usage |
-|------|-------------|-----|-------|
-| Pilot Pink | `--pilot-pink` | `#f891ff` | Gradient accents, chat image border |
-| Pilot Cyan | `--pilot-cyan` | `#e7f9ff` | Background tint |
-| Pale Lavender | `--pale-lavender` | `#fef4ff` | Pricing card footer background |
-| Buttery Cream | `--buttery-cream` | `#fcf3d6` | Warm accent |
-| Pastel Violet | `--pastel-violet` | `#fbedff` | Light purple tint |
-| Light Yellow | `--light-yellow` | `#fee17f` | Highlight backgrounds |
-| Lime/Growth | — | `#f3ffd3` | Growth section card gradient |
-| Gold/Amber | — | `#967000` | Growth eyebrow text color |
+| Name          | CSS Variable      | Hex       | Usage                               |
+| ------------- | ----------------- | --------- | ----------------------------------- |
+| Pilot Pink    | `--pilot-pink`    | `#f891ff` | Gradient accents, chat image border |
+| Pilot Cyan    | `--pilot-cyan`    | `#e7f9ff` | Background tint                     |
+| Pale Lavender | `--pale-lavender` | `#fef4ff` | Pricing card footer background      |
+| Buttery Cream | `--buttery-cream` | `#fcf3d6` | Warm accent                         |
+| Pastel Violet | `--pastel-violet` | `#fbedff` | Light purple tint                   |
+| Light Yellow  | `--light-yellow`  | `#fee17f` | Highlight backgrounds               |
+| Lime/Growth   | —                 | `#f3ffd3` | Growth section card gradient        |
+| Gold/Amber    | —                 | `#967000` | Growth eyebrow text color           |
 
 ### Alpha / Opacity Variants
 
-| Hex | Base Color | Opacity | Usage |
-|-----|-----------|---------|-------|
-| `#c8b6fc1a` | Purple-3 | ~10% | CTA button border gradient |
-| `#5931dc1a` | Purple CTA | ~10% | CTA button border gradient |
-| `#5f2ee51a` | Primary purple | ~10% | Shadow glow |
-| `#3c2d890d` | Deep purple | ~5% | Subtle backgrounds |
-| `#3c2d8914` | Deep purple | ~8% | |
-| `#3c2d891a` | Deep purple | ~10% | |
-| `#281350 at 5%` | Dark purple | ~5% | Section backgrounds |
-| `#f891ff1a` | Pink | ~10% | `--pilot-pink-10` |
+| Hex             | Base Color     | Opacity | Usage                      |
+| --------------- | -------------- | ------- | -------------------------- |
+| `#c8b6fc1a`     | Purple-3       | ~10%    | CTA button border gradient |
+| `#5931dc1a`     | Purple CTA     | ~10%    | CTA button border gradient |
+| `#5f2ee51a`     | Primary purple | ~10%    | Shadow glow                |
+| `#3c2d890d`     | Deep purple    | ~5%     | Subtle backgrounds         |
+| `#3c2d8914`     | Deep purple    | ~8%     |                            |
+| `#3c2d891a`     | Deep purple    | ~10%    |                            |
+| `#281350 at 5%` | Dark purple    | ~5%     | Section backgrounds        |
+| `#f891ff1a`     | Pink           | ~10%    | `--pilot-pink-10`          |
 
 ---
 
 ## 4. Border Radius
 
-| Value | Usage |
-|-------|-------|
-| `4px` | Buttons (`.button`), form checkboxes, dropdown dates, small cards |
-| `6px` | Range track |
-| `8px` | Cards (Chilipiper modal) |
-| `12px` | Small cards |
-| `16px` | Chat/message images |
-| `20px` / `20px 20px 60px` | Section shapes |
-| `1rem` (16px) | Card `.card-rounded`, `.cta` section |
-| `0.5rem` (8px) | `.card-white`, `.card-gray` |
-| `0.75rem` (12px) | Nav mega-menu icon links |
-| `1.5rem` (24px) | Medium pill-shaped elements |
-| `2rem` (32px) | Larger pills |
-| `2.875rem` | `.home_form-cta` (hero CTA button) |
-| `3rem` | `.home_slide-btn` (slide CTA button) |
-| `3.5rem` | `.home_form-wrap` (hero email form container) |
-| `50%` | Circular elements |
-| `50px` | Pill buttons |
-| `60px` | Pricing tab menu |
-| `100px` | Fully rounded large pills |
-| `999px` | Infinite radius (always pill) |
-| `100%` | Perfect circles |
+| Value                     | Usage                                                             |
+| ------------------------- | ----------------------------------------------------------------- |
+| `4px`                     | Buttons (`.button`), form checkboxes, dropdown dates, small cards |
+| `6px`                     | Range track                                                       |
+| `8px`                     | Cards (Chilipiper modal)                                          |
+| `12px`                    | Small cards                                                       |
+| `16px`                    | Chat/message images                                               |
+| `20px` / `20px 20px 60px` | Section shapes                                                    |
+| `1rem` (16px)             | Card `.card-rounded`, `.cta` section                              |
+| `0.5rem` (8px)            | `.card-white`, `.card-gray`                                       |
+| `0.75rem` (12px)          | Nav mega-menu icon links                                          |
+| `1.5rem` (24px)           | Medium pill-shaped elements                                       |
+| `2rem` (32px)             | Larger pills                                                      |
+| `2.875rem`                | `.home_form-cta` (hero CTA button)                                |
+| `3rem`                    | `.home_slide-btn` (slide CTA button)                              |
+| `3.5rem`                  | `.home_form-wrap` (hero email form container)                     |
+| `50%`                     | Circular elements                                                 |
+| `50px`                    | Pill buttons                                                      |
+| `60px`                    | Pricing tab menu                                                  |
+| `100px`                   | Fully rounded large pills                                         |
+| `999px`                   | Infinite radius (always pill)                                     |
+| `100%`                    | Perfect circles                                                   |
 
 ---
 
@@ -382,51 +474,51 @@ Webflow default fallbacks (before overrides):
 
 ### Container / Layout Widths
 
-| Class | Max Width | H-Padding |
-|-------|-----------|-----------|
-| `.container` | `75.5rem` (1208px) | `40px` |
-| `.container-narrow` | `856px` | `40px` |
-| `.container-narrower` | `766px` | `40px` |
-| `.container-max-width-836px` | `836px` | — |
-| `.container-max-width-1080px` | `1080px` | — |
-| `.container-max-85rem` | `85rem` (1360px) | — |
-| `.container-max-width-72-5rem` | `72.5rem` | — |
-| `.container-max-width-1222` | `1222px` | — |
-| `.container-max-80rem` | `80rem` (1280px) | — |
+| Class                          | Max Width          | H-Padding |
+| ------------------------------ | ------------------ | --------- |
+| `.container`                   | `75.5rem` (1208px) | `40px`    |
+| `.container-narrow`            | `856px`            | `40px`    |
+| `.container-narrower`          | `766px`            | `40px`    |
+| `.container-max-width-836px`   | `836px`            | —         |
+| `.container-max-width-1080px`  | `1080px`           | —         |
+| `.container-max-85rem`         | `85rem` (1360px)   | —         |
+| `.container-max-width-72-5rem` | `72.5rem`          | —         |
+| `.container-max-width-1222`    | `1222px`           | —         |
+| `.container-max-80rem`         | `80rem` (1280px)   | —         |
 
 ### Section Padding Patterns
 
-| Class / Pattern | Padding |
-|----------------|---------|
-| `.section-hero-base` | `7.5rem` top/bottom |
-| Standard section | `120px` top/bottom |
-| Large section gap | `160px` top |
-| XL section gap | `200px` top |
-| `.padding-top-7-5rem` | `7.5rem` top |
-| `.padding-top-6rem` | `6rem` top |
-| `.padding-top-5rem` | `5rem` top |
-| `.padding-bottom-5rem` | `5rem` bottom |
-| `.padding-bottom-240px` | `240px` bottom |
-| `.padding-bottom-22rem` | `22rem` bottom |
-| `.padding-tb-5rem` | `5rem` top + bottom |
-| `.padding-9rem-6-5rem` | `7.5rem` top + bottom |
-| `.footer` | `5rem` top, `2rem` bottom |
+| Class / Pattern         | Padding                   |
+| ----------------------- | ------------------------- |
+| `.section-hero-base`    | `7.5rem` top/bottom       |
+| Standard section        | `120px` top/bottom        |
+| Large section gap       | `160px` top               |
+| XL section gap          | `200px` top               |
+| `.padding-top-7-5rem`   | `7.5rem` top              |
+| `.padding-top-6rem`     | `6rem` top                |
+| `.padding-top-5rem`     | `5rem` top                |
+| `.padding-bottom-5rem`  | `5rem` bottom             |
+| `.padding-bottom-240px` | `240px` bottom            |
+| `.padding-bottom-22rem` | `22rem` bottom            |
+| `.padding-tb-5rem`      | `5rem` top + bottom       |
+| `.padding-9rem-6-5rem`  | `7.5rem` top + bottom     |
+| `.footer`               | `5rem` top, `2rem` bottom |
 
 ### Margin Utilities
 
-| Class | Value |
-|-------|-------|
-| `.margin-bottom-0` | `margin-bottom: 0` |
-| `.margin-bottom-small` | `40px` |
-| `.margin-bottom-medium` | `24–40px` (responsive) |
-| `.margin-bottom-xlarge` | `3rem` / `font-size: 3rem` |
-| `.margin-bottom-xxlarge` | `100px` |
-| `.margin-bottom-60px` | `60px` |
-| `.margin-bottom-3-75rem` | `3.75rem` |
-| `.margin-top-0` | `0` |
-| `.margin-top-5rem` | `5rem` |
-| `.margin-top-3rem` | display inline-block |
-| `.margin-negative-8rem` | `margin-top: -8rem` |
+| Class                    | Value                      |
+| ------------------------ | -------------------------- |
+| `.margin-bottom-0`       | `margin-bottom: 0`         |
+| `.margin-bottom-small`   | `40px`                     |
+| `.margin-bottom-medium`  | `24–40px` (responsive)     |
+| `.margin-bottom-xlarge`  | `3rem` / `font-size: 3rem` |
+| `.margin-bottom-xxlarge` | `100px`                    |
+| `.margin-bottom-60px`    | `60px`                     |
+| `.margin-bottom-3-75rem` | `3.75rem`                  |
+| `.margin-top-0`          | `0`                        |
+| `.margin-top-5rem`       | `5rem`                     |
+| `.margin-top-3rem`       | display inline-block       |
+| `.margin-negative-8rem`  | `margin-top: -8rem`        |
 
 ### Grid System
 
@@ -442,14 +534,37 @@ Webflow default fallbacks (before overrides):
 }
 
 /* Utility grids */
-.grid-2col  { grid-template-columns: 1fr 1fr;         column-gap: 3.75rem; }
-.grid-3-col { grid-template-columns: 1fr 1fr 1fr;     gap: 16px; }
-.grid-5-col { grid-template-columns: 1fr 1fr 1fr 1fr 1fr; gap: 16px; }
-.grid__3    { grid-template-columns: 1fr 1fr 1fr; }
-.grid__4    { grid-template-columns: 1fr 1fr 1fr 1fr; }
-.grid-quotes { grid-template-columns: 1fr 1fr 1fr; column-gap: 40px; row-gap: 30px; }
-.pricing-columns { grid-template-columns: 1fr 1fr; column-gap: 40px; }
-.footer-grid     { grid-template-columns: 1fr 1fr 1fr 1fr 1fr; column-gap: 3rem; }
+.grid-2col {
+  grid-template-columns: 1fr 1fr;
+  column-gap: 3.75rem;
+}
+.grid-3-col {
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+}
+.grid-5-col {
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 16px;
+}
+.grid__3 {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.grid__4 {
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.grid-quotes {
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 40px;
+  row-gap: 30px;
+}
+.pricing-columns {
+  grid-template-columns: 1fr 1fr;
+  column-gap: 40px;
+}
+.footer-grid {
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  column-gap: 3rem;
+}
 ```
 
 ---
@@ -844,7 +959,7 @@ Webflow default fallbacks (before overrides):
 }
 
 .home_cfo_flex_item_header {
-  background-color: #f3ffd3;  /* lime green accent */
+  background-color: #f3ffd3; /* lime green accent */
   padding: 0.375rem;
   font-size: 1.5rem;
   line-height: 1;
@@ -1003,7 +1118,7 @@ Webflow default fallbacks (before overrides):
 ```css
 .testimonial::before {
   color: #3c2d89;
-  content: "\201C";  /* opening curly quote */
+  content: "\201C"; /* opening curly quote */
   display: block;
   font-size: 60px;
   font-weight: 600;
@@ -1012,18 +1127,37 @@ Webflow default fallbacks (before overrides):
 
 /* Testimonial card rise animation */
 @keyframes stand-out {
-  0%   { box-shadow: none; transform: translateY(0); }
-  6%   { box-shadow: 0 64px 46px rgba(0,0,0,0.04); transform: translateY(-60px); }
-  33%  { box-shadow: 0 64px 46px rgba(0,0,0,0.04); transform: translateY(-60px); }
-  39%  { box-shadow: none; transform: translateY(0); }
-  100% { box-shadow: none; transform: translateY(0); }
+  0% {
+    box-shadow: none;
+    transform: translateY(0);
+  }
+  6% {
+    box-shadow: 0 64px 46px rgba(0, 0, 0, 0.04);
+    transform: translateY(-60px);
+  }
+  33% {
+    box-shadow: 0 64px 46px rgba(0, 0, 0, 0.04);
+    transform: translateY(-60px);
+  }
+  39% {
+    box-shadow: none;
+    transform: translateY(0);
+  }
+  100% {
+    box-shadow: none;
+    transform: translateY(0);
+  }
 }
 
 .testimonial {
   animation: stand-out 12s infinite;
 }
-.testimonial:first-child { animation-delay: 8s; }
-.testimonial:last-child  { animation-delay: 4s; }
+.testimonial:first-child {
+  animation-delay: 8s;
+}
+.testimonial:last-child {
+  animation-delay: 4s;
+}
 ```
 
 ---
@@ -1147,18 +1281,18 @@ Webflow default fallbacks (before overrides):
 
 ## 13. Shadow / Elevation Scale
 
-| Usage | Value |
-|-------|-------|
-| Nav scroll shadow | `0 4px 8px rgba(0,0,0,0.1)` |
-| Floated nav shadow | `0 16px 24px rgba(14,13,18,0.07)` |
-| Card hover shadow | `0 16px 35px #0000001a` |
-| Deep card shadow | `0 16px 35px #0000001a, 0 63px 63px #00000017, 0 142px 85px #0000000d` |
-| Dropdown shadow | `0 7px 20px 0 rgba(68,68,68,0.11)` |
-| Inner glow | `0 0 0 1px rgba(0,0,0,0.1)` |
-| Purple glow | `0 0 3px 0 var(--purple--1-primary-ee5), 0 8px 16px 0 #6008b514` |
-| Dark purple glow | `0 0 60px #3c2d8980` |
-| Subtle card | `-1px 8px 16px #3e3c3d14, 0 0 1px #65636229` |
-| Testimonial lift | `0 64px 46px rgba(0,0,0,0.04)` |
+| Usage              | Value                                                                  |
+| ------------------ | ---------------------------------------------------------------------- |
+| Nav scroll shadow  | `0 4px 8px rgba(0,0,0,0.1)`                                            |
+| Floated nav shadow | `0 16px 24px rgba(14,13,18,0.07)`                                      |
+| Card hover shadow  | `0 16px 35px #0000001a`                                                |
+| Deep card shadow   | `0 16px 35px #0000001a, 0 63px 63px #00000017, 0 142px 85px #0000000d` |
+| Dropdown shadow    | `0 7px 20px 0 rgba(68,68,68,0.11)`                                     |
+| Inner glow         | `0 0 0 1px rgba(0,0,0,0.1)`                                            |
+| Purple glow        | `0 0 3px 0 var(--purple--1-primary-ee5), 0 8px 16px 0 #6008b514`       |
+| Dark purple glow   | `0 0 60px #3c2d8980`                                                   |
+| Subtle card        | `-1px 8px 16px #3e3c3d14, 0 0 1px #65636229`                           |
+| Testimonial lift   | `0 64px 46px rgba(0,0,0,0.04)`                                         |
 
 ---
 
@@ -1179,7 +1313,9 @@ transition: height 0.5s;
 
 /* Logo wall infinite scroll */
 @keyframes moveLogoWall {
-  to { transform: translateX(-2872px); }
+  to {
+    transform: translateX(-2872px);
+  }
 }
 .logo-carousel-flex {
   animation: moveLogoWall 125s linear infinite;
@@ -1187,8 +1323,14 @@ transition: height 0.5s;
 
 /* Testimonial card float animation */
 @keyframes stand-out {
-  0%, 39%, 100% { box-shadow: none; transform: translateY(0); }
-  6%, 33%       { box-shadow: 0 64px 46px rgba(0,0,0,0.04); transform: translateY(-60px); }
+  0%, 39%, 100% {
+    box-shadow: none;
+    transform: translateY(0);
+  }
+  6%, 33% {
+    box-shadow: 0 64px 46px rgba(0, 0, 0, 0.04);
+    transform: translateY(-60px);
+  }
 }
 ```
 
@@ -1196,31 +1338,32 @@ transition: height 0.5s;
 
 ## 15. Letter Spacing Values
 
-| Value | Usage |
-|-------|-------|
+| Value                     | Usage                                  |
+| ------------------------- | -------------------------------------- |
 | `letter-spacing: -0.03em` | Cursive accent text, slide CTA buttons |
-| `letter-spacing: -0.01em` | Tight headings |
-| `letter-spacing: 0` | Reset |
-| `letter-spacing: 1.2px` | Eyebrow labels (uppercase small caps) |
-| `letter-spacing: 1.92px` | Uppercase labels |
-| `letter-spacing: 2px` | Button text (uppercase) |
-| `letter-spacing: 0.1rem` | Moderate spacing |
-| `letter-spacing: 0.15em` | Wide caps |
-| `letter-spacing: 0.16em` | Tracking |
+| `letter-spacing: -0.01em` | Tight headings                         |
+| `letter-spacing: 0`       | Reset                                  |
+| `letter-spacing: 1.2px`   | Eyebrow labels (uppercase small caps)  |
+| `letter-spacing: 1.92px`  | Uppercase labels                       |
+| `letter-spacing: 2px`     | Button text (uppercase)                |
+| `letter-spacing: 0.1rem`  | Moderate spacing                       |
+| `letter-spacing: 0.15em`  | Wide caps                              |
+| `letter-spacing: 0.16em`  | Tracking                               |
 
 ---
 
 ## 16. Responsive Breakpoints
 
-| Breakpoint | CSS Media Query | Usage |
-|-----------|----------------|-------|
-| Mobile | `max-width: 479px` | Single column, stacked layout |
-| Tablet | `max-width: 767px` | 2 column, simplified nav |
-| Medium | `min-width: 768px` | Table hover effects enabled |
-| Desktop | `min-width: 1281px` | Nav container padding adjustment |
-| Large | `min-width: 1900px` | Hero image shadow hidden |
+| Breakpoint | CSS Media Query     | Usage                            |
+| ---------- | ------------------- | -------------------------------- |
+| Mobile     | `max-width: 479px`  | Single column, stacked layout    |
+| Tablet     | `max-width: 767px`  | 2 column, simplified nav         |
+| Medium     | `min-width: 768px`  | Table hover effects enabled      |
+| Desktop    | `min-width: 1281px` | Nav container padding adjustment |
+| Large      | `min-width: 1900px` | Hero image shadow hidden         |
 
-Webflow collapse breakpoint: `medium` (768px) — mobile menu activates below this.
+Webflow collapse breakpoint: `medium` (768px) — mobile menu activates below
+this.
 
 ---
 
@@ -1228,20 +1371,20 @@ Webflow collapse breakpoint: `medium` (768px) — mobile menu activates below th
 
 The homepage (`/`) is a Webflow-built page with these major sections in order:
 
-| Section | Class | Background | Key Feature |
-|---------|-------|-----------|-------------|
-| **Announcement Banner** | `.navbanner` | `#3c2d89` (deep purple) | White text on purple |
-| **Navigation** | `.navbar7_component` | `#ffffff` | Sticky, shadow on scroll |
-| **Hero** | `.new_hero` | White/light gradient | Email capture + dashboard image |
-| **Social Proof Logos** | logo carousel | White | Trusted by 3,000+ clients |
-| **About / Features** | `.home_about_flex` | White with `#dae9f3` borders | 3-column feature cards |
-| **AI Dashboard** | `.home_ai_*` | White | AI financial insights demo |
-| **CFO Guidance** | `.home_cfo_flex` | White + `#f3ffd3` (lime) accents | 3 advisor profiles |
-| **Growth Scenarios** | `.home_growth-flex` | White with `#e7ddc9` borders | 4 use case cards |
-| **Case Studies** | Swiper slider | White | Rotating customer stories |
-| **Resources** | `.home_insights-*` | White | 4 resource/guide cards |
-| **3-Way CTA** | `.new_footer-*` | Light purple + dark purple | Conversion section |
-| **Footer** | `.footer` | White | 5-column link grid |
+| Section                 | Class                | Background                       | Key Feature                     |
+| ----------------------- | -------------------- | -------------------------------- | ------------------------------- |
+| **Announcement Banner** | `.navbanner`         | `#3c2d89` (deep purple)          | White text on purple            |
+| **Navigation**          | `.navbar7_component` | `#ffffff`                        | Sticky, shadow on scroll        |
+| **Hero**                | `.new_hero`          | White/light gradient             | Email capture + dashboard image |
+| **Social Proof Logos**  | logo carousel        | White                            | Trusted by 3,000+ clients       |
+| **About / Features**    | `.home_about_flex`   | White with `#dae9f3` borders     | 3-column feature cards          |
+| **AI Dashboard**        | `.home_ai_*`         | White                            | AI financial insights demo      |
+| **CFO Guidance**        | `.home_cfo_flex`     | White + `#f3ffd3` (lime) accents | 3 advisor profiles              |
+| **Growth Scenarios**    | `.home_growth-flex`  | White with `#e7ddc9` borders     | 4 use case cards                |
+| **Case Studies**        | Swiper slider        | White                            | Rotating customer stories       |
+| **Resources**           | `.home_insights-*`   | White                            | 4 resource/guide cards          |
+| **3-Way CTA**           | `.new_footer-*`      | Light purple + dark purple       | Conversion section              |
+| **Footer**              | `.footer`            | White                            | 5-column link grid              |
 
 ---
 
@@ -1250,9 +1393,16 @@ The homepage (`/`) is a Webflow-built page with these major sections in order:
 ### Display / Visibility
 
 ```css
-.shown       { display: block; }
-.no-animation { animation: none !important; }
-.full-screen  { overflow-y: scroll; width: 100%; }
+.shown {
+  display: block;
+}
+.no-animation {
+  animation: none !important;
+}
+.full-screen {
+  overflow-y: scroll;
+  width: 100%;
+}
 ```
 
 ### Justify / Alignment
@@ -1269,92 +1419,137 @@ The homepage (`/`) is a Webflow-built page with these major sections in order:
 ### Width Constraints
 
 ```css
-.max-width-31rem    { max-width: 31rem; }
-.max-width-full-tablet { /* full width at tablet */ }
-.section-heading    { text-align: center; max-width: 900px; margin: 0 auto 3rem; }
-.pricing__2-col-max-width { max-width: 900px; margin: auto; }
+.max-width-31rem {
+  max-width: 31rem;
+}
+.max-width-full-tablet {
+  /* full width at tablet */
+}
+.section-heading {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto 3rem;
+}
+.pricing__2-col-max-width {
+  max-width: 900px;
+  margin: auto;
+}
 ```
 
 ### Text Decorative
 
 ```css
-.home_text-underline   { /* brand underline accent */ }
-.home_mono-text-link   { font-family: Spacemono; /* monospace link */ }
-.svg-divider           { fill: currentColor; }
+.home_text-underline {
+  /* brand underline accent */
+}
+.home_mono-text-link {
+  font-family: Spacemono; /* monospace link */
+}
+.svg-divider {
+  fill: currentColor;
+}
 ```
 
 ---
 
 ## 19. Third-Party Integrations
 
-| Tool | Purpose | ID / Key |
-|------|---------|----------|
-| **Webflow** | CMS/hosting platform | Site ID: `60a5136f2c6c8e4fb3a130d9` |
-| **Google Tag Manager** | Analytics orchestration | `GTM-WCT3V3Z`, `GTM-KWQ5QTCZ` |
-| **Marketo** | Lead forms | Account: `754-NWB-621` |
-| **Intellimize** | A/B testing / personalization | `117814141` |
-| **Convert** | A/B testing | `10043185-10044507` |
-| **Chili Piper** | Meeting scheduling | Styled to match brand (`#5f2ee5`) |
-| **OneTrust** | Cookie consent | `1abf67ec-40bb-420e-95f6-8625a5eaf16b` |
-| **Swiper.js** | Carousels / sliders | `swiper-bundle.min.css/js` (CDN jsdelivr) |
-| **GSAP 3** | Animations | `gsap.min.js` (cdnjs, v3.12.2) |
-| **jQuery** | DOM manipulation | `jquery-3.5.1.min.js` |
-| **Munchkin (Marketo)** | Tracking | `munchkin.marketo.net` |
-| **Bizible** | Attribution | `cdn.bizible.com/scripts/bizible.js` |
-| **OptinMonster** | Lead gen popups | Account `64522`, User `57229` |
+| Tool                   | Purpose                       | ID / Key                                  |
+| ---------------------- | ----------------------------- | ----------------------------------------- |
+| **Webflow**            | CMS/hosting platform          | Site ID: `60a5136f2c6c8e4fb3a130d9`       |
+| **Google Tag Manager** | Analytics orchestration       | `GTM-WCT3V3Z`, `GTM-KWQ5QTCZ`             |
+| **Marketo**            | Lead forms                    | Account: `754-NWB-621`                    |
+| **Intellimize**        | A/B testing / personalization | `117814141`                               |
+| **Convert**            | A/B testing                   | `10043185-10044507`                       |
+| **Chili Piper**        | Meeting scheduling            | Styled to match brand (`#5f2ee5`)         |
+| **OneTrust**           | Cookie consent                | `1abf67ec-40bb-420e-95f6-8625a5eaf16b`    |
+| **Swiper.js**          | Carousels / sliders           | `swiper-bundle.min.css/js` (CDN jsdelivr) |
+| **GSAP 3**             | Animations                    | `gsap.min.js` (cdnjs, v3.12.2)            |
+| **jQuery**             | DOM manipulation              | `jquery-3.5.1.min.js`                     |
+| **Munchkin (Marketo)** | Tracking                      | `munchkin.marketo.net`                    |
+| **Bizible**            | Attribution                   | `cdn.bizible.com/scripts/bizible.js`      |
+| **OptinMonster**       | Lead gen popups               | Account `64522`, User `57229`             |
 
 ---
 
 ## 20. Logo Assets
 
-| Asset | URL |
-|-------|-----|
-| Pilot logo (SVG, current) | `https://cdn.prod.website-files.com/60a5136f2c6c8e4fb3a130d9/6876671c627d80dce661a525_Pilot.svg` |
-| Pilot logo (black) | `https://cdn.prod.website-files.com/60a5136f2c6c8e4fb3a130d9/60a6655502236d57ba0dc64f_pilot-logo-black.svg` |
-| Logo dimensions | `width: 65px, height: 35px` |
+All logo files live in `logos/` in this repository. Official SVGs are also hosted on the Webflow CDN.
+
+### Logo Repository
+
+| File                      | Type     | Description                                   |
+| ------------------------- | -------- | --------------------------------------------- |
+| `full-logo-black.svg`     | Wordmark | Black "pilot" text — for light backgrounds    |
+| `full-logo-purple.svg`    | Wordmark | Purple "pilot" text — for dark backgrounds    |
+| `pilot_logo_small.png`    | Wordmark | Purple wordmark, PNG format                   |
+| `logo-circular-pilot.svg` | Mark     | Circular "p" mark                             |
+| `pilot-icon.svg`          | Mark     | "p" lettermark                                |
+| `dark-pilot-logo.svg`     | App icon | Purple background, white "p" — rounded square |
+| `light-pilot-logo.svg`    | App icon | White background, dark "p" — rounded square   |
+
+### CDN References
+
+| Asset                     | URL                                                                                                         |
+| ------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| Pilot logo (SVG, current) | `https://cdn.prod.website-files.com/60a5136f2c6c8e4fb3a130d9/6876671c627d80dce661a525_Pilot.svg`            |
+| Pilot logo (black)        | `https://cdn.prod.website-files.com/60a5136f2c6c8e4fb3a130d9/60a6655502236d57ba0dc64f_pilot-logo-black.svg` |
+| Render size               | `width: 65px, height: 35px`                                                                                 |
 
 ### Media Kit
 
-The complete media kit — including all logo variants (full logo, lettermark) in SVG, PNG, and PDF formats — is maintained in Google Drive:
+The complete media kit — including all logo variants (full logo, lettermark) in
+SVG, PNG, and PDF formats — is maintained in Google Drive:
 
 **[→ Pilot Media Kit (Google Drive)](https://drive.google.com/drive/folders/1h5BirEATWxpMydrbScK5M-YV8zKhRJmP)**
 
 Available formats and variants:
 
-| Variant | Colorways |
-|---------|-----------|
-| **Full logo** | Black, Purple, Purple Fill, White, White Fill |
+| Variant        | Colorways                                     |
+| -------------- | --------------------------------------------- |
+| **Full logo**  | Black, Purple, Purple Fill, White, White Fill |
 | **Lettermark** | Black, Purple, Purple Fill, White, White Fill |
 
-Formats: SVG, PNG, PDF. Download-ready `.zip` archives are also available in the Drive folder.
+Formats: SVG, PNG, PDF. Download-ready `.zip` archives are also available in the
+Drive folder.
 
 ---
 
 ## 21. Key Design Patterns Summary
 
 ### Color Usage Rules
-- **Purple `#5f2ee5`**: All primary CTAs, link hover states, form focus borders, selected states
-- **Dark Purple `#281350`**: Dark section backgrounds, input text, strong brand moments
+
+- **Purple `#5f2ee5`**: All primary CTAs, link hover states, form focus borders,
+  selected states
+- **Dark Purple `#281350`**: Dark section backgrounds, input text, strong brand
+  moments
 - **`#3c2d89`**: Secondary dark accents, testimonial marks, deep purple sections
 - **`#f3f5fa`**: Standard light section background
 - **`#f9fafc`**: Partner/trust section background (slightly blue-tinted)
 - **White `#ffffff`**: Default card and page background
 
 ### Typographic Hierarchy Rules
+
 - **Display/H1**: Euclid Circular B, 3rem, 600 weight, 115% line-height
-- **Section headers/H2**: Euclid Circular B, 2.5rem, 600 weight, 115% line-height
+- **Section headers/H2**: Euclid Circular B, 2.5rem, 600 weight, 115%
+  line-height
 - **Card headers/H3**: Euclid Circular B, 2rem, 600 weight, 125% line-height
 - **Body text**: Euclid Circular B, 1rem (16px), 400 weight, 1.75rem line-height
 - **Buttons/Labels/Eyebrows**: Space Mono, uppercase, letter-spacing 1.2–2px
 - **Accent/Cursive**: La Belle Aurore, 2.5rem, `#281350`
 
 ### Button Rules
-- **Primary filled**: `#5f2ee5` background, white text, `Spacemono`, uppercase, `border-radius: 2.875rem`
-- **Secondary outlined**: `1px solid #5f2ee5`, `#5f2ee5` text, `border-radius: 4px`
+
+- **Primary filled**: `#5f2ee5` background, white text, `Spacemono`, uppercase,
+  `border-radius: 2.875rem`
+- **Secondary outlined**: `1px solid #5f2ee5`, `#5f2ee5` text,
+  `border-radius: 4px`
 - **White outlined**: `1px solid white`, white text (for dark backgrounds)
-- **All buttons**: `transition: all 0.2s`, `cursor: pointer`, `white-space: nowrap`
+- **All buttons**: `transition: all 0.2s`, `cursor: pointer`,
+  `white-space: nowrap`
 
 ### Spacing Rules
+
 - **Section vertical padding**: 120px standard, 7.5rem (120px) hero
 - **Container max-width**: `75.5rem` (1208px) standard
 - **Grid gaps**: 16px default, 40px for pricing, 3rem for footer
@@ -1366,13 +1561,17 @@ Formats: SVG, PNG, PDF. Download-ready `.zip` archives are also available in the
 
 Pilot is 50% people, 50% tech. This ratio shifts depending on context:
 
-| Situation | Ratio | Visual Direction |
-|-----------|-------|-----------------|
-| CFOs building a financial model | **80% people** | Lead with photography, human warmth, soft colors |
-| Day-to-day bookkeeping | **50/50** | Balance product UI + human imagery |
-| AI accounting offering | **80% tech** | Lead with product screenshots, data, precision visuals |
+| Situation                       | Ratio          | Visual Direction                                       |
+| ------------------------------- | -------------- | ------------------------------------------------------ |
+| CFOs building a financial model | **80% people** | Lead with photography, human warmth, soft colors       |
+| Day-to-day bookkeeping          | **50/50**      | Balance product UI + human imagery                     |
+| AI accounting offering          | **80% tech**   | Lead with product screenshots, data, precision visuals |
 
-**Rule:** Match your visual choices (photos, illustrations, UI screenshots) to where the feature/service sits on this spectrum. The more human the situation, the more you lead with people photography, the La Belle Aurore accent font, and warm background colors. The more technical, the more you lead with product UI, Space Mono typography, and precise grid/data backgrounds.
+**Rule:** Match your visual choices (photos, illustrations, UI screenshots) to
+where the feature/service sits on this spectrum. The more human the situation,
+the more you lead with people photography, the La Belle Aurore accent font, and
+warm background colors. The more technical, the more you lead with product UI,
+Space Mono typography, and precise grid/data backgrounds.
 
 ```
 MORE PEOPLE  •————————————————  HALF AND HALF  ————————————————•  MORE SOFTWARE
@@ -1384,52 +1583,55 @@ MORE PEOPLE  •————————————————  HALF AND HALF 
 
 ## 23. Official Brand Color Palette (Named Colors)
 
-These are the official named colors from the Pilot brand system. Use these names when communicating about brand colors internally.
+These are the official named colors from the Pilot brand system. Use these names
+when communicating about brand colors internally.
 
 ### Primary Purple Scale
 
-| Name | Hex | CSS Variable | Usage |
-|------|-----|-------------|-------|
-| **PROFIT** | `#281350` | `--pilot-dark-purple` | Darkest purple; dark backgrounds, deep anchors. **Note: Too dark for profit-related positive messaging.** |
-| **PILOT** | `#5931DC` | `--purple--1-primary-ee5` (≈) | Primary brand purple; all CTAs, key links, primary accents |
-| **BRILLIANT** | `#825BEB` | `--purple--2-beb` | Medium purple; secondary accents, gradients |
-| **HIGHLIGHT** | `#DECEFF` | — | Light purple; the same highlight color used in the Pilot product — creates uniformity across materials. Signals a value has changed. |
-| **MARGIN** | `#F6F3FF` | `--pale-periwinkle` | Near-white purple tint; ultra-light backgrounds |
+| Name          | Hex       | CSS Variable                  | Usage                                                                                                                                |
+| ------------- | --------- | ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| **PROFIT**    | `#281350` | `--pilot-dark-purple`         | Darkest purple; dark backgrounds, deep anchors. **Note: Too dark for profit-related positive messaging.**                            |
+| **PILOT**     | `#5931DC` | `--purple--1-primary-ee5` (≈) | Primary brand purple; all CTAs, key links, primary accents                                                                           |
+| **BRILLIANT** | `#825BEB` | `--purple--2-beb`             | Medium purple; secondary accents, gradients                                                                                          |
+| **HIGHLIGHT** | `#DECEFF` | —                             | Light purple; the same highlight color used in the Pilot product — creates uniformity across materials. Signals a value has changed. |
+| **MARGIN**    | `#F6F3FF` | `--pale-periwinkle`           | Near-white purple tint; ultra-light backgrounds                                                                                      |
 
 The scale runs: deep (loud, certain) → light (calm, trust).
 
 ```css
 /* Named color scale */
---color-profit:    #281350;  /* Deep anchor */
---color-pilot:     #5931DC;  /* Primary CTA */
---color-brilliant: #825BEB;  /* Medium accent */
---color-highlight: #DECEFF;  /* Product highlight / change indicator */
---color-margin:    #F6F3FF;  /* Ultra-light background */
+--color-profit: #281350; /* Deep anchor */
+--color-pilot: #5931dc; /* Primary CTA */
+--color-brilliant: #825beb; /* Medium accent */
+--color-highlight: #deceff; /* Product highlight / change indicator */
+--color-margin: #f6f3ff; /* Ultra-light background */
 ```
 
 ### Secondary Spread (Accent Colors)
 
-Each accent color represents a pillar or promise. All selected because they pair with purple. Subdued tones are standard; use the "+" variants sparingly for accents only.
+Each accent color represents a pillar or promise. All selected because they pair
+with purple. Subdued tones are standard; use the "+" variants sparingly for
+accents only.
 
-| Name | Hex | Tone | Usage |
-|------|-----|------|-------|
-| **ACCESS** | `#FCF3D6` | Warm cream/yellow | — |
-| **CLARITY** | `#FBEDFF` | Light lavender | — |
-| **TRUST** | `#E7F9FF` | Light sky blue | — |
-| **ACCESS+** | `#FFD967` | Bright gold/amber | Accent only, use sparingly |
+| Name         | Hex       | Tone                | Usage                      |
+| ------------ | --------- | ------------------- | -------------------------- |
+| **ACCESS**   | `#FCF3D6` | Warm cream/yellow   | —                          |
+| **CLARITY**  | `#FBEDFF` | Light lavender      | —                          |
+| **TRUST**    | `#E7F9FF` | Light sky blue      | —                          |
+| **ACCESS+**  | `#FFD967` | Bright gold/amber   | Accent only, use sparingly |
 | **CLARITY+** | `#F891FF` | Bright pink/magenta | Accent only, use sparingly |
-| **TRUST+** | `#8EECFF` | Bright cyan | Accent only, use sparingly |
+| **TRUST+**   | `#8EECFF` | Bright cyan         | Accent only, use sparingly |
 
 ```css
 /* Secondary spread — subdued */
---color-access:   #FCF3D6;
---color-clarity:  #FBEDFF;
---color-trust:    #E7F9FF;
+--color-access: #fcf3d6;
+--color-clarity: #fbedff;
+--color-trust: #e7f9ff;
 
 /* Secondary spread — vivid (accent use only) */
---color-access-plus:  #FFD967;
---color-clarity-plus: #F891FF;
---color-trust-plus:   #8EECFF;
+--color-access-plus: #ffd967;
+--color-clarity-plus: #f891ff;
+--color-trust-plus: #8eecff;
 ```
 
 ---
@@ -1438,24 +1640,26 @@ Each accent color represents a pillar or promise. All selected because they pair
 
 ### Font Roles
 
-| Font | Conveys | When to Use | Limits |
-|------|---------|-------------|--------|
-| **Euclid Circular B** | Default — geometric, warm, friendly, unfussy. When bolded, commanding. Otherwise, invites conversation. Works across all audiences and financial maturity levels. | H2, subtitles, body copy, everything by default | No restrictions |
-| **Space Mono** | "Tech" — precision, signals software | Labels, buttons, eyebrows, pricing tabs. | Use sparingly. When overused it becomes harsh and alienating, especially on charts. Never use for long body text. |
-| **La Belle Aurore** | "People" — introduces imperfection, warmth, the Pilot human touch | Short accent phrases only | **Never more than 4 words at a time.** Beware overuse — do not use as a crutch. |
+| Font                  | Conveys                                                                                                                                                           | When to Use                                     | Limits                                                                                                            |
+| --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| **Euclid Circular B** | Default — geometric, warm, friendly, unfussy. When bolded, commanding. Otherwise, invites conversation. Works across all audiences and financial maturity levels. | H2, subtitles, body copy, everything by default | No restrictions                                                                                                   |
+| **Space Mono**        | "Tech" — precision, signals software                                                                                                                              | Labels, buttons, eyebrows, pricing tabs.        | Use sparingly. When overused it becomes harsh and alienating, especially on charts. Never use for long body text. |
+| **La Belle Aurore**   | "People" — introduces imperfection, warmth, the Pilot human touch                                                                                                 | Short accent phrases only                       | **Never more than 4 words at a time.** Beware overuse — do not use as a crutch.                                   |
 
 ### Typography Alignment Rules
 
-- **Always left-align text.** Text can also be right-aligned if circumstances require.
+- **Always left-align text.** Text can also be right-aligned if circumstances
+  require.
 - **Text must never be centered.** No exceptions.
 
 ### Eyebrow / Label Style
 
-Used to introduce sections. Set in Space Mono, uppercase, with tracked-out letter-spacing.
+Used to introduce sections. Set in Space Mono, uppercase, with tracked-out
+letter-spacing.
 
 ```css
 .eyebrow {
-  font-family: 'Space Mono', monospace;
+  font-family: "Space Mono", monospace;
   font-size: 12px;
   font-weight: 400;
   text-transform: uppercase;
@@ -1467,37 +1671,40 @@ Used to introduce sections. Set in Space Mono, uppercase, with tracked-out lette
 
 ## 25. Gradients
 
-Gradients suggest **transformation** — moving from one state to another. Because the Pilot brand is rigidly accurate, gradients add back the missing human nature. They invite sunlight, depth, perspective, and hint at a world outside the spreadsheet.
+Gradients suggest **transformation** — moving from one state to another. Because
+the Pilot brand is rigidly accurate, gradients add back the missing human
+nature. They invite sunlight, depth, perspective, and hint at a world outside
+the spreadsheet.
 
 ### Gradient Types
 
-| Type | Description | CSS Direction |
-|------|-------------|---------------|
-| **Diagonal** | Linear with same tonal range, diagonal direction | `135deg` or `45deg` |
-| **Vertical** | Linear with same tonal range, fully vertical | `180deg` or `0deg` |
+| Type                            | Description                                      | CSS Direction               |
+| ------------------------------- | ------------------------------------------------ | --------------------------- |
+| **Diagonal**                    | Linear with same tonal range, diagonal direction | `135deg` or `45deg`         |
+| **Vertical**                    | Linear with same tonal range, fully vertical     | `180deg` or `0deg`          |
 | **Multi-directional (Ambient)** | Blurred orbs / radial gradients layered together | `radial-gradient` with blur |
 
 ### Diagonal Gradient Examples
 
 ```css
 /* Deep purple diagonal */
-background: linear-gradient(135deg, #281350, #5931DC);
+background: linear-gradient(135deg, #281350, #5931dc);
 
 /* Light blue/cyan diagonal */
-background: linear-gradient(135deg, #E7F9FF, #8EECFF);
+background: linear-gradient(135deg, #e7f9ff, #8eecff);
 
 /* Warm gold diagonal */
-background: linear-gradient(135deg, #FCF3D6, #FFD967);
+background: linear-gradient(135deg, #fcf3d6, #ffd967);
 ```
 
 ### Vertical Gradient Examples
 
 ```css
 /* Pink/lavender vertical */
-background: linear-gradient(180deg, #F891FF, #FBEDFF);
+background: linear-gradient(180deg, #f891ff, #fbedff);
 
 /* Purple highlight vertical */
-background: linear-gradient(180deg, #5931DC, #DECEFF);
+background: linear-gradient(180deg, #5931dc, #deceff);
 ```
 
 ### Multi-directional / Ambient Examples
@@ -1506,19 +1713,29 @@ Ambient gradients using blurred orbes.
 
 ```css
 /* Purple orb */
-background: radial-gradient(circle at 80% 80%, #b193fc 0%, transparent 70%), #5931dc;
+background:
+  radial-gradient(circle at 80% 80%, #b193fc 0%, transparent 70%),
+  #5931dc;
 
 /* Yellow orb */
-background: radial-gradient(circle at 20% 80%, #ffebb3 0%, transparent 70%), #ffd967;
+background:
+  radial-gradient(circle at 20% 80%, #ffebb3 0%, transparent 70%),
+  #ffd967;
 
 /* Pink orb */
-background: radial-gradient(circle at 80% 80%, #f8bdf8 0%, transparent 70%), #fdf0fc;
+background:
+  radial-gradient(circle at 80% 80%, #f8bdf8 0%, transparent 70%),
+  #fdf0fc;
 
 /* Cyan orb */
-background: radial-gradient(circle at 80% 80%, #aaeaff 0%, transparent 70%), #e8fbff;
+background:
+  radial-gradient(circle at 80% 80%, #aaeaff 0%, transparent 70%),
+  #e8fbff;
 ```
 
-**Rule:** Use gradients within the same tonal family. A purple gradient should move through the purple scale. Don't mix warm and cool families (e.g., orange + purple) unless you are intentionally creating an ambient/orb effect.
+**Rule:** Use gradients within the same tonal family. A purple gradient should
+move through the purple scale. Don't mix warm and cool families (e.g., orange +
+purple) unless you are intentionally creating an ambient/orb effect.
 
 ---
 
@@ -1537,7 +1754,7 @@ Two core shapes define the Pilot brand:
 border-top: 1px solid #e0e0e0;
 
 /* Colored accent line (e.g., eyebrow left-border) */
-border-left: 2px solid #5931DC;
+border-left: 2px solid #5931dc;
 ```
 
 ### Circles
@@ -1557,7 +1774,7 @@ border-left: 2px solid #5931DC;
 
 /* Example: purple brand circle */
 .brand-circle--purple {
-  background-color: #5931DC;
+  background-color: #5931dc;
 }
 
 /* Example: blurred ambient orb */
@@ -1569,17 +1786,21 @@ border-left: 2px solid #5931DC;
 }
 ```
 
-**Color exception for circles:** Do not use `PROFIT` (`#281350`) as a circle fill. It is too dark and reads as a void rather than an anchor.
+**Color exception for circles:** Do not use `PROFIT` (`#281350`) as a circle
+fill. It is too dark and reads as a void rather than an anchor.
 
 ---
 
 ## 27. Drop Shadows
 
-Drop shadows are used **only for complex graphics** that incorporate name tags, layered product snapshots, or icons. Subtle drop shadows add depth and dimension, making it easier to understand layered compositions.
+Drop shadows are used **only for complex graphics** that incorporate name tags,
+layered product snapshots, or icons. Subtle drop shadows add depth and
+dimension, making it easier to understand layered compositions.
 
 ### Rules
 
-- **Only ever use purples for drop shadows.** No black, no gray, no neutral shadows.
+- **Only ever use purples for drop shadows.** No black, no gray, no neutral
+  shadows.
 - **Blur:** 50–100px
 - **Opacity:** 10%–20%
 
@@ -1602,7 +1823,9 @@ box-shadow: 0 30px 70px rgba(89, 49, 220, 0.15);
 box-shadow: 0 30px 100px rgba(93, 46, 229, 0.12); /* #5f2ee5 at ~12% */
 ```
 
-**When to use:** Product screenshots floating over backgrounds, name tag cards layered over photos, icon clusters with depth. Do not add drop shadows to simple text, standalone icons, or flat layout elements.
+**When to use:** Product screenshots floating over backgrounds, name tag cards
+layered over photos, icon clusters with depth. Do not add drop shadows to simple
+text, standalone icons, or flat layout elements.
 
 ---
 
@@ -1611,37 +1834,69 @@ box-shadow: 0 30px 100px rgba(93, 46, 229, 0.12); /* #5f2ee5 at ~12% */
 ### Icon Philosophy
 
 Every Pilot icon is composed of two elements:
-1. **Precise, angular lines** at exactly 45° or 90° angles — representing technology and accuracy
+
+1. **Precise, angular lines** at exactly 45° or 90° angles — representing
+   technology and accuracy
 2. **A soft, human circle** — representing people and warmth
 
-This combination expresses Pilot's core identity: *precision, powered by people.*
+This combination expresses Pilot's core identity: _precision, powered by
+people._
 
 ### Icon Style Specifications
 
-| Property | Value |
-|----------|-------|
-| Stroke weight | 1.5–2px, consistent |
-| Line angles | 45° or 90° only |
-| Circle element | Present in most icons; always perfect circle |
-| Color | Dark navy (`#281350`) strokes + purple circle accent (`#825BEB` or `#DECEFF`) |
-| Background fill | None (outline/stroke style) or very light fill |
-| Corner treatment | Sharp corners on angular elements; soft on circular |
+| Property         | Value                                                                         |
+| ---------------- | ----------------------------------------------------------------------------- |
+| Stroke weight    | 1.5–2px, consistent                                                           |
+| Line angles      | 45° or 90° only                                                               |
+| Circle element   | Present in most icons; always perfect circle                                  |
+| Color            | Dark navy (`#281350`) strokes + purple circle accent (`#825BEB` or `#DECEFF`) |
+| Background fill  | None (outline/stroke style) or very light fill                                |
+| Corner treatment | Sharp corners on angular elements; soft on circular                           |
 
 ### Do / Don't
 
 **Do:**
-- Use angular 45°/90° strokes for the "tech" elements (arrows, charts, grid lines)
-- Add a soft circle element (even partially visible) to introduce the human element
+
+- Use angular 45°/90° strokes for the "tech" elements (arrows, charts, grid
+  lines)
+- Add a soft circle element (even partially visible) to introduce the human
+  element
 - Keep stroke weights consistent across an icon set
 
 **Don't:**
+
 - Use curves or organic shapes for the mechanical/angular parts
 - Use diagonals at arbitrary angles (only 45° or 90°)
 - Mix heavy and light strokes in the same icon
 
+### Icon Repository
+
+All icons are maintained in the `icons/` directory at the root of this
+repository, organized into two sets:
+
+- **`icons/Icons (Key Color)/`** — Canonical dark purple (`#281350`) icons,
+  organized by category
+- **`icons/All Icons (Alt Colors)/`** — Same icons in alternate brand color
+  variants
+
+#### Categories
+
+| Category                   | Count | Prefix | Examples                                                                |
+| -------------------------- | ----- | ------ | ----------------------------------------------------------------------- |
+| **General Concept**        | 21    | `GC_`  | AI, Banking, Calculator, Dashboard, Growth, Payment, Team, Verified     |
+| **Operational Services**   | 5     | `OS_`  | AI Bookkeeper, Invoicing, Payroll, Reporting, Op Strategy               |
+| **Trusted Advisory / CFO** | 6     | `TA_`  | Budgeting, Compensation, Forecast, Fundraising, Pricing, Setup          |
+| **Financial Foundations**  | 8     | `FF_`  | Bookkeeping, Taxes, Compliance, Operations, Admin, Stock Admin          |
+| **Industries**             | 22    | `ID_`  | Software, AI Startup, E-Commerce, Consulting, Law Firm, Dentist, Trades |
+| **Marketing**              | 3     | `MKT_` | Newsletter, Toolkit, Agency Calculator                                  |
+
+All icons are PNG format. The visualizer (`pilot-design-system-visualizer.html`)
+renders these icons with click-to-download functionality.
+
 ### Future Icon Work
 
 Two projects are outstanding:
+
 - Larger illustrations (hero-scale, editorial)
 - Smaller product icons (UI-scale, functional)
 
@@ -1651,12 +1906,16 @@ Two projects are outstanding:
 
 ### Core Rules
 
-1. **Real people in real situations** — we prefer an okay *real* photo over an eye-grabbing but highly treated fake one
-2. **Break people out of their box** — avoid rectangular crops; use curves, circles, or cutouts
+1. **Real people in real situations** — we prefer an okay _real_ photo over an
+   eye-grabbing but highly treated fake one
+2. **Break people out of their box** — avoid rectangular crops; use curves,
+   circles, or cutouts
 
 ### Photography Character
 
-We want the team's calm, confident honesty to shine through. The tone is warm, approachable, and direct — not aspirational or polished to the point of feeling fake.
+We want the team's calm, confident honesty to shine through. The tone is warm,
+approachable, and direct — not aspirational or polished to the point of feeling
+fake.
 
 ### What We Look For
 
@@ -1677,7 +1936,9 @@ We want the team's calm, confident honesty to shine through. The tone is warm, a
 
 ### Photo Spectrum: SMB Warm → Startup Cool
 
-Photos also follow the people/tech spectrum. Small business owner contexts lean warm (natural light, lived-in environments). Startup/tech contexts lean cool (clean, modern workspaces).
+Photos also follow the people/tech spectrum. Small business owner contexts lean
+warm (natural light, lived-in environments). Startup/tech contexts lean cool
+(clean, modern workspaces).
 
 ```
 SMB WARM  •————————————————————————————————•  STARTUP COOL
@@ -1688,24 +1949,30 @@ small biz owners, craftspeople)         startup offices, laptops)
 ### Breaking People Out of Boxes
 
 Avoid rectangular photo boxes. Instead:
+
 - Use **curves or circles** to frame subjects — our "rising sun" circle shape
-- Enrich with **subtle monotone gradients** or **gradient halos** behind the subject
+- Enrich with **subtle monotone gradients** or **gradient halos** behind the
+  subject
 - Use **cutouts** (remove background) and place subjects into brand layouts
 
 ### Headshots
 
-Headshots of team members and customers are an exception — **we want eye contact.** Headshots should always look friendly and approachable. Make them look good, even if you need to use AI to complete a missing shoulder.
+Headshots of team members and customers are an exception — **we want eye
+contact.** Headshots should always look friendly and approachable. Make them
+look good, even if you need to use AI to complete a missing shoulder.
 
-| Property | Rule |
-|----------|------|
-| Shoulders | Visible |
-| Expression | Friendly |
-| Lighting | Warm |
-| Avoid | Grayscale, photo filters |
+| Property   | Rule                     |
+| ---------- | ------------------------ |
+| Shoulders  | Visible                  |
+| Expression | Friendly                 |
+| Lighting   | Warm                     |
+| Avoid      | Grayscale, photo filters |
 
 ### Black & White Photography
 
-We only use grayscale photography in **collage-style layouts**, which we only create out of necessity. Otherwise we can't show these people, items, or situations, and it makes stock photos seem passable.
+We only use grayscale photography in **collage-style layouts**, which we only
+create out of necessity. Otherwise we can't show these people, items, or
+situations, and it makes stock photos seem passable.
 
 - **No people looking at the camera** in B&W collages
 - Isolate subjects and place them into brand layouts
@@ -1715,16 +1982,18 @@ We only use grayscale photography in **collage-style layouts**, which we only cr
 
 ## 30. Backgrounds (Decorative Patterns)
 
-Our backgrounds are **purposeful** — they foreshadow what customers will see in the product and working with us. We keep it simple and friendly, with rounded corners applied to data elements.
+Our backgrounds are **purposeful** — they foreshadow what customers will see in
+the product and working with us. We keep it simple and friendly, with rounded
+corners applied to data elements.
 
 ### Four Background Pattern Types
 
-| Type | Description | CSS Approach |
-|------|-------------|-------------|
-| **Ledger** | Grid lines suggesting a spreadsheet — horizontal and vertical rules creating cells | `repeating-linear-gradient` or SVG grid |
-| **Bar Chart** | Simplified bar chart columns (filled, for visual balance; fill not required) | SVG or CSS clip-path columns |
+| Type                  | Description                                                                                   | CSS Approach                                                    |
+| --------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------- |
+| **Ledger**            | Grid lines suggesting a spreadsheet — horizontal and vertical rules creating cells            | `repeating-linear-gradient` or SVG grid                         |
+| **Bar Chart**         | Simplified bar chart columns (filled, for visual balance; fill not required)                  | SVG or CSS clip-path columns                                    |
 | **Highlighted Cells** | Scattered rectangular highlight marks at different sizes, suggesting active spreadsheet cells | Absolute-positioned `div` elements with low-opacity purple fill |
-| **Dot Matrix** | Regular grid of small dots, suggesting data density and precision | CSS `radial-gradient` or `background-image: radial-gradient` |
+| **Dot Matrix**        | Regular grid of small dots, suggesting data density and precision                             | CSS `radial-gradient` or `background-image: radial-gradient`    |
 
 ### CSS Implementation
 
@@ -1739,7 +2008,11 @@ Our backgrounds are **purposeful** — they foreshadow what customers will see i
 
 /* Dot matrix background */
 .bg-dot-matrix {
-  background-image: radial-gradient(circle, rgba(93, 46, 229, 0.15) 1.5px, transparent 1.5px);
+  background-image: radial-gradient(
+    circle,
+    rgba(93, 46, 229, 0.15) 1.5px,
+    transparent 1.5px
+  );
   background-size: 16px 16px;
 }
 
@@ -1750,7 +2023,7 @@ Our backgrounds are **purposeful** — they foreshadow what customers will see i
 }
 .bg-highlighted-cells::before,
 .bg-highlighted-cells::after {
-  content: '';
+  content: "";
   position: absolute;
   background-color: rgba(93, 46, 229, 0.10);
   border-radius: 3px;
@@ -1758,26 +2031,30 @@ Our backgrounds are **purposeful** — they foreshadow what customers will see i
 }
 ```
 
-**Key detail:** Round the corners on bar chart bars and highlighted cell rectangles. This mirrors how the Pilot product displays data — keeping the brand consistent between marketing and product.
+**Key detail:** Round the corners on bar chart bars and highlighted cell
+rectangles. This mirrors how the Pilot product displays data — keeping the brand
+consistent between marketing and product.
 
 ---
 
 ## 31. Corners & Border Radius (Brand Rules)
 
-Traditional finance relies on grids and rigid spreadsheets — many of our clients dislike that. We deliberately round corners to varying degrees to make the brand feel more approachable.
+Traditional finance relies on grids and rigid spreadsheets — many of our clients
+dislike that. We deliberately round corners to varying degrees to make the brand
+feel more approachable.
 
 ### Corner Rules by Element Type
 
-| Element | Radius | Notes |
-|---------|--------|-------|
-| **CTA Buttons (pills)** | `999px` or `100%` | Always full pill. Can add a light gradient stroke/glow for emphasis. |
-| **Name cards, data boxes, info boxes** | `30px`–`40px` | "Subtle roundness." Use Figma's Scale function to maintain accurate rounding when resizing. |
-| **Chat bubbles** | iPhone-style | Mimic the iPhone's native message bubble shape — they are their own design language. |
-| **Cards (standard)** | `0.5rem` (8px) | Light rounding for data cards |
-| **Cards (featured)** | `1rem` (16px) | More prominent rounding |
-| **Form container** | `3.5rem` (56px) | Hero email capture form |
-| **Pricing tabs** | `60px` | Tab switcher pill container |
-| **Small UI elements** | `4px` | Minimal rounding — checkboxes, dropdown items |
+| Element                                | Radius            | Notes                                                                                       |
+| -------------------------------------- | ----------------- | ------------------------------------------------------------------------------------------- |
+| **CTA Buttons (pills)**                | `999px` or `100%` | Always full pill. Can add a light gradient stroke/glow for emphasis.                        |
+| **Name cards, data boxes, info boxes** | `30px`–`40px`     | "Subtle roundness." Use Figma's Scale function to maintain accurate rounding when resizing. |
+| **Chat bubbles**                       | iPhone-style      | Mimic the iPhone's native message bubble shape — they are their own design language.        |
+| **Cards (standard)**                   | `0.5rem` (8px)    | Light rounding for data cards                                                               |
+| **Cards (featured)**                   | `1rem` (16px)     | More prominent rounding                                                                     |
+| **Form container**                     | `3.5rem` (56px)   | Hero email capture form                                                                     |
+| **Pricing tabs**                       | `60px`            | Tab switcher pill container                                                                 |
+| **Small UI elements**                  | `4px`             | Minimal rounding — checkboxes, dropdown items                                               |
 
 ### CSS Examples
 
@@ -1816,11 +2093,17 @@ Traditional finance relies on grids and rigid spreadsheets — many of our clien
 
 ## 32. Figma-Specific Notes
 
-- When resizing rounded-corner elements (name cards, data boxes), use Figma's **Scale function** (not resize handles) to maintain accurate corner rounding proportions.
-- Chat bubbles should use **auto-layout + corner smoothing** to match iOS message bubble appearance.
-- Circles must always maintain equal W and H — **lock aspect ratio** before scaling.
-- Drop shadow effects in Figma: use **Drop Shadow** effect, color from purple family only, blur 50–100, opacity 10–20%.
-- Brand circles enriched with blurred gradients: use **blur effect** on a colored circle layer placed behind the main circle.
+- When resizing rounded-corner elements (name cards, data boxes), use Figma's
+  **Scale function** (not resize handles) to maintain accurate corner rounding
+  proportions.
+- Chat bubbles should use **auto-layout + corner smoothing** to match iOS
+  message bubble appearance.
+- Circles must always maintain equal W and H — **lock aspect ratio** before
+  scaling.
+- Drop shadow effects in Figma: use **Drop Shadow** effect, color from purple
+  family only, blur 50–100, opacity 10–20%.
+- Brand circles enriched with blurred gradients: use **blur effect** on a
+  colored circle layer placed behind the main circle.
 
 ---
 
@@ -1829,55 +2112,55 @@ Traditional finance relies on grids and rigid spreadsheets — many of our clien
 ```css
 :root {
   /* ─── Official Named Colors ─── */
-  --color-profit:        #281350;  /* PROFIT — darkest purple */
-  --color-pilot:         #5931DC;  /* PILOT — primary brand purple */
-  --color-brilliant:     #825BEB;  /* BRILLIANT — medium purple */
-  --color-highlight:     #DECEFF;  /* HIGHLIGHT — product change indicator */
-  --color-margin:        #F6F3FF;  /* MARGIN — near-white purple tint */
+  --color-profit: #281350; /* PROFIT — darkest purple */
+  --color-pilot: #5931dc; /* PILOT — primary brand purple */
+  --color-brilliant: #825beb; /* BRILLIANT — medium purple */
+  --color-highlight: #deceff; /* HIGHLIGHT — product change indicator */
+  --color-margin: #f6f3ff; /* MARGIN — near-white purple tint */
 
-  --color-access:        #FCF3D6;  /* ACCESS — warm cream */
-  --color-clarity:       #FBEDFF;  /* CLARITY — light lavender */
-  --color-trust:         #E7F9FF;  /* TRUST — light sky blue */
-  --color-access-plus:   #FFD967;  /* ACCESS+ — bright gold (accent only) */
-  --color-clarity-plus:  #F891FF;  /* CLARITY+ — bright pink (accent only) */
-  --color-trust-plus:    #8EECFF;  /* TRUST+ — bright cyan (accent only) */
+  --color-access: #fcf3d6; /* ACCESS — warm cream */
+  --color-clarity: #fbedff; /* CLARITY — light lavender */
+  --color-trust: #e7f9ff; /* TRUST — light sky blue */
+  --color-access-plus: #ffd967; /* ACCESS+ — bright gold (accent only) */
+  --color-clarity-plus: #f891ff; /* CLARITY+ — bright pink (accent only) */
+  --color-trust-plus: #8eecff; /* TRUST+ — bright cyan (accent only) */
 
   /* ─── Webflow/CSS Live Site Variables ─── */
-  --pilot-black:               #3f3c3d;   /* Body text */
-  --pilot-dark-purple:         #281350;   /* = PROFIT */
-  --white:                     #ffffff;
+  --pilot-black: #3f3c3d; /* Body text */
+  --pilot-dark-purple: #281350; /* = PROFIT */
+  --white: #ffffff;
 
-  --purple--1-primary-ee5:     #5f2ee5;   /* Primary CTA purple (≈ PILOT) */
-  --purple--2-beb:             #825beb;   /* = BRILLIANT */
-  --purple--3-30-6fc:          #c8b6fc;   /* Light purple nav text */
-  --purple--x-d89:             #3c2d89;   /* Deep purple accent */
-  --purple--x-c70:             #473c70;   /* Muted dark purple */
-  --purple--3-cfd:             #f0ecfd;   /* Very light purple tint */
+  --purple--1-primary-ee5: #5f2ee5; /* Primary CTA purple (≈ PILOT) */
+  --purple--2-beb: #825beb; /* = BRILLIANT */
+  --purple--3-30-6fc: #c8b6fc; /* Light purple nav text */
+  --purple--x-d89: #3c2d89; /* Deep purple accent */
+  --purple--x-c70: #473c70; /* Muted dark purple */
+  --purple--3-cfd: #f0ecfd; /* Very light purple tint */
 
-  --light--light-5fa:          #f3f5fa;   /* Primary section background */
-  --light--purple-f2edff:      #f2edff;
-  --light--f8f8f8:             #f8f8f8;
-  --light--blue-gray-afc:      #f9fafc;
-  --light--light-ef5:          #edeef5;
-  --light--light-purple-afd:   #e3dafd;
-  --gray:                      #f3f5fa;
-  --gray-999:                  #999;
-  --gray-light:                #e0e0e0;
-  --dark-gray-363:             #656363;
-  --pale-periwinkle:           #f6f3ff;   /* = MARGIN */
-  --transparent:               #fff0;
+  --light--light-5fa: #f3f5fa; /* Primary section background */
+  --light--purple-f2edff: #f2edff;
+  --light--f8f8f8: #f8f8f8;
+  --light--blue-gray-afc: #f9fafc;
+  --light--light-ef5: #edeef5;
+  --light--light-purple-afd: #e3dafd;
+  --gray: #f3f5fa;
+  --gray-999: #999;
+  --gray-light: #e0e0e0;
+  --dark-gray-363: #656363;
+  --pale-periwinkle: #f6f3ff; /* = MARGIN */
+  --transparent: #fff0;
 
-  --bright-blue:               #4f9bf3;
-  --cta-green:                 #47bfa4;
-  --error-red:                 #ce1836;
-  --supernova:                 #ffcc00;
-  --light-yellow:              #fee17f;
-  --pilot-pink:                #f891ff;   /* = CLARITY+ */
-  --pilot-pink-10:             #f891ff1a;
-  --pilot-cyan:                #e7f9ff;   /* = TRUST */
-  --pale-lavender:             #fef4ff;
-  --buttery-cream:             #fcf3d6;   /* = ACCESS */
-  --pastel-violet:             #fbedff;   /* = CLARITY */
-  --olive-green:               #6e9605;
+  --bright-blue: #4f9bf3;
+  --cta-green: #47bfa4;
+  --error-red: #ce1836;
+  --supernova: #ffcc00;
+  --light-yellow: #fee17f;
+  --pilot-pink: #f891ff; /* = CLARITY+ */
+  --pilot-pink-10: #f891ff1a;
+  --pilot-cyan: #e7f9ff; /* = TRUST */
+  --pale-lavender: #fef4ff;
+  --buttery-cream: #fcf3d6; /* = ACCESS */
+  --pastel-violet: #fbedff; /* = CLARITY */
+  --olive-green: #6e9605;
 }
 ```
