@@ -1474,19 +1474,37 @@ The homepage (`/`) is a Webflow-built page with these major sections in order:
 
 ## 20. Logo Assets
 
-All logo files live in `logos/` in this repository. Official SVGs are also hosted on the Webflow CDN.
+All logo files live in `logos/` in this repository, organized into root-level
+working files and two subfolders (`logos/SVG/` and `logos/PNG/`) with
+consistently named variants. Official SVGs are also hosted on the Webflow CDN.
 
 ### Logo Repository
 
-| File                      | Type     | Description                                   |
+These files live at the root of `logos/` and can be downloaded directly from
+this repository.
+
+| File                      | Type     | Description                                   | Path                              |
 | ------------------------- | -------- | --------------------------------------------- |
-| `full-logo-black.svg`     | Wordmark | Black "pilot" text — for light backgrounds    |
-| `full-logo-purple.svg`    | Wordmark | Purple "pilot" text — for dark backgrounds    |
-| `pilot_logo_small.png`    | Wordmark | Purple wordmark, PNG format                   |
-| `logo-circular-pilot.svg` | Mark     | Circular "p" mark                             |
-| `pilot-icon.svg`          | Mark     | "p" lettermark                                |
-| `dark-pilot-logo.svg`     | App icon | Purple background, white "p" — rounded square |
-| `light-pilot-logo.svg`    | App icon | White background, dark "p" — rounded square   |
+| `full-logo-black.svg`     | Wordmark | Black "pilot" text — for light backgrounds    | `logos/full-logo-black.svg`       |
+| `full-logo-purple.svg`    | Wordmark | Purple "pilot" text — for dark backgrounds    | `logos/full-logo-purple.svg`      |
+| `pilot_logo_small.png`    | Wordmark | Purple wordmark, PNG format                   | `logos/pilot_logo_small.png`      |
+| `logo-circular-pilot.svg` | Mark     | Circular "p" mark                             | `logos/logo-circular-pilot.svg`   |
+| `pilot-icon.svg`          | Mark     | "p" lettermark                                | `logos/pilot-icon.svg`            |
+| `dark-pilot-logo.svg`     | App icon | Purple background, white "p" — rounded square | `logos/dark-pilot-logo.svg`       |
+| `light-pilot-logo.svg`    | App icon | White background, dark "p" — rounded square   | `logos/light-pilot-logo.svg`      |
+
+### Download-Ready Subfolders
+
+The `logos/` directory also contains two organized subfolders with all logo
+variants in consistent naming:
+
+| Subfolder     | Files | Contents                                                   |
+| ------------- | ----- | ---------------------------------------------------------- |
+| `logos/SVG/`  | 8     | Full logo + Lettermark in Black, Purple, Purple Fill, White |
+| `logos/PNG/`  | 11    | Full logo + Lettermark in Black, Purple, Purple Fill, White, White Fill |
+
+**Naming convention:** `{type}_{colorway}.{ext}` — e.g. `full-logo_purple.svg`,
+`lettermark_white_fill.png`
 
 ### CDN References
 
