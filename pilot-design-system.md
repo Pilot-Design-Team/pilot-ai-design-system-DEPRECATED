@@ -194,6 +194,43 @@ p {
 
 ---
 
+### Typography Rules
+
+- **We always left-align text.** Text can also be right-aligned if the
+  circumstances require it.
+- **Text should never be centered.** No exceptions in standard content. _(The
+  only permitted exception is CTA banner sections — full-width colored banners
+  with a single headline + button — where centered layout is a deliberate design
+  pattern.)_
+
+#### Font Weight Conventions
+
+Font weight `600` (SemiBold) is Pilot's primary emphasis weight — it carries all
+headings, section titles, stats callouts, and CTA labels. This is a deliberate
+brand choice: `700` (Bold) is **not** used for headings.
+
+| Weight | Role                                                               | Frequency |
+| ------ | ------------------------------------------------------------------ | --------- |
+| `300`  | Light / modifier text in mixed-weight headlines (Euclid Light)     | Low       |
+| `400`  | Body copy, regular paragraphs, form labels, nav links              | Standard  |
+| `500`  | Mid-emphasis (utility classes only, rare)                          | Rare      |
+| `600`  | **All headings**, section titles, stats, nav active, pricing, CTAs | Primary   |
+| `700`  | Inline `<strong>` / bold spans only — **never for headings**       | Low       |
+| `900`  | Avoid — almost never used                                          | Avoid     |
+
+**Rules:**
+
+- Use `600` for all heading elements (`h1`–`h6`), `.heading-large/medium/small`,
+  section titles, stat callouts, and pricing text.
+- Use `400` for body copy, descriptions, and supporting text.
+- Use `300` (Euclid Light) only for the "context" part of mixed-weight headlines
+  — e.g., "**5 consecutive quarters** of net sales growth" where the bold portion
+  is `600` and the light portion is `300`.
+- Use `700` only for inline bold (`<strong>`) within body paragraphs and for
+  Space Mono bold (CTA buttons). **Never use `700` on Euclid headings.**
+
+---
+
 ### Heading Scale (Webflow Defaults → Pilot Overrides)
 
 | Element | Font Size        | Font Weight | Line Height | Font Family        |

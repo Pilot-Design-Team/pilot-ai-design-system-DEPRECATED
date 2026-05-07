@@ -1794,10 +1794,129 @@
         <p class="sec-desc">Three fonts. Each carries meaning. Euclid Circular B is the default for everything. Space
           Mono signals tech. La Belle Aurore signals human warmth — use it sparingly, never more than 4 words.</p>
 
-        <div class="callout c-rule">
-          <span class="ci-icon">⚠</span>
-          <span><strong>Alignment rule:</strong> Always left-align text. Right-align is allowed when circumstances
-            require it. <strong>Text must never be centered. No exceptions.</strong></span>
+        <div class="sub">
+          <div class="sub-title">Typography Rules</div>
+          <div class="pv">
+            <div class="pv-head"><span>Alignment Rules</span></div>
+            <div class="pv-body" style="padding:0;">
+              <table class="dt" style="margin-bottom:0;">
+                <thead>
+                  <tr>
+                    <th style="width:36px;"></th>
+                    <th>Rule</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td style="text-align:center;"><span style="color:#16a34a;font-weight:700;font-size:15px;">✓</span></td>
+                    <td>We always <strong>left-align</strong> text. Text can also be <strong>right-aligned</strong> if the circumstances require it.</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center;"><span style="color:#dc2626;font-weight:700;font-size:15px;">✗</span></td>
+                    <td>Text should <strong>never be centered.</strong></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Visual demo of alignment -->
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-top:16px;">
+            <!-- Left align - DO -->
+            <div style="border:2px solid #bbf7d0;border-radius:var(--r-md);overflow:hidden;">
+              <div style="background:#f0fdf4;padding:8px 12px;font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#166534;">✓ Left-Aligned (Default)</div>
+              <div style="padding:16px 16px 20px;">
+                <p style="font-family:var(--font-body);font-size:18px;font-weight:600;color:var(--p-profit);margin-bottom:6px;text-align:left;">Financial clarity</p>
+                <p style="font-family:var(--font-body);font-size:12px;color:var(--p-gray-mid);line-height:1.6;text-align:left;">Body copy always sits left. This is the default for all Pilot content.</p>
+              </div>
+            </div>
+            <!-- Right align - CONDITIONAL -->
+            <div style="border:2px solid var(--p-access-plus);border-radius:var(--r-md);overflow:hidden;">
+              <div style="background:var(--p-access);padding:8px 12px;font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#78350f;">⚠ Right-Aligned (Conditional)</div>
+              <div style="padding:16px 16px 20px;">
+                <p style="font-family:var(--font-body);font-size:18px;font-weight:600;color:var(--p-profit);margin-bottom:6px;text-align:right;">Financial clarity</p>
+                <p style="font-family:var(--font-body);font-size:12px;color:var(--p-gray-mid);line-height:1.6;text-align:right;">Allowed only when layout circumstances specifically require it.</p>
+              </div>
+            </div>
+            <!-- Center align - NEVER -->
+            <div style="border:2px solid #fecdd3;border-radius:var(--r-md);overflow:hidden;">
+              <div style="background:#fff1f2;padding:8px 12px;font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#9f1239;">✗ Centered (Never)</div>
+              <div style="padding:16px 16px 20px;">
+                <p style="font-family:var(--font-body);font-size:18px;font-weight:600;color:var(--p-profit);margin-bottom:6px;text-align:center;text-decoration:line-through;opacity:.5;">Financial clarity</p>
+                <p style="font-family:var(--font-body);font-size:12px;color:var(--p-gray-mid);line-height:1.6;text-align:center;text-decoration:line-through;opacity:.5;">Centered text is never used in Pilot content.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Font Weight Conventions -->
+        <div class="sub">
+          <div class="sub-title">Font Weight Conventions</div>
+          <div class="callout c-rule">
+            <span class="ci-icon">⚠</span>
+            <span>Font weight <strong><code style="font-family:var(--font-mono);font-size:12px;">600</code> (SemiBold)</strong> is Pilot's primary emphasis weight — it carries all headings, section titles, stats, and CTA labels. <strong><code style="font-family:var(--font-mono);font-size:12px;">700</code> (Bold) is never used for headings.</strong></span>
+          </div>
+
+          <table class="dt">
+            <thead>
+              <tr>
+                <th>Weight</th>
+                <th>Role</th>
+                <th>Frequency</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>300</code></td>
+                <td>Light / modifier text in mixed-weight headlines (Euclid Light)</td>
+                <td><span class="badge b-yellow">Low</span></td>
+              </tr>
+              <tr>
+                <td><code>400</code></td>
+                <td>Body copy, paragraphs, form labels, nav links</td>
+                <td><span class="badge b-blue">Standard</span></td>
+              </tr>
+              <tr>
+                <td><code>500</code></td>
+                <td>Mid-emphasis (utility classes only)</td>
+                <td><span class="badge b-yellow">Rare</span></td>
+              </tr>
+              <tr>
+                <td><code>600</code></td>
+                <td><strong>All headings</strong>, section titles, stats, nav active, pricing, CTAs</td>
+                <td><span class="badge b-green">Primary</span></td>
+              </tr>
+              <tr>
+                <td><code>700</code></td>
+                <td>Inline <code>&lt;strong&gt;</code> / bold spans only — <strong>never for headings</strong></td>
+                <td><span class="badge b-yellow">Low</span></td>
+              </tr>
+              <tr>
+                <td><code>900</code></td>
+                <td>Avoid — almost never used</td>
+                <td><span class="badge b-red">Avoid</span></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!-- Visual weight demo -->
+          <div class="pv">
+            <div class="pv-head"><span>Live Specimen · 600 vs 700 on Headings</span></div>
+            <div class="pv-body" style="padding:28px 32px;">
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;">
+                <div>
+                  <div style="font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#166534;margin-bottom:10px;">✓ Correct — weight 600</div>
+                  <p style="font-family:var(--font-body);font-size:2rem;font-weight:600;color:var(--p-profit);line-height:1.2;margin-bottom:8px;">Financial clarity for growing companies</p>
+                  <span style="font-family:var(--font-mono);font-size:10px;color:var(--p-gray-pale);text-transform:uppercase;letter-spacing:1px;">Euclid Circular B · SemiBold 600</span>
+                </div>
+                <div>
+                  <div style="font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#9f1239;margin-bottom:10px;">✗ Wrong — weight 700</div>
+                  <p style="font-family:var(--font-body);font-size:2rem;font-weight:700;color:var(--p-profit);line-height:1.2;margin-bottom:8px;opacity:.5;text-decoration:line-through;">Financial clarity for growing companies</p>
+                  <span style="font-family:var(--font-mono);font-size:10px;color:var(--p-gray-pale);text-transform:uppercase;letter-spacing:1px;">700 is too heavy for Pilot headings</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div class="sub">
