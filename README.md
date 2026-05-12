@@ -1,66 +1,53 @@
-# Pilot Marketing Website Design System V1.0
+# Pilot Marketing AI Design System — Version 1.1
 
-**Pilot's marketing AI design system for humans & AI where the pilot-design-system.md file is the source of truth.**
+**Pilot's marketing AI design system for humans & AI where the `pilot-design-system.md` file is the source of truth.**
 
-This repository contains the complete design system for building Pilot.com marketing pages and websites — including all brand tokens, typography rules, color palette, component patterns, and brand assets.
-
----
-
-## For AI & Vibecoding Tools
-
-**Use a single consolidated reference:** [**pilot-design-system.md**](./pilot-design-system.md)
-
-- **pilot-design-system.md** is the one comprehensive document covering all CSS variables, named colors, fonts, spacing, gradients, shapes, shadows, buttons, cards, forms, navigation, photography guidelines, background patterns, and brand philosophy.
-- Attach or open **pilot-design-system.md** when building or editing any Pilot marketing page so all design system context is in one place.
-- For a live visual preview of all tokens and components, open **pilot-design-system-visualizer.html** directly in a browser — no build step required.
-- Follow the vibecoding constraints in the design system: no new fonts, no invented colors, left-align always, purple-only shadows, pill CTAs only.
+This repository contains the complete design system for building Pilot.com marketing pages — including all brand tokens, typography rules, color palette, component patterns, and brand assets.
 
 ---
 
-## Contents
+## Repository Structure
 
-### Documentation
-
-- **pilot-design-system.md** — Single consolidated reference: all CSS tokens, named color palette, typography scale, brand philosophy, component patterns, imagery rules, and vibecoding constraints. Use this for AI/vibecoding and as the primary design system reference.
-- **pilot-design-system-visualizer.html** — Self-contained HTML file with live visual previews of every design token and component. Open locally in any browser, no install needed.
-
-### Assets
-
-Assets are committed directly to this repo. Cloning automatically brings them down — no install step required.
-
-- **fonts/** — All three brand typefaces, ready to use locally:
-  - `EuclidCircularB-Regular-WebS.woff2` / `.woff` / `WebXL` variants — primary body & heading font
-  - `EuclidCircularB-Semibold-WebS.woff2` / `.woff` / `WebXL` variants — semibold weight
-  - `SpaceMono-Regular.ttf` / `Bold` / `Italic` / `BoldItalic` — tech/label/button font
-  - `LaBelleAurore-Regular.ttf` — human warmth accent font (≤4 words only)
-- **logos/** — Official Pilot brand assets:
-  - `light-pilot-logo.svg` — Primary logo for light backgrounds
-  - `dark-pilot-logo.svg` — Logo for dark/PROFIT purple backgrounds
-  - `logo-circular-pilot.svg` — Circular logo mark
-  - `pilot-icon.svg` — Standalone icon mark
-  - `pilot-crystal-ball.png` — Crystal ball illustration
-  - `pilot_billing_bot.png` — Billing bot illustration
-  - `pilot_cfo_logo.png` — CFO product logo
-  - `pilot_logo_small.png` — Small logo variant
+```
+├── pilot-design-system.md              # Source of truth — full design system reference
+├── pilot-design-system-visualizer.html # Interactive visual preview (open in browser)
+├── pilot-design-system-md-viewer.html  # Markdown renderer (embedded in visualizer)
+├── pilot-slides-guidelines.md          # Slide deck brand guidelines
+├── icons.md                            # Icon system specification
+├── vercel.json                         # Hosting config (rewrites / → visualizer)
+│
+├── fonts/                              # Brand typefaces (Euclid Circular B, Space Mono, La Belle Aurore)
+├── icons/                              # Icon assets (key color + alt color variants)
+├── images/                             # Marketing images
+└── logos/                              # Logo assets (SVG, PNG — multiple color variants)
+```
 
 ---
 
 ## Quick Start
 
-### Clone and get everything
+### 1. Clone the repository
 
 ```bash
 git clone git@github.com:Pilot-Design-Team/marketing-website-design-system.git
 cd marketing-website-design-system
 ```
 
-Fonts and logos are included in the repo — no install step needed. Open the visualizer immediately:
+Fonts, icons, and logos are included — no install step needed.
+
+### 2. Open the visual preview
 
 ```bash
 open pilot-design-system-visualizer.html
 ```
 
-### Use in a project
+Or serve locally for the full experience (including the embedded markdown viewer):
+
+```bash
+npx -y serve .
+```
+
+### 3. Use in a project
 
 Reference fonts locally from the `fonts/` directory:
 
@@ -84,10 +71,22 @@ Copy the CSS variable block from **pilot-design-system.md § CSS Variables** int
 
 ---
 
+## For AI & Vibecoding Tools
+
+**Use a single consolidated reference:** [**pilot-design-system.md**](./pilot-design-system.md)
+
+- **pilot-design-system.md** is the one comprehensive document covering all CSS variables, named colors, fonts, spacing, gradients, shapes, shadows, buttons, cards, forms, navigation, photography guidelines, background patterns, and brand philosophy.
+- Attach or open **pilot-design-system.md** when building or editing any Pilot marketing page so all design system context is in one place.
+- For a live visual preview of all tokens and components, open **pilot-design-system-visualizer.html** directly in a browser — no build step required.
+- Follow the vibecoding constraints in the design system: no new fonts, no invented colors, left-align always, purple-only shadows, pill CTAs only.
+
+---
+
 ## Design System Highlights
 
 | Token | Value |
 |---|---|
+| Source of truth | `pilot-design-system.md` |
 | Primary brand color | `#5931DC` — PILOT purple |
 | Darkest anchor | `#281350` — PROFIT purple |
 | Body font | Euclid Circular B (weights 300–700) |
@@ -115,6 +114,17 @@ When building with AI tools, enforce these constraints:
 
 ---
 
+## Assets
+
+All assets are committed directly to this repo. Cloning automatically brings them down — no install step required.
+
+- **fonts/** — Brand typefaces: Euclid Circular B (Regular + Semibold, woff/woff2), Space Mono (Regular/Bold/Italic), La Belle Aurore
+- **logos/** — Full logos and lettermarks in SVG + PNG, across black/purple/white color variants
+- **icons/** — Icon system assets in key color and alternate color variants (see `icons.md` for the full specification)
+- **images/** — Marketing design reference images
+
+---
+
 ## Updating the Design System
 
 When brand rules, tokens, or components change:
@@ -128,8 +138,8 @@ When brand rules, tokens, or components change:
 ## Notes
 
 - **Website:** [Pilot.com](https://pilot.com) — built on Webflow + custom CSS
-- **Platform:** Webflow · Marketo forms · Swiper.js · GSAP 3
 - **Font licensing:** Euclid Circular B is licensed via Pilot — do not redistribute outside of Pilot projects
-- **Source of Truth:** pilot-design-system.md reflects live site conventions and brand guidelines
+
+---
 
 © Pilot.com, Inc.
