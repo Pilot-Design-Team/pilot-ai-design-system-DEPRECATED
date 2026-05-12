@@ -1,6 +1,6 @@
 # Pilot Marketing Website Design System V1.0
 
-**Pilot's marketing website design system for humans & AI where the design file is the source of truth.**
+**Pilot's marketing AI design system for humans & AI where the pilot-design-system.md file is the source of truth.**
 
 This repository contains the complete design system for building Pilot.com marketing pages and websites — including all brand tokens, typography rules, color palette, component patterns, and brand assets.
 

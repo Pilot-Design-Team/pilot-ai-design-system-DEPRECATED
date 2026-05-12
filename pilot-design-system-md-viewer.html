@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pilot Design System — Markdown</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/euclid-circular-b" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --p-profit: #281350;
+      --p-pilot: #5931DC;
+      --p-brilliant: #825BEB;
+      --p-highlight: #DECEFF;
+      --p-margin: #F6F3FF;
+      --p-black: #3f3c3d;
+      --p-deep: #3c2d89;
+      --p-white: #ffffff;
+      --p-bg: #f3f5fa;
+      --p-border: #e0e0e0;
+      --p-gray-mid: #656363;
+      --p-gray-pale: #999;
+      --font-body: 'Euclid Circular B', 'DM Sans', system-ui, -apple-system, sans-serif;
+      --font-mono: 'Space Mono', 'Courier New', monospace;
+    }
+
+    html { font-size: 16px; }
+
+    body {
+      font-family: var(--font-body);
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--p-black);
+      background: var(--p-white);
+      padding: 48px 56px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Headings */
+    h1 {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--p-profit);
+      margin-bottom: 8px;
+      line-height: 1.25;
+      letter-spacing: -0.3px;
+    }
+    h2 {
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--p-profit);
+      margin-top: 48px;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--p-border);
+      line-height: 1.3;
+    }
+    h3 {
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--p-deep);
+      margin-top: 32px;
+      margin-bottom: 10px;
+    }
+    h4 {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--p-pilot);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-top: 24px;
+      margin-bottom: 8px;
+    }
+
+    /* Paragraphs & inline */
+    p {
+      margin-bottom: 14px;
+      max-width: 760px;
+    }
+    strong { color: var(--p-profit); font-weight: 600; }
+    em { font-style: italic; color: var(--p-gray-mid); }
+
+    a {
+      color: var(--p-pilot);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(89,49,220,.2);
+      transition: border-color .15s;
+    }
+    a:hover { border-bottom-color: var(--p-pilot); }
+
+    /* Code */
+    code {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      background: var(--p-bg);
+      border: 1px solid var(--p-border);
+      border-radius: 3px;
+      padding: 1px 5px;
+      color: var(--p-pilot);
+      white-space: nowrap;
+    }
+
+    pre {
+      background: #1a1628;
+      border-radius: 8px;
+      padding: 20px;
+      overflow-x: auto;
+      margin-bottom: 18px;
+    }
+    pre code {
+      background: none;
+      border: none;
+      padding: 0;
+      color: #c8b6fc;
+      font-size: 12px;
+      line-height: 1.75;
+      white-space: pre;
+    }
+
+    /* Blockquotes */
+    blockquote {
+      border-left: 3px solid var(--p-pilot);
+      padding: 12px 20px;
+      margin: 16px 0;
+      background: var(--p-margin);
+      border-radius: 0 6px 6px 0;
+      color: var(--p-gray-mid);
+      font-size: 14px;
+    }
+    blockquote p { margin-bottom: 6px; }
+    blockquote p:last-child { margin-bottom: 0; }
+
+    /* Lists */
+    ul, ol {
+      margin: 10px 0 16px 22px;
+      max-width: 760px;
+    }
+    li {
+      margin-bottom: 5px;
+      line-height: 1.65;
+    }
+    li::marker { color: var(--p-pilot); }
+
+    /* Tables */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13.5px;
+      margin: 16px 0 24px;
+    }
+    th {
+      text-align: left;
+      padding: 9px 13px;
+      background: var(--p-bg);
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--p-gray-pale);
+      border-bottom: 1px solid var(--p-border);
+      white-space: nowrap;
+    }
+    td {
+      padding: 9px 13px;
+      border-bottom: 1px solid #f0f0f5;
+      vertical-align: top;
+      line-height: 1.55;
+    }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: rgba(89,49,220,.02); }
+
+    /* Horizontal rule */
+    hr {
+      border: none;
+      border-top: 1px solid var(--p-border);
+      margin: 36px 0;
+    }
+
+    /* Images */
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin: 12px 0;
+    }
+
+    /* Loading state */
+    .loading {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 200px;
+      color: var(--p-gray-pale);
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div id="content" class="loading">Loading design system…</div>
+  <script>
+    (async () => {
+      try {
+        const res = await fetch('pilot-design-system.md');
+        const md = await res.text();
+        document.getElementById('content').className = '';
+        document.getElementById('content').innerHTML = marked.parse(md);
+      } catch (e) {
+        document.getElementById('content').innerHTML =
+          '<p style="color:#ce1836">Failed to load pilot-design-system.md — make sure you are serving this file from a local server (not file://).</p>';
+      }
+    })();
+  </script>
+</body>
+</html>

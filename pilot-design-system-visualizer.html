@@ -1430,6 +1430,7 @@
       <div class="ng-label">Overview</div>
       <a class="nl" href="#quick-ref"><span class="nl-dot"></span>Quick Reference</a>
       <a class="nl" href="#philosophy"><span class="nl-dot"></span>Brand Philosophy</a>
+      <a class="nl" href="#design-system-md"><span class="nl-dot"></span>DesignSystem.md</a>
       <div class="ng-label">Foundations</div>
       <a class="nl" href="#colors"><span class="nl-dot"></span>Color Palette</a>
       <a class="nl" href="#typography"><span class="nl-dot"></span>Typography</a>
@@ -1471,8 +1472,7 @@
       <section class="sec" id="quick-ref">
         <span class="sec-tag">Overview</span>
         <h2 class="sec-title">Quick Reference</h2>
-        <p class="sec-desc">Essential values at a glance — extracted from the live pilot.com Webflow CSS and the
-          official Pilot Brand &amp; Marketing Design System document.</p>
+        <p class="sec-desc">Essential values at a glance.</p>
         <table class="dt">
           <thead>
             <tr>
@@ -1481,6 +1481,10 @@
             </tr>
           </thead>
           <tbody>
+            <tr>
+              <td><strong>Source of truth</strong></td>
+              <td><a href="#design-system-md" style="color: var(--p-pilot); text-decoration: none; border-bottom: 1px solid rgba(89,49,220,.3);">Design system markdown file</a></td>
+            </tr>
             <tr>
               <td><strong>Website</strong></td>
               <td>Pilot.com</td>
@@ -1580,6 +1584,24 @@
             </tr>
           </tbody>
         </table>
+      </section>
+
+      <!-- ═══════════════════════════════════════
+     DESIGN SYSTEM MD
+     ═══════════════════════════════════════ -->
+      <section class="sec" id="design-system-md">
+        <span class="sec-tag">Overview</span>
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 7px;">
+          <h2 class="sec-title" style="margin-bottom: 0;">DesignSystem.md</h2>
+          <a href="pilot-design-system.md" download="pilot-design-system.md" class="btn btn-o btn-sm" style="flex-shrink: 0;">
+            <svg width="13" height="13" viewBox="0 0 16 16" fill="none" style="margin-right: 2px;"><path d="M8 1v10m0 0l-3.5-3.5M8 11l3.5-3.5M2 14h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Download
+          </a>
+        </div>
+        <p class="sec-desc">This design system Markdown file is the source of truth for agents and humans and contains everything you need to know about the pilot marketing AI design system.</p>
+        <div style="border: 1px solid var(--p-border); border-radius: var(--r-lg); overflow: hidden; background: var(--p-bg);">
+          <iframe src="pilot-design-system-md-viewer.html" style="width: 100%; height: 80vh; border: none; display: block;"></iframe>
+        </div>
       </section>
 
       <!-- ═══════════════════════════════════════
@@ -3524,59 +3546,48 @@
             <tr>
               <th>Tool</th>
               <th>Purpose</th>
-              <th>ID / Notes</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td><strong>Webflow</strong></td>
               <td>CMS / hosting platform</td>
-              <td>Site ID: <code>60a5136f2c6c8e4fb3a130d9</code></td>
             </tr>
             <tr>
               <td><strong>Google Tag Manager</strong></td>
               <td>Analytics orchestration</td>
-              <td><code>GTM-WCT3V3Z</code>, <code>GTM-KWQ5QTCZ</code></td>
             </tr>
             <tr>
               <td><strong>Marketo</strong></td>
               <td>Lead forms</td>
-              <td>Account <code>754-NWB-621</code></td>
             </tr>
             <tr>
               <td><strong>Chili Piper</strong></td>
               <td>Meeting scheduling</td>
-              <td>Styled to match <code>#5f2ee5</code></td>
             </tr>
             <tr>
               <td><strong>Swiper.js</strong></td>
               <td>Carousels / sliders</td>
-              <td>CDN jsDelivr, swiper-bundle</td>
             </tr>
             <tr>
               <td><strong>GSAP 3</strong></td>
               <td>Animations</td>
-              <td>v3.12.2, cdnjs</td>
             </tr>
             <tr>
               <td><strong>Intellimize</strong></td>
               <td>A/B testing / personalization</td>
-              <td><code>117814141</code></td>
             </tr>
             <tr>
               <td><strong>Convert</strong></td>
               <td>A/B testing</td>
-              <td><code>10043185-10044507</code></td>
             </tr>
             <tr>
               <td><strong>OneTrust</strong></td>
               <td>Cookie consent</td>
-              <td><code>1abf67ec-40bb-420e-95f6-8625a5eaf16b</code></td>
             </tr>
             <tr>
               <td><strong>OptinMonster</strong></td>
               <td>Lead gen popups</td>
-              <td>Account <code>64522</code></td>
             </tr>
           </tbody>
         </table>

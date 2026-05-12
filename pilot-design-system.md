@@ -2,10 +2,7 @@
 
 > **Last updated:** April 2026\
 > Extracted from https://www.pilot.com and the official Pilot Brand & Marketing
-> Design System document.\
-> Source CSS: `pilot-v2.shared.71c89cc4c.min.css` (cdn.prod.website-files.com)
-> and `build.css` (assets.pilot.com)\
-> Platform: Webflow + custom CSS + Marketo forms + Swiper.js carousels
+> Design System document.
 
 ## Quick Reference
 
