@@ -267,6 +267,7 @@
     #main {
       margin-left: var(--sidebar-w);
       flex: 1;
+      overflow-x: hidden;
     }
 
     .sec {
@@ -1371,6 +1372,14 @@
         padding: 36px 22px 52px
       }
 
+      #intro {
+        padding: 28px 22px 36px !important;
+      }
+
+      #intro img {
+        border-radius: var(--r-md) !important;
+      }
+
       .photo-grid {
         grid-template-columns: 1fr
       }
@@ -1397,6 +1406,15 @@
 
       .tb-search {
         display: none
+      }
+
+      #intro {
+        padding: 16px 12px 24px !important;
+      }
+
+      #intro img {
+        border-radius: 6px !important;
+        box-shadow: 0 2px 12px rgba(89,49,220,.08) !important;
       }
     }
   </style>
@@ -1469,8 +1487,8 @@
       <!-- ═══════════════════════════════════════
      INTRO
      ═══════════════════════════════════════ -->
-      <section class="sec" id="intro" style="padding: 40px 60px 48px; text-align: center;">
-        <img src="images/Pilot-Marketing-AI-Design.jpg" alt="Pilot Marketing AI Design" style="max-width: 100%; height: auto; border-radius: var(--r-lg); box-shadow: 0 4px 24px rgba(89,49,220,.10);">
+      <section class="sec" id="intro" style="padding: 40px 60px 48px;">
+        <img src="images/Pilot-Marketing-AI-Design.jpg" alt="Pilot Marketing AI Design" style="display: block; width: 100%; max-width: 1000px; height: auto; border-radius: var(--r-lg); box-shadow: 0 4px 24px rgba(89,49,220,.10);">
       </section>
 
       <!-- ═══════════════════════════════════════
