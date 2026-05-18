@@ -1,6 +1,6 @@
 # Pilot.com Design System Reference
 
-> **Last updated:** April 2026\
+> **Last updated:** May 2026\
 > Extracted from https://www.pilot.com and the official Pilot Brand & Marketing
 > Design System document.
 
@@ -2656,3 +2656,4 @@ Known deviations from the design system on the live pilot.com site:
 | `growth-fund-recipients.html` | 2 | Reduce to 1 |
 | `integrations-stripe.html` | 2 | Reduce to 1 |
 | `tax-calendar.html` | 2 | Reduce to 1 |
+
