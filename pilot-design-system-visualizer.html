@@ -640,7 +640,7 @@
     }
 
     .btn-p:hover {
-      background: #4a25c4;
+      background: #281350;
       transform: translateY(-1px);
       box-shadow: 0 8px 20px rgba(89, 49, 220, .3);
     }
@@ -2222,27 +2222,32 @@
             </thead>
             <tbody>
               <tr>
-                <td><code>.container</code></td>
+                <td><code>.container</code> <span class="badge b-green" style="margin-left:6px;">Canonical</span></td>
                 <td><code>75.5rem</code> (1208px) — Standard</td>
                 <td><code>40px</code></td>
               </tr>
               <tr>
-                <td><code>.container-narrow</code></td>
+                <td><code>.container-narrow</code> <span class="badge b-green" style="margin-left:6px;">Canonical</span></td>
+                <td><code>60rem</code> (960px)</td>
+                <td><code>40px</code></td>
+              </tr>
+              <tr>
+                <td><code>.container-narrow</code> <span class="badge b-red" style="margin-left:6px;">Legacy</span></td>
                 <td><code>856px</code></td>
                 <td><code>40px</code></td>
               </tr>
               <tr>
-                <td><code>.container-narrower</code></td>
+                <td><code>.container-narrower</code> <span class="badge b-red" style="margin-left:6px;">Legacy</span></td>
                 <td><code>766px</code></td>
                 <td><code>40px</code></td>
               </tr>
               <tr>
-                <td><code>.container-max-85rem</code></td>
+                <td><code>.container-max-85rem</code> <span class="badge b-red" style="margin-left:6px;">Legacy</span></td>
                 <td><code>1360px</code></td>
                 <td>—</td>
               </tr>
               <tr>
-                <td><code>.container-max-80rem</code></td>
+                <td><code>.container-max-80rem</code> <span class="badge b-red" style="margin-left:6px;">Legacy</span></td>
                 <td><code>1280px</code></td>
                 <td>—</td>
               </tr>
@@ -3042,36 +3047,49 @@
       <section class="sec" id="cards">
         <span class="sec-tag">Components</span>
         <h2 class="sec-title">Cards</h2>
-        <p class="sec-desc">Multiple card styles for different contexts. Borders: 1px #e0e0e0. Standard padding: 40px.
-          Larger cards: 4rem. Dark CTA card uses PROFIT background.</p>
+        <p class="sec-desc">Five canonical card variants for new implementations. Default to pin lines for separating content — only use cards when content needs elevation, a distinct background, or is a clickable surface.</p>
+
+        <div class="callout c-rule">
+          <span class="ci-icon">⚠</span>
+          <span><strong>Only these 5 canonical variants</strong> should be used for new work. Legacy card classes (<code>.card-large</code>, <code>.card-small</code>, <code>.promo-card</code>, <code>.story-card</code>) are technical debt — migrate to a canonical variant.</span>
+        </div>
 
         <div class="pv">
-          <div class="pv-head"><span>Card Variants</span></div>
+          <div class="pv-head"><span>Canonical Card Variants</span></div>
           <div class="pv-body">
             <div class="cdg">
-              <div><span class="c-tag">.card — no radius</span>
-                <div class="card">
-                  <h4>Standard Card</h4>
-                  <p>1px border, no radius. Feature sections and content blocks.</p>
+              <div><span class="c-tag">.card-white <span class="badge b-green" style="margin-left:4px;">Canonical</span></span>
+                <div style="background:#fff;border-radius:0.5rem;padding:2rem;width:100%;">
+                  <h4>White Card</h4>
+                  <p>Default card for general content. Radius: 0.5rem, padding: 4rem.</p>
                 </div>
               </div>
-              <div><span class="c-tag">.card-sm — 4px</span>
-                <div class="card-sm">
-                  <h4>Small Card</h4>
-                  <p>Subtle rounding. Compact info cards.</p>
-                </div>
-              </div>
-              <div><span class="c-tag">.card-rounded — 16px</span>
-                <div class="card-r">
-                  <h4>Rounded Card</h4>
-                  <p>Prominent rounding. Featured content.</p>
-                </div>
-              </div>
-              <div><span class="c-tag">.card-gray</span>
-                <div class="card-gy">
+              <div><span class="c-tag">.card-gray <span class="badge b-green" style="margin-left:4px;">Canonical</span></span>
+                <div style="background:#f3f5fa;border-radius:0.5rem;padding:2rem;width:100%;">
                   <h4>Gray Card</h4>
-                  <p>Light gray bg #f3f5fa. Secondary content areas.</p>
+                  <p>Alternate card for sections on white background. #f3f5fa bg.</p>
                 </div>
+              </div>
+              <div><span class="c-tag">.card-white-shadow <span class="badge b-green" style="margin-left:4px;">Canonical</span></span>
+                <div style="background:#fff;border-radius:0.75rem;padding:1.5rem 2rem;box-shadow:16px 16px 40px rgba(54,46,134,0.05);">
+                  <h4>White Shadow Card</h4>
+                  <p>Elevated or featured items. Purple subtle shadow.</p>
+                </div>
+              </div>
+              <div><span class="c-tag">.blog-card <span class="badge b-green" style="margin-left:4px;">Canonical</span></span>
+                <div style="background:#fff;border-radius:0.625rem;overflow:hidden;box-shadow:0 2px 12px rgba(89,49,220,.08);">
+                  <div style="height:80px;background:linear-gradient(135deg,var(--p-trust),var(--p-clarity));"></div>
+                  <div style="padding:1rem 1.25rem;">
+                    <h4>Blog / Resource Card</h4>
+                    <p>CMS and resource content. Image + text layout.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div style="margin-top:14px"><span class="c-tag">.testimonial-card <span class="badge b-green" style="margin-left:4px;">Canonical</span></span>
+              <div style="background:var(--p-margin);border-radius:1rem;padding:2rem;text-align:center;">
+                <p style="font-family:var(--font-body);font-size:14px;color:var(--p-profit);font-weight:600;margin-bottom:6px;">"Pilot transformed how we think about our finances."</p>
+                <p style="font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:1px;color:var(--p-pilot);">— Sarah Chen, CEO</p>
               </div>
             </div>
             <div style="margin-top:14px"><span class="c-tag">.cta — dark card (full width)</span>
@@ -3083,6 +3101,84 @@
               </div>
             </div>
           </div>
+        </div>
+
+        <table class="dt">
+          <thead>
+            <tr>
+              <th>Card</th>
+              <th>Background</th>
+              <th>Radius</th>
+              <th>Shadow</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>.card-white</code></td>
+              <td>White</td>
+              <td><code>0.5rem</code></td>
+              <td>None</td>
+            </tr>
+            <tr>
+              <td><code>.card-gray</code></td>
+              <td><code>#f3f5fa</code></td>
+              <td><code>0.5rem</code></td>
+              <td>None</td>
+            </tr>
+            <tr>
+              <td><code>.card-white-shadow</code></td>
+              <td>White</td>
+              <td><code>0.75rem</code></td>
+              <td>Purple subtle</td>
+            </tr>
+            <tr>
+              <td><code>.blog-card</code></td>
+              <td>Image + Text</td>
+              <td><code>0.625rem</code></td>
+              <td>Standard</td>
+            </tr>
+            <tr>
+              <td><code>.testimonial-card</code></td>
+              <td>Varies</td>
+              <td><code>1rem</code></td>
+              <td>None</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="sub">
+          <div class="sub-title">Deprecated Card Variants <span class="badge b-red" style="margin-left:8px;">Migrate</span></div>
+          <table class="dt">
+            <thead>
+              <tr>
+                <th>Legacy Class</th>
+                <th>Issue</th>
+                <th>Migrate To</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>.card-large</code></td>
+                <td>No radius, 3.75rem padding</td>
+                <td><code>.card-white</code></td>
+              </tr>
+              <tr>
+                <td><code>.card-small</code></td>
+                <td>4px radius, gray border</td>
+                <td><code>.card-white</code> or <code>.card-white-shadow</code></td>
+              </tr>
+              <tr>
+                <td><code>.promo-card</code></td>
+                <td>10px radius, gray shadow</td>
+                <td><code>.card-white-shadow</code></td>
+              </tr>
+              <tr>
+                <td><code>.story-card</code></td>
+                <td>5px radius, gray shadow</td>
+                <td><code>.card-white-shadow</code></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </section>
 
@@ -3098,8 +3194,8 @@
         <div class="pv">
           <div class="pv-head"><span>Nav Preview</span></div>
           <div style="background:#f3f5fa;border-radius:0 0 var(--r-lg) var(--r-lg);overflow:hidden">
-            <div style="background:#3c2d89;height:38px;display:flex;align-items:center;justify-content:center">
-              <span style="font-size:13px;font-weight:600;color:#c8b6fc">🎉 New: AI-powered bookkeeping is here →</span>
+            <div style="background:#f891ff;height:50px;display:flex;align-items:center;justify-content:center">
+              <span style="font-size:13px;font-weight:600;color:#fff">🎉 New: AI-powered bookkeeping is here →</span>
             </div>
             <div
               style="background:#fff;padding:0 24px;height:60px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 2px 8px rgba(0,0,0,.05)">
@@ -3133,11 +3229,11 @@
           <tbody>
             <tr>
               <td>Announcement banner bg</td>
-              <td><code>#3c2d89</code> — deep purple</td>
+              <td><code>#f891ff</code> — CLARITY+ pink <span class="badge b-green" style="margin-left:6px;">Canonical</span></td>
             </tr>
             <tr>
               <td>Banner text</td>
-              <td><code>#c8b6fc</code> — light purple, weight 600</td>
+              <td><code>#ffffff</code> — white, weight 600</td>
             </tr>
             <tr>
               <td>Banner height</td>
