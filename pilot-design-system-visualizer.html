@@ -1518,7 +1518,7 @@
             </tr>
             <tr>
               <td><strong>Text alignment</strong></td>
-              <td>Left-align always — <strong>never centered</strong></td>
+              <td>Left-align default — <strong>center permitted for exceptions</strong></td>
             </tr>
             <tr>
               <td><strong>Drop shadow color</strong></td>
@@ -1809,11 +1809,11 @@
                 <tbody>
                   <tr>
                     <td style="text-align:center;"><span style="color:#16a34a;font-weight:700;font-size:15px;">✓</span></td>
-                    <td>We always <strong>left-align</strong> text. Text can also be <strong>right-aligned</strong> if the circumstances require it.</td>
+                    <td>We default to <strong>left-aligned</strong> text. Text can be <strong>centered</strong> for section headings, pricing, and CTA blocks.</td>
                   </tr>
                   <tr>
                     <td style="text-align:center;"><span style="color:#dc2626;font-weight:700;font-size:15px;">✗</span></td>
-                    <td>Text should <strong>never be centered.</strong></td>
+                    <td>Text should <strong>never be right-aligned.</strong></td>
                   </tr>
                 </tbody>
               </table>
@@ -1830,20 +1830,20 @@
                 <p style="font-family:var(--font-body);font-size:12px;color:var(--p-gray-mid);line-height:1.6;text-align:left;">Body copy always sits left. This is the default for all Pilot content.</p>
               </div>
             </div>
-            <!-- Right align - CONDITIONAL -->
-            <div style="border:2px solid var(--p-access-plus);border-radius:var(--r-md);overflow:hidden;">
-              <div style="background:var(--p-access);padding:8px 12px;font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#78350f;">⚠ Right-Aligned (Conditional)</div>
+            <!-- Right align - NEVER -->
+            <div style="border:2px solid #fecdd3;border-radius:var(--r-md);overflow:hidden;">
+              <div style="background:#fff1f2;padding:8px 12px;font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#9f1239;">✗ Right-Aligned (Never)</div>
               <div style="padding:16px 16px 20px;">
-                <p style="font-family:var(--font-body);font-size:18px;font-weight:600;color:var(--p-profit);margin-bottom:6px;text-align:right;">Financial clarity</p>
-                <p style="font-family:var(--font-body);font-size:12px;color:var(--p-gray-mid);line-height:1.6;text-align:right;">Allowed only when layout circumstances specifically require it.</p>
+                <p style="font-family:var(--font-body);font-size:18px;font-weight:600;color:var(--p-profit);margin-bottom:6px;text-align:right;text-decoration:line-through;opacity:.5;">Financial clarity</p>
+                <p style="font-family:var(--font-body);font-size:12px;color:var(--p-gray-mid);line-height:1.6;text-align:right;text-decoration:line-through;opacity:.5;">Right-aligned text is never used in Pilot content.</p>
               </div>
             </div>
-            <!-- Center align - NEVER -->
-            <div style="border:2px solid #fecdd3;border-radius:var(--r-md);overflow:hidden;">
-              <div style="background:#fff1f2;padding:8px 12px;font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#9f1239;">✗ Centered (Never)</div>
+            <!-- Center align - CONDITIONAL -->
+            <div style="border:2px solid var(--p-access-plus);border-radius:var(--r-md);overflow:hidden;">
+              <div style="background:var(--p-access);padding:8px 12px;font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#78350f;">⚠ Centered (Conditional)</div>
               <div style="padding:16px 16px 20px;">
-                <p style="font-family:var(--font-body);font-size:18px;font-weight:600;color:var(--p-profit);margin-bottom:6px;text-align:center;text-decoration:line-through;opacity:.5;">Financial clarity</p>
-                <p style="font-family:var(--font-body);font-size:12px;color:var(--p-gray-mid);line-height:1.6;text-align:center;text-decoration:line-through;opacity:.5;">Centered text is never used in Pilot content.</p>
+                <p style="font-family:var(--font-body);font-size:18px;font-weight:600;color:var(--p-profit);margin-bottom:6px;text-align:center;">Financial clarity</p>
+                <p style="font-family:var(--font-body);font-size:12px;color:var(--p-gray-mid);line-height:1.6;text-align:center;">Allowed only for section headings, pricing, and CTA blocks.</p>
               </div>
             </div>
           </div>
@@ -2085,17 +2085,17 @@
                 <td>Body</td>
                 <td><code>1rem</code> (16px)</td>
                 <td><code>400</code></td>
-                <td><code>1.75rem</code></td>
+                <td><code>1.75rem (28px)</code></td>
               </tr>
               <tr>
                 <td>Eyebrow</td>
-                <td><code>12px</code></td>
+                <td><code>0.75rem</code> (12px)</td>
                 <td><code>400</code></td>
                 <td>—</td>
               </tr>
               <tr>
                 <td>Cursive accent</td>
-                <td><code>2.5rem</code></td>
+                <td><code>2.5rem</code> (40px)</td>
                 <td><code>400</code></td>
                 <td><code>1</code></td>
               </tr>
@@ -2129,27 +2129,27 @@
             </thead>
             <tbody>
               <tr>
-                <td><code>-0.03em</code></td>
+                <td><code>-0.03em (-0.48px)</code></td>
                 <td>Cursive accent text, slide CTA buttons</td>
               </tr>
               <tr>
-                <td><code>-0.01em</code></td>
+                <td><code>-0.01em (-0.16px)</code></td>
                 <td>Tight headings</td>
               </tr>
               <tr>
-                <td><code>1.2px</code></td>
+                <td><code>0.075em (1.2px)</code></td>
                 <td>Eyebrow labels (uppercase)</td>
               </tr>
               <tr>
-                <td><code>1.92px</code></td>
+                <td><code>0.12em (1.92px)</code></td>
                 <td>Uppercase labels</td>
               </tr>
               <tr>
-                <td><code>2px</code></td>
+                <td><code>0.125em (2px)</code></td>
                 <td>Button text (uppercase)</td>
               </tr>
               <tr>
-                <td><code>0.15em</code></td>
+                <td><code>0.15em (2.4px)</code></td>
                 <td>Wide caps, announcements</td>
               </tr>
             </tbody>
@@ -2169,32 +2169,25 @@
           <div class="sub-title">Spacing Scale</div>
           <div class="sp-grid">
             <div class="sp-row">
-              <div class="sp-bar" style="width:160px"></div><span class="sp-info"><code>160px</code> — Large section gap
-                (top)</span>
+              <div class="sp-bar" style="width:160px"></div><span class="sp-info"><code>10rem (160px)</code> — Large section gap (top)</span>
             </div>
             <div class="sp-row">
-              <div class="sp-bar" style="width:120px"></div><span class="sp-info"><code>120px</code> — Standard section
-                padding (top/bottom)</span>
+              <div class="sp-bar" style="width:120px"></div><span class="sp-info"><code>7.5rem (120px)</code> — Standard section padding (top/bottom)</span>
             </div>
             <div class="sp-row">
-              <div class="sp-bar" style="width:80px"></div><span class="sp-info"><code>5rem (80px)</code> — Footer top
-                padding</span>
+              <div class="sp-bar" style="width:80px"></div><span class="sp-info"><code>5rem (80px)</code> — Footer top padding</span>
             </div>
             <div class="sp-row">
-              <div class="sp-bar" style="width:60px"></div><span class="sp-info"><code>60px</code> — Column gap
-                (pricing)</span>
+              <div class="sp-bar" style="width:60px"></div><span class="sp-info"><code>3.75rem (60px)</code> — Column gap (pricing)</span>
             </div>
             <div class="sp-row">
-              <div class="sp-bar" style="width:48px"></div><span class="sp-info"><code>3rem (48px)</code> — Footer
-                column gap</span>
+              <div class="sp-bar" style="width:48px"></div><span class="sp-info"><code>3rem (48px)</code> — Footer column gap</span>
             </div>
             <div class="sp-row">
-              <div class="sp-bar" style="width:40px"></div><span class="sp-info"><code>40px</code> — Card padding
-                (standard)</span>
+              <div class="sp-bar" style="width:40px"></div><span class="sp-info"><code>2.5rem (40px)</code> — Card padding (standard)</span>
             </div>
             <div class="sp-row">
-              <div class="sp-bar" style="width:16px"></div><span class="sp-info"><code>16px</code> — Default grid
-                gap</span>
+              <div class="sp-bar" style="width:16px"></div><span class="sp-info"><code>1rem (16px)</code> — Default grid gap</span>
             </div>
           </div>
         </div>
@@ -2397,74 +2390,329 @@
       <section class="sec" id="shapes">
         <span class="sec-tag">Foundations</span>
         <h2 class="sec-title">Grids and Shapes</h2>
-        <p class="sec-desc">Our content is anchored by a 12-column grid. Lines and circles add structure and warmth — but only when they earn their place.</p>
+        <p class="sec-desc">Content lives inside fixed-width containers and uses blessed grid ratios that map to a 12-column design grid. Circles add structure and warmth — but only when they earn their place.</p>
 
-        <!-- ── Grids & Pin Lines ── -->
+        <!-- ── Grid System ── -->
         <div class="sub">
-          <div class="sub-title">12-Column Grid & Pin Lines</div>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-bottom:28px;">
-            <!-- Left: visual examples -->
-            <div>
-              <!-- 12-col grid overlay demo -->
-              <div style="position:relative;border-radius:8px;overflow:hidden;margin-bottom:16px;height:200px;background:linear-gradient(135deg,#fce4ec 0%,#ffecd2 100%);">
-                <div style="position:absolute;inset:0;display:grid;grid-template-columns:repeat(12,1fr);gap:0;">
-                  <div style="border-right:1px solid rgba(89,49,220,0.12);height:100%"></div>
-                  <div style="border-right:1px solid rgba(89,49,220,0.12);height:100%"></div>
-                  <div style="border-right:1px solid rgba(89,49,220,0.12);height:100%"></div>
-                  <div style="border-right:1px solid rgba(89,49,220,0.12);height:100%"></div>
-                  <div style="border-right:1px solid rgba(89,49,220,0.12);height:100%"></div>
-                  <div style="border-right:1px solid rgba(89,49,220,0.12);height:100%"></div>
-                  <div style="border-right:1px solid rgba(89,49,220,0.12);height:100%"></div>
-                  <div style="border-right:1px solid rgba(89,49,220,0.12);height:100%"></div>
-                  <div style="border-right:1px solid rgba(89,49,220,0.12);height:100%"></div>
-                  <div style="border-right:1px solid rgba(89,49,220,0.12);height:100%"></div>
-                  <div style="border-right:1px solid rgba(89,49,220,0.12);height:100%"></div>
-                  <div style="height:100%"></div>
-                </div>
-                <div style="position:absolute;top:24px;left:20px;max-width:45%;">
-                  <p style="font-family:var(--font-body);font-size:11px;font-weight:600;color:#281350;line-height:1.4;">Whether you're scaling from 2 to 20 people or preparing for your exit — Pilot works for growing businesses.</p>
-                </div>
-              </div>
-              <!-- Pin lines visual -->
-              <div style="position:relative;border-radius:8px;overflow:hidden;height:120px;background:linear-gradient(180deg,#281350,#3c2069);display:flex;align-items:center;padding:0 20px;">
-                <div style="position:absolute;inset:0;display:grid;grid-template-columns:repeat(12,1fr);gap:0;">
-                  <div style="border-right:1px solid rgba(200,182,252,0.15);height:100%"></div>
-                  <div style="border-right:1px solid rgba(200,182,252,0.15);height:100%"></div>
-                  <div style="border-right:1px solid rgba(200,182,252,0.15);height:100%"></div>
-                  <div style="border-right:1px solid rgba(200,182,252,0.15);height:100%"></div>
-                  <div style="border-right:1px solid rgba(200,182,252,0.15);height:100%"></div>
-                  <div style="border-right:1px solid rgba(200,182,252,0.15);height:100%"></div>
-                  <div style="border-right:1px solid rgba(200,182,252,0.15);height:100%"></div>
-                  <div style="border-right:1px solid rgba(200,182,252,0.15);height:100%"></div>
-                  <div style="border-right:1px solid rgba(200,182,252,0.15);height:100%"></div>
-                  <div style="border-right:1px solid rgba(200,182,252,0.15);height:100%"></div>
-                  <div style="border-right:1px solid rgba(200,182,252,0.15);height:100%"></div>
-                  <div style="height:100%"></div>
-                </div>
-                <div style="position:relative;z-index:1;">
-                  <p style="font-family:var(--font-body);font-size:16px;font-weight:700;color:#fff;margin-bottom:6px;">Didn't set up your business right?</p>
-                  <span style="font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:1px;background:#5931DC;color:#fff;padding:4px 10px;border-radius:999px;">GET THE OPS CHECKLIST →</span>
-                </div>
-              </div>
-            </div>
-            <!-- Right: guidelines text -->
-            <div style="display:flex;flex-direction:column;justify-content:center;">
-              <!-- Mini 12-col grid icon -->
-              <div style="width:120px;height:80px;border:1px solid var(--p-border);border-radius:6px;display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-bottom:24px;overflow:hidden;">
-                <div style="border-right:1px solid var(--p-border);height:100%;display:flex;align-items:flex-end;padding:4px;">
-                  <div style="width:100%;height:30%;background:#e0e0e0;border-radius:2px;"></div>
-                </div>
-                <div style="border-right:1px solid var(--p-border);height:100%;display:flex;align-items:flex-start;padding:4px;">
-                  <div style="width:100%;height:50%;background:#e0e0e0;border-radius:2px;"></div>
-                </div>
-                <div style="border-right:1px solid var(--p-border);height:100%;"></div>
-                <div style="height:100%;"></div>
-              </div>
-              <p style="font-family:var(--font-body);font-size:16px;font-weight:400;color:#000;margin-bottom:20px;line-height:1.6;">Our content should always snap to a 12-column grid to ensure perfect alignment and precision.</p>
-              <p style="font-family:var(--font-body);font-size:16px;font-weight:400;color:#000;margin-bottom:20px;line-height:1.6;">Pin lines help emphasize the grid and anchor content.</p>
-              <p style="font-family:var(--font-body);font-size:16px;font-weight:400;color:#000;line-height:1.6;">However, if you can delete them and the design works without, do without. The underlying column grid anchors the text regardless.</p>
-            </div>
+          <div class="sub-title">Grid System &amp; Blessed Ratios</div>
+          <p style="font-family:var(--font-body);font-size:15px;color:var(--p-black);line-height:1.6;margin-bottom:20px;max-width:680px;">The underlying design grid is 12 columns. In CSS, content uses <code>fr</code> units that map to specific column spans. Only these blessed ratios are permitted.</p>
+
+          <div class="callout c-rule">
+            <span class="ci-icon">⚠</span>
+            <span>Non-standard ratios (e.g. <code>1.25fr</code>, <code>55% 45%</code>) are technical debt and must be migrated to a blessed ratio.</span>
           </div>
+
+          <!-- Ratio mapping table -->
+          <table class="dt" style="margin-top:20px;">
+            <thead>
+              <tr>
+                <th>Ratio</th>
+                <th>12-Col Spans</th>
+                <th>CSS</th>
+                <th style="width:50%;">Visual</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>1 : 1</strong></td>
+                <td>6 + 6</td>
+                <td><code>1fr 1fr</code></td>
+                <td><div style="display:grid;grid-template-columns:1fr 1fr;gap:3px;height:24px;"><div style="background:var(--p-pilot);border-radius:3px;opacity:0.7;"></div><div style="background:var(--p-pilot);border-radius:3px;opacity:0.45;"></div></div></td>
+              </tr>
+              <tr>
+                <td><strong>1 : 2</strong></td>
+                <td>4 + 8</td>
+                <td><code>1fr 2fr</code></td>
+                <td><div style="display:grid;grid-template-columns:1fr 2fr;gap:3px;height:24px;"><div style="background:var(--p-pilot);border-radius:3px;opacity:0.7;"></div><div style="background:var(--p-pilot);border-radius:3px;opacity:0.45;"></div></div></td>
+              </tr>
+              <tr>
+                <td><strong>2 : 1</strong></td>
+                <td>8 + 4</td>
+                <td><code>2fr 1fr</code></td>
+                <td><div style="display:grid;grid-template-columns:2fr 1fr;gap:3px;height:24px;"><div style="background:var(--p-pilot);border-radius:3px;opacity:0.7;"></div><div style="background:var(--p-pilot);border-radius:3px;opacity:0.45;"></div></div></td>
+              </tr>
+              <tr>
+                <td><strong>1 : 3</strong></td>
+                <td>3 + 9</td>
+                <td><code>1fr 3fr</code></td>
+                <td><div style="display:grid;grid-template-columns:1fr 3fr;gap:3px;height:24px;"><div style="background:var(--p-pilot);border-radius:3px;opacity:0.7;"></div><div style="background:var(--p-pilot);border-radius:3px;opacity:0.45;"></div></div></td>
+              </tr>
+              <tr>
+                <td><strong>3 : 1</strong></td>
+                <td>9 + 3</td>
+                <td><code>3fr 1fr</code></td>
+                <td><div style="display:grid;grid-template-columns:3fr 1fr;gap:3px;height:24px;"><div style="background:var(--p-pilot);border-radius:3px;opacity:0.7;"></div><div style="background:var(--p-pilot);border-radius:3px;opacity:0.45;"></div></div></td>
+              </tr>
+              <tr>
+                <td><strong>1 : 1 : 1</strong></td>
+                <td>4 + 4 + 4</td>
+                <td><code>1fr 1fr 1fr</code></td>
+                <td><div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:3px;height:24px;"><div style="background:var(--p-pilot);border-radius:3px;opacity:0.7;"></div><div style="background:var(--p-pilot);border-radius:3px;opacity:0.45;"></div><div style="background:var(--p-pilot);border-radius:3px;opacity:0.3;"></div></div></td>
+              </tr>
+              <tr>
+                <td><strong>1 : 1 : 1 : 1</strong></td>
+                <td>3 + 3 + 3 + 3</td>
+                <td><code>1fr 1fr 1fr 1fr</code></td>
+                <td><div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:3px;height:24px;"><div style="background:var(--p-pilot);border-radius:3px;opacity:0.7;"></div><div style="background:var(--p-pilot);border-radius:3px;opacity:0.45;"></div><div style="background:var(--p-pilot);border-radius:3px;opacity:0.3;"></div><div style="background:var(--p-pilot);border-radius:3px;opacity:0.2;"></div></div></td>
+              </tr>
+              <tr>
+                <td><strong>1×5</strong></td>
+                <td style="color:var(--p-gray-pale);">—</td>
+                <td><code>1fr 1fr 1fr 1fr 1fr</code></td>
+                <td><div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr 1fr;gap:3px;height:24px;"><div style="background:var(--p-pilot);border-radius:3px;opacity:0.7;"></div><div style="background:var(--p-pilot);border-radius:3px;opacity:0.55;"></div><div style="background:var(--p-pilot);border-radius:3px;opacity:0.4;"></div><div style="background:var(--p-pilot);border-radius:3px;opacity:0.28;"></div><div style="background:var(--p-pilot);border-radius:3px;opacity:0.18;"></div></div></td>
+              </tr>
+              <tr>
+                <td><strong>Full</strong></td>
+                <td>12</td>
+                <td><code>1fr</code></td>
+                <td><div style="display:grid;grid-template-columns:1fr;gap:3px;height:24px;"><div style="background:var(--p-pilot);border-radius:3px;opacity:0.7;"></div></div></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!-- Container widths -->
+          <div class="sub-title" style="margin-top:28px;">Container Widths</div>
+          <table class="dt">
+            <thead>
+              <tr>
+                <th>Container</th>
+                <th>Max Width</th>
+                <th>H-Padding</th>
+                <th>Usage</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>Standard</code></td>
+                <td><code>75.5rem (1208px)</code></td>
+                <td><code>2.5rem (40px)</code></td>
+                <td>Default page container</td>
+              </tr>
+              <tr>
+                <td><code>Narrow</code></td>
+                <td><code>60rem (960px)</code></td>
+                <td><code>2.5rem (40px)</code></td>
+                <td>Text-heavy, focused content</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!-- Visual examples -->
+          <div class="sub-title" style="margin-top:28px;">Live Examples</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:8px;">
+
+            <!-- 1:1 example — pin lines, no cards -->
+            <div style="position:relative;border-radius:8px;overflow:hidden;height:180px;background:linear-gradient(135deg,var(--p-access),var(--p-clarity));">
+              <div style="position:absolute;inset:0;display:grid;grid-template-columns:repeat(12,1fr);gap:0;">
+                <div style="border-right:1px solid rgba(89,49,220,0.10);height:100%"></div>
+                <div style="border-right:1px solid rgba(89,49,220,0.10);height:100%"></div>
+                <div style="border-right:1px solid rgba(89,49,220,0.10);height:100%"></div>
+                <div style="border-right:1px solid rgba(89,49,220,0.10);height:100%"></div>
+                <div style="border-right:1px solid rgba(89,49,220,0.10);height:100%"></div>
+                <div style="border-right:1px solid rgba(89,49,220,0.10);height:100%"></div>
+                <div style="border-right:1px solid rgba(89,49,220,0.10);height:100%"></div>
+                <div style="border-right:1px solid rgba(89,49,220,0.10);height:100%"></div>
+                <div style="border-right:1px solid rgba(89,49,220,0.10);height:100%"></div>
+                <div style="border-right:1px solid rgba(89,49,220,0.10);height:100%"></div>
+                <div style="border-right:1px solid rgba(89,49,220,0.10);height:100%"></div>
+                <div style="height:100%"></div>
+              </div>
+              <div style="position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:0;height:100%;">
+                <div style="padding:16px;border-right:1px solid rgba(89,49,220,0.18);">
+                  <p style="font-family:var(--font-body);font-size:14px;font-weight:600;color:var(--p-profit);margin-bottom:6px;">Bookkeeping</p>
+                  <p style="font-family:var(--font-body);font-size:11px;color:var(--p-profit);line-height:1.5;opacity:0.8;">Whether you're scaling from 2 to 20 people — Pilot works for growing businesses.</p>
+                </div>
+                <div style="padding:16px;">
+                  <p style="font-family:var(--font-body);font-size:14px;font-weight:600;color:var(--p-profit);margin-bottom:6px;">Tax</p>
+                  <p style="font-family:var(--font-body);font-size:11px;color:var(--p-profit);line-height:1.5;opacity:0.8;">AI-powered bookkeeping that handles your finances end-to-end.</p>
+                </div>
+              </div>
+              <div style="position:absolute;bottom:8px;left:12px;z-index:2;"><span style="font-family:var(--font-mono);font-size:9px;background:rgba(89,49,220,0.12);color:var(--p-pilot);padding:2px 8px;border-radius:99px;">1:1 · pin line divider</span></div>
+            </div>
+
+            <!-- 2:1 example -->
+            <div style="position:relative;border-radius:8px;overflow:hidden;height:180px;background:linear-gradient(180deg,var(--p-profit),#3c2069);">
+              <div style="position:absolute;inset:0;display:grid;grid-template-columns:repeat(12,1fr);gap:0;">
+                <div style="border-right:1px solid rgba(200,182,252,0.12);height:100%"></div>
+                <div style="border-right:1px solid rgba(200,182,252,0.12);height:100%"></div>
+                <div style="border-right:1px solid rgba(200,182,252,0.12);height:100%"></div>
+                <div style="border-right:1px solid rgba(200,182,252,0.12);height:100%"></div>
+                <div style="border-right:1px solid rgba(200,182,252,0.12);height:100%"></div>
+                <div style="border-right:1px solid rgba(200,182,252,0.12);height:100%"></div>
+                <div style="border-right:1px solid rgba(200,182,252,0.12);height:100%"></div>
+                <div style="border-right:1px solid rgba(200,182,252,0.12);height:100%"></div>
+                <div style="border-right:1px solid rgba(200,182,252,0.12);height:100%"></div>
+                <div style="border-right:1px solid rgba(200,182,252,0.12);height:100%"></div>
+                <div style="border-right:1px solid rgba(200,182,252,0.12);height:100%"></div>
+                <div style="height:100%"></div>
+              </div>
+              <div style="position:relative;z-index:1;display:grid;grid-template-columns:2fr 1fr;gap:12px;padding:16px;height:100%;align-items:center;">
+                <div>
+                  <p style="font-family:var(--font-body);font-size:16px;font-weight:600;color:#fff;margin-bottom:8px;">Didn't set up your business right?</p>
+                  <p style="font-family:var(--font-body);font-size:11px;color:var(--p-highlight);line-height:1.5;margin-bottom:12px;">We fix the mistakes other accountants miss.</p>
+                  <span style="font-family:var(--font-mono);font-size:9px;text-transform:uppercase;letter-spacing:1px;background:var(--p-pilot);color:#fff;padding:5px 12px;border-radius:999px;">GET THE OPS CHECKLIST →</span>
+                </div>
+                <div style="background:rgba(200,182,252,0.12);border-radius:6px;height:100%;"></div>
+              </div>
+              <div style="position:absolute;bottom:8px;left:12px;z-index:2;"><span style="font-family:var(--font-mono);font-size:9px;background:rgba(200,182,252,0.15);color:var(--p-highlight);padding:2px 8px;border-radius:99px;">2:1 · 8+4 cols</span></div>
+            </div>
+
+            <!-- 1:1:1 example — pin lines, no cards -->
+            <div style="position:relative;border-radius:8px;overflow:hidden;height:180px;background:var(--p-margin);">
+              <div style="position:absolute;inset:0;display:grid;grid-template-columns:repeat(12,1fr);gap:0;">
+                <div style="border-right:1px solid rgba(89,49,220,0.08);height:100%"></div>
+                <div style="border-right:1px solid rgba(89,49,220,0.08);height:100%"></div>
+                <div style="border-right:1px solid rgba(89,49,220,0.08);height:100%"></div>
+                <div style="border-right:1px solid rgba(89,49,220,0.08);height:100%"></div>
+                <div style="border-right:1px solid rgba(89,49,220,0.08);height:100%"></div>
+                <div style="border-right:1px solid rgba(89,49,220,0.08);height:100%"></div>
+                <div style="border-right:1px solid rgba(89,49,220,0.08);height:100%"></div>
+                <div style="border-right:1px solid rgba(89,49,220,0.08);height:100%"></div>
+                <div style="border-right:1px solid rgba(89,49,220,0.08);height:100%"></div>
+                <div style="border-right:1px solid rgba(89,49,220,0.08);height:100%"></div>
+                <div style="border-right:1px solid rgba(89,49,220,0.08);height:100%"></div>
+                <div style="height:100%"></div>
+              </div>
+              <div style="position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;height:100%;">
+                <div style="padding:16px;border-right:1px solid #e0e0e0;">
+                  <p style="font-family:var(--font-mono);font-size:8px;text-transform:uppercase;letter-spacing:1px;color:var(--p-pilot);margin-bottom:6px;">Bookkeeping</p>
+                  <p style="font-family:var(--font-body);font-size:10px;font-weight:600;color:var(--p-profit);line-height:1.4;">Expert bookkeepers for startups</p>
+                </div>
+                <div style="padding:16px;border-right:1px solid #e0e0e0;">
+                  <p style="font-family:var(--font-mono);font-size:8px;text-transform:uppercase;letter-spacing:1px;color:var(--p-pilot);margin-bottom:6px;">Tax</p>
+                  <p style="font-family:var(--font-body);font-size:10px;font-weight:600;color:var(--p-profit);line-height:1.4;">Federal and state tax filing</p>
+                </div>
+                <div style="padding:16px;">
+                  <p style="font-family:var(--font-mono);font-size:8px;text-transform:uppercase;letter-spacing:1px;color:var(--p-pilot);margin-bottom:6px;">CFO</p>
+                  <p style="font-family:var(--font-body);font-size:10px;font-weight:600;color:var(--p-profit);line-height:1.4;">Strategic financial guidance</p>
+                </div>
+              </div>
+              <div style="position:absolute;bottom:8px;left:12px;z-index:2;"><span style="font-family:var(--font-mono);font-size:9px;background:rgba(89,49,220,0.12);color:var(--p-pilot);padding:2px 8px;border-radius:99px;">1:1:1 · pin line dividers</span></div>
+            </div>
+
+            <!-- 1:3 example — pin line divider -->
+            <div style="position:relative;border-radius:8px;overflow:hidden;height:180px;background:var(--p-trust);">
+              <div style="position:absolute;inset:0;display:grid;grid-template-columns:repeat(12,1fr);gap:0;">
+                <div style="border-right:1px solid rgba(89,49,220,0.08);height:100%"></div>
+                <div style="border-right:1px solid rgba(89,49,220,0.08);height:100%"></div>
+                <div style="border-right:1px solid rgba(89,49,220,0.08);height:100%"></div>
+                <div style="border-right:1px solid rgba(89,49,220,0.08);height:100%"></div>
+                <div style="border-right:1px solid rgba(89,49,220,0.08);height:100%"></div>
+                <div style="border-right:1px solid rgba(89,49,220,0.08);height:100%"></div>
+                <div style="border-right:1px solid rgba(89,49,220,0.08);height:100%"></div>
+                <div style="border-right:1px solid rgba(89,49,220,0.08);height:100%"></div>
+                <div style="border-right:1px solid rgba(89,49,220,0.08);height:100%"></div>
+                <div style="border-right:1px solid rgba(89,49,220,0.08);height:100%"></div>
+                <div style="border-right:1px solid rgba(89,49,220,0.08);height:100%"></div>
+                <div style="height:100%"></div>
+              </div>
+              <div style="position:relative;z-index:1;display:grid;grid-template-columns:1fr 3fr;gap:0;height:100%;align-items:stretch;">
+                <div style="padding:16px;border-right:1px solid rgba(89,49,220,0.15);display:flex;flex-direction:column;gap:6px;justify-content:center;">
+                  <p style="font-family:var(--font-mono);font-size:8px;text-transform:uppercase;letter-spacing:1px;color:var(--p-pilot);margin-bottom:4px;">Sidebar</p>
+                  <p style="font-family:var(--font-body);font-size:10px;color:var(--p-black);line-height:1.4;opacity:0.7;">Navigation or filter links live here</p>
+                </div>
+                <div style="padding:16px;">
+                  <p style="font-family:var(--font-mono);font-size:8px;text-transform:uppercase;letter-spacing:1px;color:var(--p-pilot);margin-bottom:6px;">Main Content</p>
+                  <p style="font-family:var(--font-body);font-size:10px;font-weight:400;color:var(--p-black);line-height:1.5;">The line between sidebar and content is the boundary. No card needed — the pin line does the work.</p>
+                </div>
+              </div>
+              <div style="position:absolute;bottom:8px;left:12px;z-index:2;"><span style="font-family:var(--font-mono);font-size:9px;background:rgba(89,49,220,0.12);color:var(--p-pilot);padding:2px 8px;border-radius:99px;">1:3 · pin line divider</span></div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ── Pin Lines vs Cards ── -->
+        <div class="sub">
+          <div class="sub-title">Pin Lines vs Cards</div>
+          <p style="font-family:var(--font-body);font-size:15px;color:var(--p-black);line-height:1.6;margin-bottom:16px;max-width:680px;">Pilot uses thin intersecting lines — not explicit card containers — as the primary way to separate grid content. Lines create structure without the visual weight of bordered cards.</p>
+
+          <div class="callout c-rule">
+            <span class="ci-icon">⚠</span>
+            <span><strong>Default to lines, not cards.</strong> Use a 1px border between columns and rows to divide content. Only reach for an explicit card when the content needs elevation (shadow) or a distinct background color.</span>
+          </div>
+
+          <!-- Side-by-side comparison -->
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:20px;margin-bottom:8px;">
+
+            <!-- ✓ Pin Lines (preferred) -->
+            <div style="border:2px solid #bbf7d0;border-radius:var(--r-md);overflow:hidden;">
+              <div style="background:#f0fdf4;padding:8px 12px;font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#166534;">✓ Pin Lines (Default)</div>
+              <div style="padding:0;">
+                <div style="display:grid;grid-template-columns:1fr 1fr 1fr;">
+                  <!-- Col 1 -->
+                  <div style="padding:16px;border-right:1px solid var(--p-border);">
+                    <p style="font-family:var(--font-body);font-size:14px;font-weight:600;color:var(--p-profit);margin-bottom:4px;">Yi Jean Lim</p>
+                    <p style="font-family:var(--font-mono);font-size:8px;text-transform:uppercase;letter-spacing:0.5px;color:var(--p-pilot);margin-bottom:8px;background:var(--p-access);display:inline-block;padding:2px 6px;border-radius:3px;">Former investment banker</p>
+                    <p style="font-family:var(--font-body);font-size:10px;color:var(--p-black);line-height:1.5;">"We bring reality-anchored clarity and a focus on rapid time-to-value."</p>
+                  </div>
+                  <!-- Col 2 -->
+                  <div style="padding:16px;border-right:1px solid var(--p-border);">
+                    <p style="font-family:var(--font-body);font-size:14px;font-weight:600;color:var(--p-profit);margin-bottom:4px;">Cole Levin</p>
+                    <p style="font-family:var(--font-mono);font-size:8px;text-transform:uppercase;letter-spacing:0.5px;color:var(--p-pilot);margin-bottom:8px;background:var(--p-trust);display:inline-block;padding:2px 6px;border-radius:3px;">Finance Director</p>
+                    <p style="font-family:var(--font-body);font-size:10px;color:var(--p-black);line-height:1.5;">"The difference between companies that scale and those that stall?"</p>
+                  </div>
+                  <!-- Col 3 -->
+                  <div style="padding:16px;">
+                    <p style="font-family:var(--font-body);font-size:14px;font-weight:600;color:var(--p-profit);margin-bottom:4px;">Neha Banik</p>
+                    <p style="font-family:var(--font-mono);font-size:8px;text-transform:uppercase;letter-spacing:0.5px;color:var(--p-pilot);margin-bottom:8px;background:var(--p-clarity);display:inline-block;padding:2px 6px;border-radius:3px;">Corporate Strategist</p>
+                    <p style="font-family:var(--font-body);font-size:10px;color:var(--p-black);line-height:1.5;">"Small businesses need clear financials and someone in their corner."</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ✗ Explicit Cards (only when needed) -->
+            <div style="border:2px solid var(--p-access-plus);border-radius:var(--r-md);overflow:hidden;">
+              <div style="background:var(--p-access);padding:8px 12px;font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#78350f;">⚠ Explicit Cards (Only When Needed)</div>
+              <div style="padding:12px;">
+                <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;">
+                  <div style="background:var(--p-margin);border-radius:6px;padding:14px;box-shadow:0 2px 8px rgba(89,49,220,0.06);">
+                    <p style="font-family:var(--font-body);font-size:14px;font-weight:600;color:var(--p-profit);margin-bottom:4px;">Yi Jean Lim</p>
+                    <p style="font-family:var(--font-body);font-size:10px;color:var(--p-black);line-height:1.5;">"We bring reality-anchored clarity."</p>
+                  </div>
+                  <div style="background:var(--p-margin);border-radius:6px;padding:14px;box-shadow:0 2px 8px rgba(89,49,220,0.06);">
+                    <p style="font-family:var(--font-body);font-size:14px;font-weight:600;color:var(--p-profit);margin-bottom:4px;">Cole Levin</p>
+                    <p style="font-family:var(--font-body);font-size:10px;color:var(--p-black);line-height:1.5;">"Companies that scale measure what matters."</p>
+                  </div>
+                  <div style="background:var(--p-margin);border-radius:6px;padding:14px;box-shadow:0 2px 8px rgba(89,49,220,0.06);">
+                    <p style="font-family:var(--font-body);font-size:14px;font-weight:600;color:var(--p-profit);margin-bottom:4px;">Neha Banik</p>
+                    <p style="font-family:var(--font-body);font-size:10px;color:var(--p-black);line-height:1.5;">"Small businesses need clear financials."</p>
+                  </div>
+                </div>
+                <p style="font-family:var(--font-body);font-size:10px;color:var(--p-gray-pale);margin-top:10px;line-height:1.4;">Use cards only when content needs elevation (shadow) or a distinct background.</p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- When to use which -->
+          <table class="dt" style="margin-top:20px;">
+            <thead>
+              <tr>
+                <th>Pattern</th>
+                <th>When to Use</th>
+                <th>CSS</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Pin lines</strong></td>
+                <td>Team profiles, feature comparisons, pricing columns, any repeating content within a shared context</td>
+                <td><code>border-right: 1px solid #e0e0e0</code></td>
+              </tr>
+              <tr>
+                <td><strong>Row dividers</strong></td>
+                <td>Stacked rows within a section (FAQ, feature lists, table-like layouts)</td>
+                <td><code>border-bottom: 1px solid #e0e0e0</code></td>
+              </tr>
+              <tr>
+                <td><strong>Cards</strong></td>
+                <td>Only when content needs visual elevation — distinct background, shadow, or clickable surface</td>
+                <td>Canonical card classes</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
 
         <!-- ── Circles ── -->

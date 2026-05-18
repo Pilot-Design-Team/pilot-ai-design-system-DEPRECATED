@@ -13,9 +13,9 @@
 | Tech font           | Space Mono (sparingly)                          |
 | Human accent font   | La Belle Aurore (≤4 words)                      |
 | CTA border-radius   | `999px` (full pill)                             |
-| Text alignment      | Left only — never centered                      |
+| Text alignment      | Left-align by default (see exceptions below)    |
 | Drop shadow color   | Purple family only, blur 50–100, opacity 10–20% |
-| Container max-width | `75.5rem` (1208px)                              |
+| Container max-width | `75.5rem` (1208px) standard · `60rem` (960px) narrow |
 | Base text color     | `#3f3c3d`                                       |
 
 ---
@@ -121,10 +121,13 @@ Euclid B works across all audiences and financial maturity levels.
 }
 ```
 
-Webflow also uses shorthand aliases for this font:
+**Canonical CSS font-family stack** (use this for all implementations):
 
-- `font-family: Euclid, sans-serif` — used in headings, body, footer titles
-- `font-family: Euclidcircularb Webs, sans-serif` — used in hero form
+```css
+font-family: 'Euclid Circular B', 'Euclidcircularb Webs', sans-serif;
+```
+
+Webflow uses multiple aliases (`Euclid`, `Euclid Circular B`, `Euclidcircularb Webs`). Always use the canonical stack above to ensure cross-environment consistency.
 
 #### Secondary: Space Mono
 
@@ -156,17 +159,26 @@ legal text.
 }
 ```
 
-Also referenced as `Space Mono` (the Google Fonts name).
+**Canonical CSS font-family stack:**
+
+```css
+font-family: 'Space Mono', 'Spacemono', monospace;
+```
+
+Webflow uses `Spacemono` (no space). Always use the canonical stack above.
 
 #### Accent: La Belle Aurore
 
 Decorative script/cursive font. Used for brand accent text (e.g.,
 `.home_cursive` class).
 
+**Canonical CSS font-family stack:**
+
 ```css
-/* Loaded via WebFont.load({ google: { families: ["La Belle Aurore:300,400,500,600,700"] } }) */
-font-family: "La Belle Aurore", sans-serif;
+font-family: 'La Belle Aurore', cursive;
 ```
+
+Loaded via `WebFont.load({ google: { families: ["La Belle Aurore:300,400,500,600,700"] } })`.
 
 Usage: `.home_cursive` — color: `#281350`, font-size: `2.5rem`, font-weight:
 `400`, letter-spacing: `-0.03em`, line-height: `1`.
@@ -196,12 +208,16 @@ p {
 
 ### Typography Rules
 
-- **We always left-align text.** Text can also be right-aligned if the
-  circumstances require it.
-- **Text should never be centered.** No exceptions in standard content. _(The
-  only permitted exception is CTA banner sections — full-width colored banners
-  with a single headline + button — where centered layout is a deliberate design
-  pattern.)_
+#### Text Alignment
+
+- **Default to left-align.** Left-alignment is the standard for all text.
+- **Right-alignment is never allowed.**
+- **Centering is permitted only in these specific contexts:**
+  - Section headings (standalone `<h2>` introducing a new page section)
+  - Pricing layouts (plan names, price displays, tab labels)
+  - Standalone CTA blocks (full-width conversion sections)
+- **All other text must not be centered.** Body copy, card content, feature
+  descriptions, and navigation text are always left-aligned.
 
 #### Font Weight Conventions
 
@@ -209,25 +225,24 @@ Font weight `600` (SemiBold) is Pilot's primary emphasis weight — it carries a
 headings, section titles, stats callouts, and CTA labels. This is a deliberate
 brand choice: `700` (Bold) is **not** used for headings.
 
-| Weight | Role                                                               | Frequency |
-| ------ | ------------------------------------------------------------------ | --------- |
-| `300`  | Light / modifier text in mixed-weight headlines (Euclid Light)     | Low       |
-| `400`  | Body copy, regular paragraphs, form labels, nav links              | Standard  |
-| `500`  | Mid-emphasis (utility classes only, rare)                          | Rare      |
-| `600`  | **All headings**, section titles, stats, nav active, pricing, CTAs | Primary   |
-| `700`  | Inline `<strong>` / bold spans only — **never for headings**       | Low       |
-| `900`  | Avoid — almost never used                                          | Avoid     |
+| Weight | Role                                                               | Status          |
+| ------ | ------------------------------------------------------------------ | --------------- |
+| `400`  | Body copy, regular paragraphs, form labels, nav links              | **Standard**    |
+| `600`  | **All headings**, section titles, stats, nav active, pricing, CTAs | **Primary**     |
+| `700`  | Inline `<strong>` / bold spans only — **never for headings**       | Permitted       |
+| `300`  | ~~Light text~~ — migrate to `400`                                  | ⚠️ **Legacy**  |
+| `500`  | ~~Mid-emphasis~~ — migrate to `600`                                | ⚠️ **Legacy**  |
+| `900`  | ~~Heavy~~ — do not use                                             | ❌ **Avoid**    |
 
 **Rules:**
 
 - Use `600` for all heading elements (`h1`–`h6`), `.heading-large/medium/small`,
   section titles, stat callouts, and pricing text.
 - Use `400` for body copy, descriptions, and supporting text.
-- Use `300` (Euclid Light) only for the "context" part of mixed-weight headlines
-  — e.g., "**5 consecutive quarters** of net sales growth" where the bold portion
-  is `600` and the light portion is `300`.
 - Use `700` only for inline bold (`<strong>`) within body paragraphs and for
   Space Mono bold (CTA buttons). **Never use `700` on Euclid headings.**
+- **Do not use `300` or `500`.** These weights exist on the live site as legacy
+  patterns and should be migrated to `400` and `600` respectively.
 
 ---
 
@@ -326,34 +341,67 @@ Webflow default fallbacks (before overrides):
 
 ### Font Weight Scale
 
-| Weight | Usage                               |
-| ------ | ----------------------------------- |
-| `300`  | Light text, Euclid Circular B Light |
-| `400`  | Body text, regular weight           |
-| `500`  | Medium emphasis                     |
-| `600`  | Headings, semibold CTAs, nav items  |
-| `700`  | Bold, strong emphasis               |
-| `900`  | Rare / heavy use                    |
+| Weight | Usage                              | Status          |
+| ------ | ---------------------------------- | --------------- |
+| `400`  | Body text, regular weight          | **Standard**    |
+| `600`  | Headings, semibold CTAs, nav items | **Primary**     |
+| `700`  | Bold, strong emphasis              | Permitted       |
+| `300`  | ~~Light text~~ — migrate to `400` | ⚠️ **Legacy**  |
+| `500`  | ~~Medium emphasis~~ — migrate to `600` | ⚠️ **Legacy** |
+| `900`  | Do not use                         | ❌ **Avoid**    |
 
 ---
 
-### Font Size Scale (pixel equivalents, base 16px)
+### Font Size Scale (Semantic Tiers)
 
-| rem Value  | px Equivalent | Usage                              |
-| ---------- | ------------- | ---------------------------------- |
-| `0.75rem`  | 12px          | Small labels, eyebrows, legal text |
-| `0.875rem` | 14px          | Small body text                    |
-| `1rem`     | 16px          | Base body text                     |
-| `1.125rem` | 18px          | Hero form, select inputs           |
-| `1.25rem`  | 20px          | Footer titles, large body          |
-| `1.5rem`   | 24px          | H4, card headers                   |
-| `1.75rem`  | 28px          | Medium headings                    |
-| `2rem`     | 32px          | H3, `.heading-medium`              |
-| `2.5rem`   | 40px          | H2, cursive accent                 |
-| `3rem`     | 48px          | H1, `.heading-large`               |
-| `3.5rem`   | 56px          | Large display                      |
-| `4rem`     | 64px          | XL display                         |
-| `5rem`     | 80px          | Hero display                       |
+Font sizes are organized into semantic tiers. Pick the right tier for your
+content type; the exact size within a tier depends on context and emphasis.
+
+#### Display Tier (hero headlines, stat callouts)
+
+| Size | px | Line Height | Class Example | Notes |
+| --- | --- | --- | --- | --- |
+| `4.5rem` | 72px | — | `.text-4-5rem` | Maximum display |
+| `4.2rem` | 67px | 4.8rem | `.text-4-2rem` | Large display |
+| `4rem` | 64px | 120% | `.text-4rem` | XL stat numbers |
+| `3.75rem` | 60px | 107% / 4rem | `.heading-3-75rem`, `.text-3-75rem` | Hero headlines |
+| `3.6rem` | 58px | 4.3rem | `.heading-3-6rem` | Large page titles |
+| `3rem` | 48px | 3.5–3.6rem | `.heading-large`, `h1` | Standard H1 |
+
+#### Heading Tier (section titles, card headers)
+
+| Size | px | Line Height | Class Example | Notes |
+| --- | --- | --- | --- | --- |
+| `2.5rem` | 40px | 115% | `h2`, `.new_h2` | Section headings |
+| `2.4rem` | 38px | 3rem | `.heading-medium-2-4rem` | Large section heading |
+| `2.25rem` | 36px | 2.75rem | `.heading-2-25rem` | Medium section heading |
+| `2rem` | 32px | 2.2–2.7rem | `.heading-medium`, `h3` | Card titles |
+| `1.75rem` | 28px | — | `.text-1-75rem` | Subsection headers |
+| `1.5rem` | 24px | 2–2.25rem | `.heading-small`, `h4` | Small headers |
+
+#### Subheading Tier (intro text, large body, pull quotes)
+
+| Size | px | Line Height | Class Example | Notes |
+| --- | --- | --- | --- | --- |
+| `1.375rem` | 22px | 1.9rem | `.text-1-375rem` | Feature descriptions |
+| `1.25rem` | 20px | 1.875rem | `.text-1-25rem`, `h5` | Large body / footer titles |
+| `1.125rem` | 18px | 1.9rem | `.text-1-125rem` | Hero form inputs |
+
+#### Body Tier (paragraphs, descriptions, UI text)
+
+| Size | px | Line Height | Class Example | Notes |
+| --- | --- | --- | --- | --- |
+| `1rem` | 16px | 1.5–1.75rem | `.text-1rem`, `p`, `body` | Default body |
+| `0.9rem` | 14.4px | — | `.text-0-9rem` | Compact body |
+| `0.875rem` | 14px | 135% | `.text-0-875rem` | Small body / meta |
+
+#### Caption Tier (labels, legal, fine print)
+
+| Size | px | Line Height | Class Example | Notes |
+| --- | --- | --- | --- | --- |
+| `0.8125rem` | 13px | 135% | `.text-0-8125rem` | Fine print, footer legal |
+| `0.8rem` | 12.8px | 120% | `.text-0-8rem` | Inline labels |
+| `0.75rem` | 12px | — | Eyebrow default | Eyebrow text, small caps |
 
 ---
 
@@ -443,8 +491,8 @@ standard. Only use the "+" variants for accents, and sparingly.
 | Name             | CSS Variable    | Hex       | Usage                                                         |
 | ---------------- | --------------- | --------- | ------------------------------------------------------------- |
 | Error Red        | `--error-red`   | `#ce1836` | Form validation errors · **Product only — not for marketing** |
-| CTA Green        | `--cta-green`   | `#47bfa4` | Green CTA links · **Product only — not for marketing**        |
-| Teal/Aqua        | —               | `#3da291` | Accent color                                                  |
+| CTA Green        | `--cta-green`   | `#47bfa4` | ⚠️ **Deprecated.** Do not use for marketing CTAs. Purple is the only CTA color. |
+| Teal/Aqua        | —               | `#3da291` | ⚠️ **Deprecated.** Legacy green hover state.                  |
 | Bright Blue      | `--bright-blue` | `#4f9bf3` | Informational blue                                            |
 | Supernova Yellow | `--supernova`   | `#ffcc00` | Attention/highlight                                           |
 | Olive Green      | `--olive-green` | `#6e9605` | Growth eyebrow labels                                         |
@@ -508,17 +556,16 @@ standard. Only use the "+" variants for accents, and sparingly.
 
 ### Container / Layout Widths
 
-| Class                          | Max Width          | H-Padding |
-| ------------------------------ | ------------------ | --------- |
-| `.container`                   | `75.5rem` (1208px) | `40px`    |
-| `.container-narrow`            | `856px`            | `40px`    |
-| `.container-narrower`          | `766px`            | `40px`    |
-| `.container-max-width-836px`   | `836px`            | —         |
-| `.container-max-width-1080px`  | `1080px`           | —         |
-| `.container-max-85rem`         | `85rem` (1360px)   | —         |
-| `.container-max-width-72-5rem` | `72.5rem`          | —         |
-| `.container-max-width-1222`    | `1222px`           | —         |
-| `.container-max-80rem`         | `80rem` (1280px)   | —         |
+Two canonical container widths. All other widths on the live site are legacy.
+
+| Container | Max Width | H-Padding | When to use |
+| --- | --- | --- | --- |
+| **Standard** | `75.5rem` (1208px) | `40px` | Default for all page layouts |
+| **Narrow** | `60rem` (960px) | `40px` | Text-heavy content — blog, legal, long-form reading |
+
+> ⚠️ **Legacy widths** (do not use for new pages): `856px`, `766px`, `836px`,
+> `1080px`, `85rem`, `72.5rem`, `1222px`, `80rem`. These exist on the live site
+> and should be migrated to Standard or Narrow.
 
 ### Section Padding Patterns
 
@@ -556,6 +603,27 @@ standard. Only use the "+" variants for accents, and sparingly.
 
 ### Grid System
 
+#### Blessed Grid Ratios
+
+Only these column ratios should be used for new layouts. All other ratios on the
+live site are technical debt and should be migrated.
+
+| Ratio | CSS | Usage |
+| --- | --- | --- |
+| **1** | `1fr` | Single column (mobile, full-width content) |
+| **1:1** | `1fr 1fr` | Two equal columns |
+| **1:2** | `1fr 2fr` | Sidebar + main content |
+| **2:1** | `2fr 1fr` | Main content + sidebar |
+| **1:3** | `1fr 3fr` | Narrow sidebar + wide content |
+| **3:1** | `3fr 1fr` | Wide content + narrow sidebar |
+| **1:1:1** | `1fr 1fr 1fr` | Three equal columns |
+| **1:1:1:1** | `1fr 1fr 1fr 1fr` | Four equal columns |
+| **1:1:1:1:1** | `1fr 1fr 1fr 1fr 1fr` | Five equal columns (footer) |
+
+> ⚠️ **Non-compliant ratios on the live site** (technical debt — do not replicate):
+> `1.25fr`, `1.36fr`, `1.4fr`, `1.5fr`, `1.6fr`, `55% 45%`, `60% 10% 30%`,
+> `4fr .5fr 1fr .5fr 2fr`, and other bespoke fractional ratios.
+
 ```css
 /* Default Webflow grid */
 .w-layout-grid {
@@ -567,7 +635,7 @@ standard. Only use the "+" variants for accents, and sparingly.
   display: grid;
 }
 
-/* Utility grids */
+/* Canonical grid utilities */
 .grid-2col {
   grid-template-columns: 1fr 1fr;
   column-gap: 3.75rem;
@@ -576,24 +644,9 @@ standard. Only use the "+" variants for accents, and sparingly.
   grid-template-columns: 1fr 1fr 1fr;
   gap: 16px;
 }
-.grid-5-col {
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  gap: 16px;
-}
-.grid__3 {
-  grid-template-columns: 1fr 1fr 1fr;
-}
-.grid__4 {
+.grid-4-col {
   grid-template-columns: 1fr 1fr 1fr 1fr;
-}
-.grid-quotes {
-  grid-template-columns: 1fr 1fr 1fr;
-  column-gap: 40px;
-  row-gap: 30px;
-}
-.pricing-columns {
-  grid-template-columns: 1fr 1fr;
-  column-gap: 40px;
+  gap: 16px;
 }
 .footer-grid {
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -601,62 +654,163 @@ standard. Only use the "+" variants for accents, and sparingly.
 }
 ```
 
+#### Pin Lines vs Cards
+
+**Default to lines, not cards.** When content lives inside a grid, the columns
+and rows are separated by thin 1px intersecting lines (`border-right`,
+`border-bottom`). This creates visual structure without the heaviness of card
+containers.
+
+Cards should only be used **intentionally** — when content needs:
+
+- Visual elevation (shadow)
+- A distinct background color different from the section
+- A clickable surface (e.g. blog cards, link cards)
+
+If the blessed grid ratio already defines the column boundaries, a card inside
+that column is redundant visual weight. The line *is* the boundary.
+
+| Pattern | When to Use | CSS |
+| --- | --- | --- |
+| **Pin lines** | Team profiles, feature comparisons, pricing columns, repeating content within a shared context | `border-right: 1px solid #e0e0e0` |
+| **Row dividers** | Stacked rows within a section (FAQ, feature lists) | `border-bottom: 1px solid #e0e0e0` |
+| **Cards** | Only when content needs elevation, distinct background, or a clickable surface | Canonical card classes (Section 38) |
+
 ---
 
 ## 6. Button Styles
 
-### Primary CTA Button (hero email form)
+### Canonical Button System (`new_btn`)
+
+All buttons use the `new_btn` class (v2 pill system). This is the only button
+system for new implementations.
+
+#### Primary Filled (default)
+
+Purple pill button — the default CTA.
 
 ```css
-.home_form-cta {
+.new_btn {
+  border: 1px solid var(--purple--1-primary-ee5);
   background-color: var(--purple--1-primary-ee5); /* #5f2ee5 */
+  color: var(--white);
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  border-radius: 2.875rem; /* Full pill */
+  padding: 0.75rem 1.25rem;
+  font-family: 'Space Mono', 'Spacemono', monospace;
+  line-height: 1;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s;
+}
+.new_btn:hover {
+  border-color: var(--pilot-dark-purple);
+  background-color: var(--pilot-dark-purple); /* #281350 */
+}
+```
+
+#### Outlined Variants
+
+| Modifier | Border | Text | Background | Use on |
+| --- | --- | --- | --- | --- |
+| `.is-white-outline` | White | White | Transparent | Dark backgrounds |
+| `.is-dark-purple-outline` | `#281350` | `#281350` | Transparent | Light backgrounds |
+| `.is-purple-outline` | `#5931dc` | `#5931dc` | Transparent | Light backgrounds |
+
+```css
+.new_btn.is-white-outline {
+  border-color: var(--white);
+  background-color: transparent;
+}
+.new_btn.is-white-outline:hover {
+  background-color: var(--white);
+  color: var(--pilot-dark-purple);
+}
+
+.new_btn.is-dark-purple-outline {
+  border-color: var(--pilot-dark-purple);
+  background-color: transparent;
+  color: var(--pilot-dark-purple);
+}
+.new_btn.is-dark-purple-outline:hover {
+  background-color: var(--pilot-dark-purple);
+  color: var(--white);
+}
+
+.new_btn.is-purple-outline {
+  background-color: transparent;
+  color: #5931dc;
+  border-color: #5931dc;
+}
+.new_btn.is-purple-outline:hover {
+  color: var(--white);
+  background-color: #5931dc;
+}
+```
+
+#### Size Variants
+
+| Modifier | Padding | Font Size | Use |
+| --- | --- | --- | --- |
+| `.is-small` | `0.625rem 1rem` | 14px | Inline, secondary CTAs |
+| _(default)_ | `0.75rem 1.25rem` | Inherited | Standard CTA |
+| `.is-large` | `1rem 1.25rem` | Inherited | Hero, prominent CTAs |
+| `.is-xlarge` | `1.25rem 2rem` | 24px | Maximum emphasis |
+| `.is-full` | Full width | Inherited | Form-width buttons |
+
+#### Nav CTA Variant
+
+The nav bar includes a special free trial button with stacked text:
+
+```css
+.new_btn.is-v2-nav-free-trial {
+  border-color: var(--white);
+  background-color: transparent;
+  flex-flow: column;
+  padding-top: 5.5px;
+  padding-bottom: 5.5px;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+```
+
+### Text Link (nav style)
+
+Plain text link with no background or border. Used for "SIGN IN" and similar
+non-CTA navigation actions.
+
+```css
+/* Inherits nav styling — no button class needed */
+/* Space Mono, uppercase, adapts color to background */
+```
+
+### Embedded CTA (hero email form)
+
+Primary pill button embedded inside a pill-shaped form container:
+
+```css
+.home_form-wrap {
+  background-color: var(--white);
+  border-radius: 3.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 555px;
+  min-height: 72px;
+  padding: 0.375rem 0.75rem 0.375rem 1.5rem;
+}
+
+.home_form-cta {
+  background-color: var(--purple--1-primary-ee5);
   color: var(--white);
   text-transform: uppercase;
   border-radius: 2.875rem;
   padding: 0.9375rem 1.5rem;
-  font-family: Spacemono, sans-serif;
+  font-family: 'Space Mono', 'Spacemono', monospace;
   line-height: 1;
-}
-```
-
-### Standard Button (outlined)
-
-```css
-.button {
-  border: 1px solid var(--purple--1-primary-ee5);
-  color: var(--purple--1-primary-ee5);
-  background-color: transparent;
-  border-radius: 4px;
-  padding: 8px 32px;
-  text-align: center;
-  white-space: nowrap;
-  cursor: pointer;
-  transition: all 0.2s;
-  position: relative;
-}
-
-.btn-text-white {
-  border-color: var(--white);
-  color: var(--white);
-}
-```
-
-### Slide/Carousel CTA Button
-
-```css
-.home_slide-btn {
-  background-color: #5931dc;
-  color: white;
-  text-transform: uppercase;
-  letter-spacing: -0.03em;
-  border-radius: 3rem;
-  padding: 0.75rem 1.25rem;
-  font-family: Spacemono, sans-serif;
-  line-height: 1;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
 }
 ```
 
@@ -672,39 +826,9 @@ standard. Only use the "+" variants for accents, and sparingly.
 }
 ```
 
-### Green CTA Link
-
-```css
-.cta-link {
-  color: var(--cta-green); /* #47bfa4 */
-  border-bottom: 1px solid transparent;
-  padding-bottom: 6px;
-  font-size: 1rem;
-  line-height: 1.6rem;
-  text-decoration: none;
-}
-```
-
-### Button Height Helper
-
-```css
-.btn-height-3-5-rem {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 3.5rem;
-}
-```
-
 ### Flex Button Row
 
 ```css
-.btn_flex {
-  display: flex;
-  gap: 0.5rem;
-  /* Mobile: flex-direction column; Desktop: row */
-}
-
 .home_btn-wrap {
   display: flex;
   gap: 1rem;
@@ -723,8 +847,21 @@ standard. Only use the "+" variants for accents, and sparingly.
   padding: 20px 35px;
   font-size: 24px;
   font-weight: 600;
-  font-family: Spacemono, sans-serif;
+  font-family: 'Space Mono', 'Spacemono', monospace;
 }
+```
+
+### ⚠️ Deprecated Button Patterns
+
+The following button patterns exist on the live site but should **not** be used
+for new implementations:
+
+- **`.button`** (legacy) — square `4px` corners, no Space Mono, Euclid font.
+  Migrate to `.new_btn.is-purple-outline` or `.new_btn.is-dark-purple-outline`.
+- **`.button.purple`** — legacy filled button with `8px` radius. Migrate to
+  `.new_btn` (default).
+- **`.button.green`** — green CTA. **Deprecated.** Purple is the only CTA color.
+- **`.cta-link`** — green text link. **Deprecated.** Use purple text links.
 ```
 
 ---
@@ -747,6 +884,7 @@ standard. Only use the "+" variants for accents, and sparingly.
 
 .navbar7_component.scrolled {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* ⚠️ LEGACY: uses black shadow. Should be migrated to purple per Section 27. */
 }
 
 .navbar7_container {
@@ -796,9 +934,12 @@ standard. Only use the "+" variants for accents, and sparingly.
 
 ### Nav Banner (top announcement bar)
 
+The banner sits above the nav bar and uses a pink background.
+It contains promotional text with a CTA link in Space Mono uppercase.
+
 ```css
 .nav-banner {
-  background-color: var(--purple--x-d89); /* #3c2d89 */
+  background-color: var(--pilot-pink); /* #f891ff */
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -812,9 +953,14 @@ standard. Only use the "+" variants for accents, and sparingly.
 }
 
 .nav-banner_text-wrap {
-  color: var(--purple--3-30-6fc); /* #c8b6fc */
+  color: var(--white);
 }
+
+/* CTA link inside banner — Space Mono, uppercase, underlined */
 ```
+
+> ⚠️ Previous documentation showed a solid `#3c2d89` deep purple background. The
+> live site now uses pink (`#f891ff`). Pink is the canonical style.
 
 ### Mega Menu
 
@@ -1700,9 +1846,9 @@ accents only.
 
 ### Typography Alignment Rules
 
-- **Always left-align text.** Text can also be right-aligned if circumstances
-  require.
-- **Text must never be centered.** No exceptions.
+- **Default to left-align.**
+- **Centering is permitted** for section headings, pricing layouts, and standalone CTA blocks.
+- **Right-alignment is never allowed.**
 
 ### Eyebrow / Label Style
 
@@ -2216,3 +2362,297 @@ feel more approachable.
   --olive-green: #6e9605;
 }
 ```
+
+---
+
+## 34. SEO & Heading Hierarchy Rules
+
+- **Every page must have exactly one `<h1>`.** This is both an SEO requirement
+  and an accessibility best practice.
+- Use `<h2>` for section headings within the page.
+- Use `<h3>` for subsections within a section.
+- **Never skip heading levels** (e.g., don't jump from `<h2>` to `<h4>`).
+- The `<h1>` should describe the page's primary topic concisely.
+
+> ⚠️ **Known violations on the live site** (technical debt):
+> - `about.html` — 2 H1 tags
+> - `resource-hub.html` — 4 H1 tags
+> - `g2.html` — 2 H1 tags
+> - `growth-fund-recipients.html` — 2 H1 tags
+> - `integrations-stripe.html` — 2 H1 tags
+> - `tax-calendar.html` — 2 H1 tags
+
+---
+
+## 35. Canonical Class System (v2)
+
+The live site contains two generations of CSS classes. **Only `new_*` prefixed
+classes are canonical** for new implementations.
+
+### Canonical Classes
+
+| Class | Purpose |
+| --- | --- |
+| `new_btn` | Button system (see Section 6) |
+| `new_container` | Page container |
+| `new_h2` | Section heading |
+| `new_hero` | Hero section wrapper |
+| `new_hero-headline` | Hero headline |
+| `new_footer-*` | Footer card components |
+| `new_nav-cta` | Navigation CTA |
+| `new_gradient-btn-*` | Gradient button effects |
+| `new_table_*` | Comparison table / grid |
+| `new_text-*` | Text size utilities |
+| `new_logo-eyebrow` | Logo bar above hero |
+| `new_margin-top-*` | Spacing utilities |
+
+### ⚠️ Deprecated Classes (do not use for new work)
+
+| Legacy Class | Replacement |
+| --- | --- |
+| `.button` | `new_btn` |
+| `.button.purple` | `new_btn` (default) |
+| `.button.green` | Remove — purple only |
+| `.cta-link` | Purple text link |
+| `.btn-text-white` | `new_btn.is-white-outline` |
+| `.btn-height-3-5-rem` | Use `new_btn` size variants |
+| `.btn_flex` | `home_btn-wrap` |
+| `.grid__3` | `.grid-3-col` |
+| `.grid__4` | `.grid-4-col` |
+| `.grid-5-col` | `.footer-grid` |
+| `.grid-quotes` | `.grid-3-col` |
+| `.pricing-columns` | `.grid-2col` |
+| `.home_slide-btn` | `new_btn` |
+| `.navbar7_*` | `v2_nav-*` |
+
+---
+
+## 36. Spacing & Color Utility Classes
+
+### Spacing Scale
+
+#### Margin Bottom
+
+| Class | Value |
+| --- | --- |
+| `margin-bottom-0` | `0` |
+| `margin-bottom-0-5rem` | `0.5rem` (8px) |
+| `margin-bottom-1rem` | `1rem` (16px) |
+| `margin-bottom-1-5rem` | `1.5rem` (24px) |
+| `margin-bottom-2rem` | `2rem` (32px) |
+| `margin-bottom-2-5rem` | `2.5rem` (40px) |
+| `margin-bottom-3rem` | `3rem` (48px) |
+| `margin-bottom-4rem` | `4rem` (64px) |
+
+#### Margin Top
+
+| Class | Value |
+| --- | --- |
+| `margin-top-1rem` | `1rem` (16px) |
+| `margin-top-1-5rem` | `1.5rem` (24px) |
+| `margin-top-2rem` | `2rem` (32px) |
+| `margin-top-3rem` | `3rem` (48px) |
+| `margin-top-3-5rem` | `3.5rem` (56px) |
+| `margin-top-4rem` | `4rem` (64px) |
+| `margin-top-6rem` | `6rem` (96px) |
+| `margin-top-8rem` | `8rem` (128px) |
+
+#### Padding
+
+| Class | Value |
+| --- | --- |
+| `padding-top-0` | `0` |
+| `padding-top-3rem` | `3rem` |
+| `padding-top-4rem` | `4rem` |
+| `padding-bottom-2rem` | `2rem` |
+| `padding-bottom-4rem` | `4rem` |
+| `padding-bottom-8rem` | `8rem` |
+| `padding-tb-5rem` | `5rem` top + bottom |
+
+### Color Utility Classes
+
+#### Text Colors
+
+| Class | Color | Hex |
+| --- | --- | --- |
+| `text-color-purple` | Primary purple | `#5f2ee5` |
+| `text-color-dark-purple` | Deep purple | `#3c2d89` |
+| `text-color-dark-purple-281` | Dark purple | `#281350` |
+| `text-color-white` | White | `#ffffff` |
+| `text-color-black` | Near-black | `#3f3c3d` |
+| `text-color-gray` | Medium gray | `#999` |
+| `text-color-dark-gray` | Dark gray | `#656363` |
+| `text-color-light-gray` | Light gray | `#e0e0e0` |
+| `text-color-blue` | Bright blue | `#4f9bf3` |
+
+#### Background Colors
+
+| Class | Color | Hex |
+| --- | --- | --- |
+| `bg-color-white` | White | `#ffffff` |
+| `bg-color-purple` | Primary purple | `#5f2ee5` |
+| `bg-color-dark-purple-281` | Dark purple | `#281350` |
+| `bg-color-royal-purple` | Royal purple | `#3c2d89` |
+| `bg-color-medium-purple` | Medium purple | `#825beb` |
+| `bg-color-light-purple-f2edff` | Light purple | `#f2edff` |
+| `bg-color-light-blue` | Light blue | `#e7f9ff` |
+| `bg-color-cyan` | Cyan tint | `#e7f9ff` |
+| `bg-color-buttercream` | Warm cream | `#fcf3d6` |
+
+---
+
+## 37. Additional Component Patterns
+
+These patterns are used across the live site and should be replicated in new
+implementations.
+
+### Animated Arrow Link
+
+Text link with an animated right-arrow that slides on hover:
+
+```css
+.arrow-animated-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--purple--1-primary-ee5);
+  font-family: 'Space Mono', 'Spacemono', monospace;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: gap 0.2s ease;
+}
+.arrow-animated-link:hover {
+  gap: 1rem; /* Arrow slides right */
+}
+```
+
+### Hover-Raise Effect
+
+Subtle Y-axis lift on card hover:
+
+```css
+.hover-raise {
+  transition: transform 0.2s ease;
+}
+.hover-raise:hover {
+  transform: translateY(-4px);
+}
+```
+
+### Max-Character Constraints
+
+Character-based max-width classes for controlling heading line length. These use
+`ch` units to ensure consistent wrapping regardless of font size:
+
+| Class | Max Width | Usage |
+| --- | --- | --- |
+| `max-char-18` | `18ch` | Tight headlines |
+| `max-char-20` | `20ch` | Short headlines |
+| `max-char-21` | `21ch` | Hero headlines |
+| `max-char-42` | `42ch` | Subheadings |
+| `max-char-56` | `56ch` | Body text blocks |
+
+---
+
+## 38. Canonical Card Variants
+
+The live site currently contains over 15 distinct card styles. For new implementations, **only use these 5 canonical variants**:
+
+### Canonical Variants
+
+| Card | Background | Radius | Shadow | Usage |
+| --- | --- | --- | --- | --- |
+| **`.card-white`** | White | `0.5rem` | None | Default card for general content |
+| **`.card-gray`** | `#f3f5fa` | `0.5rem` | None | Alternate card for sections on white background |
+| **`.card-white-shadow`** | White | `0.75rem` | Purple subtle | Elevated or featured items |
+| **`.blog-card`** | Image+Text | `0.625rem` | Standard | CMS and resource content |
+| **`.testimonial-card`** | Varies | `1rem` | None | Centered quotes, Space Mono font |
+
+```css
+/* 1. card-white */
+.card-white {
+  background-color: var(--white);
+  border-radius: 0.5rem;
+  width: 100%;
+  padding: 4rem; /* Modifiers available for padding */
+}
+
+/* 2. card-gray */
+.card-gray {
+  background-color: var(--light--light-5fa);
+  border-radius: 0.5rem;
+  width: 100%;
+  padding: 4rem;
+}
+
+/* 3. card-white-shadow */
+.card-white-shadow {
+  background-color: var(--white);
+  border-radius: 0.75rem;
+  padding: 1.5rem 2rem;
+  box-shadow: 16px 16px 40px rgba(54, 46, 134, 0.05);
+}
+```
+
+### ⚠️ Deprecated Card Variants
+
+The following variants are considered technical debt and should be migrated to one of the canonical variants above:
+
+- **`.card-large`** — No radius, 3.75rem padding. Migrate to `.card-white`.
+- **`.card-small`** — 4px radius, gray border. Migrate to `.card-white` or `.card-white-shadow`.
+- **`.promo-card`** — Non-standard 10px radius, gray shadow. Migrate to `.card-white-shadow`.
+- **`.story-card`** — Non-standard 5px radius, gray shadow. Migrate to `.card-white-shadow`.
+
+---
+
+## 39. Technical Debt Register
+
+Known deviations from the design system on the live pilot.com site:
+
+### Border Radius
+| Live Value | Count | Should Be |
+| --- | --- | --- |
+| `10px` / `.625rem` | 48 | `0.5rem` (8px) or `1rem` (16px) |
+| `5px` | 10 | `4px` |
+| `3px` | 9 | `4px` |
+| `.75rem` (12px) | 15 | `0.5rem` or `1rem` |
+
+### Shadows (non-purple)
+| Location | Current Shadow | Should Be |
+| --- | --- | --- |
+| Nav scroll | `rgba(0,0,0,0.1)` | Purple equivalent |
+| Floated nav | `rgba(14,13,18,0.07)` | Purple equivalent |
+| Card hover | `#0000001a` | Purple equivalent |
+| Dropdown | `rgba(68,68,68,0.11)` | Purple equivalent |
+
+### Grid Ratios
+| Non-standard Ratio | Count | Migrate To |
+| --- | --- | --- |
+| `1.25fr`, `1.5fr` | ~13 | `1fr 2fr` or `2fr 1fr` |
+| `55% 45%` | 1 | `1fr 1fr` |
+| `60% 10% 30%` | 1 | `1fr 1fr 1fr` or custom |
+| `4fr .5fr 1fr .5fr 2fr` | 1 | Redesign |
+
+### Container Widths
+| Legacy Width | Count | Migrate To |
+| --- | --- | --- |
+| `856px`, `766px`, `836px` | 3 | `60rem` (narrow) |
+| `1080px`, `1222px` | 2 | `75.5rem` (standard) |
+| `85rem`, `80rem`, `72.5rem` | 3 | `75.5rem` (standard) |
+
+### Font Weights
+| Weight | Count | Migrate To |
+| --- | --- | --- |
+| `300` | 14 | `400` |
+| `500` | 12 | `600` |
+| `900` | 2 | Remove |
+
+### SEO (Multiple H1 Tags)
+| Page | H1 Count | Fix |
+| --- | --- | --- |
+| `resource-hub.html` | 4 | Reduce to 1 |
+| `about.html` | 2 | Reduce to 1 |
+| `g2.html` | 2 | Reduce to 1 |
+| `growth-fund-recipients.html` | 2 | Reduce to 1 |
+| `integrations-stripe.html` | 2 | Reduce to 1 |
+| `tax-calendar.html` | 2 | Reduce to 1 |
