@@ -1,10 +1,11 @@
 # Pilot Design System — Changelog
 
-Log of significant changes to the design system. Each entry is max 5 bullet points covering what designers need to know. Keep it plain language — no code jargon.
+Log of significant changes to the design system. Each entry is max 5 bullet points covering what designers need to know. Keep it plain language — no code jargon. Always include the author.
 
 ---
 
 ## May 18, 2026
+*Author: Maebellyne Ventura*
 
 1. **Section backgrounds are now codified.** There are 9 approved colors, each tied to a warm↔cool content spectrum. Pick based on what the content is about, not what looks nice. Pink is never a section background.
 
