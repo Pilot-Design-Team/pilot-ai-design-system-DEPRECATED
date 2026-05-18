@@ -1490,7 +1490,7 @@
       <a class="nl" href="#navigation"><span class="nl-dot"></span>Navigation</a>
       <div class="ng-label">Visual Style</div>
       <a class="nl" href="#shadows"><span class="nl-dot"></span>Drop Shadows</a>
-      <a class="nl" href="#backgrounds"><span class="nl-dot"></span>Backgrounds</a>
+      <a class="nl" href="#backgrounds"><span class="nl-dot"></span>Decorative Patterns</a>
       <a class="nl" href="#section-bg"><span class="nl-dot"></span>Section Backgrounds</a>
       <a class="nl" href="#icons"><span class="nl-dot"></span>Icons</a>
       <a class="nl" href="#photography"><span class="nl-dot"></span>Photography</a>
@@ -3399,13 +3399,13 @@
       </section>
 
       <!-- ═══════════════════════════════════════
-     BACKGROUNDS
+     DECORATIVE PATTERNS
      ═══════════════════════════════════════ -->
       <section class="sec" id="backgrounds">
         <span class="sec-tag">Visual Style</span>
-        <h2 class="sec-title">Backgrounds</h2>
-        <p class="sec-desc">Backgrounds foreshadow what customers see in the product. Four types — all using the purple
-          color family. Round the corners on chart bars and highlighted cell rectangles.</p>
+        <h2 class="sec-title">Decorative Patterns</h2>
+        <p class="sec-desc">Patterns foreshadow what customers see in the product. Four types — all using the purple
+          color family. These are <strong>overlays</strong>, not backgrounds. They layer on top of section background colors to add visual texture.</p>
 
         <div class="bgdg">
           <div class="bgdi">
@@ -3447,6 +3447,42 @@
               </div>
             </div>
             <div class="bgdl">Highlighted Cells</div>
+          </div>
+        </div>
+
+        <!-- Layering over section colors -->
+        <div class="sub">
+          <div class="sub-title">Layering Over Section Colors</div>
+          <p style="font-family:var(--font-body);font-size:15px;color:var(--p-black);line-height:1.6;margin-bottom:16px;max-width:680px;">Patterns are never used on their own — they sit on top of a section background color. The pattern opacity is tuned for the purple family, so they work best on dark sections (Profit, Deep Purple) and neutral light sections.</p>
+
+          <table class="dt" style="margin-bottom:20px;">
+            <thead><tr><th>Section Background</th><th>Pattern Works?</th><th>Notes</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Profit</strong> (#281350)</td><td><span class="badge b-green">Best</span></td><td>Primary use case — CTA blocks, heroes. Patterns add depth to dark purple.</td></tr>
+              <tr><td><strong>Deep Purple</strong> (#3c2d89)</td><td><span class="badge b-green">Good</span></td><td>Works well, especially Ledger and Highlighted Cells.</td></tr>
+              <tr><td><strong>White / Gray</strong></td><td><span class="badge b-yellow">Subtle</span></td><td>Very faint — use only when you need just a hint of texture.</td></tr>
+              <tr><td><strong>Warm / Cool tints</strong></td><td><span class="badge b-red">Avoid</span></td><td>Purple patterns clash with non-purple tinted backgrounds.</td></tr>
+            </tbody>
+          </table>
+
+          <!-- Live preview: pattern on Profit -->
+          <div class="pv">
+            <div class="pv-head"><span>Live Preview · Ledger on Profit</span></div>
+            <div class="pv-body" style="padding:0;overflow:hidden;">
+              <div style="background:#281350;padding:48px 40px;position:relative;">
+                <div style="position:absolute;inset:0;background-image:linear-gradient(to right,rgba(89,49,220,.15) 1px,transparent 1px),linear-gradient(to bottom,rgba(89,49,220,.15) 1px,transparent 1px);background-size:40px 24px;"></div>
+                <div style="position:relative;text-align:center;">
+                  <p style="font-family:var(--font-body);font-size:2rem;font-weight:600;color:#fff;margin-bottom:8px;">See what Pilot can do for you</p>
+                  <p style="font-family:var(--font-body);font-size:1rem;color:#c8b6fc;margin-bottom:24px;">Get the peace of mind that comes from partnering with our experienced finance team.</p>
+                  <button class="btn btn-p" onclick="return false" style="pointer-events:none;">CONTACT SALES →</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="callout c-info" style="margin-top:14px;">
+            <span class="ci-icon">💡</span>
+            <span>Patterns use <code>rgba(89,49,220,...)</code> — the same purple base as PILOT. Adjust opacity to suit: <strong>0.08–0.12</strong> for light backgrounds, <strong>0.12–0.20</strong> for dark backgrounds.</span>
           </div>
         </div>
 
