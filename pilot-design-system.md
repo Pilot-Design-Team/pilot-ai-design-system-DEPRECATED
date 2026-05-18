@@ -1603,20 +1603,84 @@ promotional text with a CTA link in Space Mono uppercase.
 
 ## 14. Transitions & Animations
 
-```css
-/* Standard transitions */
-transition: all 0.2s;
-transition: all 0.3s;
-transition: all 0.5s;
-transition: all 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
-transition: background-color 0.1s, color 0.1s;
-transition: background-color 0.2s;
-transition: color 0.2s, background-color 0.2s;
-transition: transform 0.2s;
-transition: opacity 0.15s;
-transition: height 0.5s;
+### Core Principle
 
-/* Logo wall infinite scroll */
+> **Animate state, not attention.** Animations communicate that something has
+> changed (hover, open, scroll position). They never demand attention or create
+> visual noise. This matches the Pilot voice: calm, confident, in control.
+
+The site is **intentionally restrained** with animation. There are no
+scroll-triggered entrance animations (fade-in, slide-up, parallax) anywhere on
+pilot.com. This is a deliberate brand choice — pages are designed for fast
+reading speed and visual clarity.
+
+### Approved Transition Speeds
+
+Four speeds. Pick the one that matches the interaction type.
+
+| Speed | Duration | Use For | Example |
+| --- | --- | --- | --- |
+| **Quick** | `0.1s` | Color-only changes | Button fill swap on hover |
+| **Standard** | `0.2s` | General hover states | Links, card lift, border color |
+| **Moderate** | `0.3s` | Complex state changes | Nav shadow, dropdown menus |
+| **Slow** | `0.5s` | Layout shifts | Accordion height, panel reveals |
+
+```css
+/* Quick — color-only changes */
+transition: background-color 0.1s, color 0.1s;
+
+/* Standard — general hover states (DEFAULT) */
+transition: all 0.2s;
+
+/* Moderate — complex state changes */
+transition: all 0.3s;
+transition: all 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+
+/* Slow — layout shifts */
+transition: height 0.5s;
+```
+
+### Approved Easing Curves
+
+| Easing | CSS | Use For |
+| --- | --- | --- |
+| **Default** | `ease` (browser default) | Most transitions |
+| **Smooth** | `cubic-bezier(0.455, 0.03, 0.515, 0.955)` | Polished interactive elements |
+| **Linear** | `linear` | Infinite loops only (logo carousel) |
+
+> [!WARNING]
+> **Do not use** `ease-in-out`, `ease-out`, spring/bounce curves, or custom
+> beziers beyond the ones listed above. The brand does not bounce or spring.
+
+### Approved Animation Patterns
+
+#### Hover States
+
+| Element | Animation | CSS |
+| --- | --- | --- |
+| **Button color swap** | Background + border change to hover color | `transition: all 0.2s` |
+| **Card subtle lift** | Translate up 2px | `transform: translateY(-2px); transition: transform 0.2s` |
+| **Arrow link expand** | Gap widens from 0.5rem to 1rem | `transition: gap 0.2s` |
+| **Link color change** | Text color shifts | `transition: color 0.2s` |
+
+> [!NOTE]
+> **No scale, no shadow change, no bounce on hover.** The button hover is a
+> simple color swap. Cards lift a maximum of 2px. That's it.
+
+#### Interactive Components
+
+| Component | Animation | CSS |
+| --- | --- | --- |
+| **Accordion open/close** | Height expands smoothly + chevron rotates | `transition: height 0.5s` |
+| **Nav scroll shadow** | Shadow appears when scrolled | `transition: box-shadow 0.3s` |
+| **Dropdown menu** | Fade/slide in | `transition: all 0.3s` |
+
+#### Decorative / Infinite Animations
+
+These are **homepage-only brand moments**. Do not use on product/platform pages.
+
+```css
+/* Logo wall infinite scroll — homepage social proof */
 @keyframes moveLogoWall {
   to {
     transform: translateX(-2872px);
@@ -1626,7 +1690,7 @@ transition: height 0.5s;
   animation: moveLogoWall 125s linear infinite;
 }
 
-/* Testimonial card float animation */
+/* Testimonial card float — homepage testimonials */
 @keyframes stand-out {
   0%, 39%, 100% {
     box-shadow: none;
@@ -1637,7 +1701,54 @@ transition: height 0.5s;
     transform: translateY(-60px);
   }
 }
+.testimonial {
+  animation: stand-out 12s infinite;
+}
+.testimonial:first-child { animation-delay: 8s; }
+.testimonial:last-child  { animation-delay: 4s; }
 ```
+
+### Page-Type Animation Rules
+
+| Page Type | Logo Carousel | Testimonial Float | Scroll Entrance FX | Card Hover Lift |
+| --- | --- | --- | --- | --- |
+| **Homepage** | ✅ Infinite loop | ✅ Staggered float | ❌ Never | ✅ Subtle -2px |
+| **Platform / Product** | ❌ Static grid | ❌ Manual carousel | ❌ Never | ❌ No lift |
+| **Landing Pages** | Optional | Optional | ❌ Never | ✅ Subtle -2px |
+| **Blog / Resources** | ❌ None | ❌ None | ❌ Never | ✅ Subtle -2px |
+
+### Forbidden Patterns
+
+These patterns are **never used** on pilot.com and should not appear in
+wireframes or production pages:
+
+- ❌ **Scroll-triggered entrance animations** (fade-in on scroll, slide-up
+  reveals, staggered content appearing as you scroll)
+- ❌ **Parallax** scroll effects
+- ❌ **Scale on hover** (`transform: scale()`)
+- ❌ **Bounce or spring easing** (too playful for the brand)
+- ❌ **Page transition effects** (no cross-fades between pages)
+- ❌ **Loading spinners or skeleton screens** (not used on marketing site)
+- ❌ **Text typing / typewriter animations**
+- ❌ **Background gradient animations**
+
+### Accessibility
+
+All animations must respect reduced motion preferences:
+
+```css
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+```
+
+Infinite animations (logo wall, testimonial float) must pause when the user
+prefers reduced motion. Interactive transitions (hover, accordion) can be
+reduced to instant state changes.
 
 ---
 
