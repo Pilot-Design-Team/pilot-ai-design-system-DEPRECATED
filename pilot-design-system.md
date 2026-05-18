@@ -1065,7 +1065,7 @@ promotional text with a CTA link in Space Mono uppercase.
 ```css
 .nav-banner {
   background-color: var(--pilot-pink); /* #f891ff */
-  color: #fff;
+  color: #281350; /* PROFIT — dark text on pink */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1078,7 +1078,7 @@ promotional text with a CTA link in Space Mono uppercase.
 }
 
 .nav-banner_text-wrap {
-  color: var(--white);
+  color: var(--pilot-dark-purple); /* #281350 */
 }
 
 /* CTA link inside banner — Space Mono, uppercase, underlined */
@@ -1678,7 +1678,7 @@ The homepage (`/`) is a Webflow-built page with these major sections in order:
 
 | Section                 | Class                | Background                       | Key Feature                     |
 | ----------------------- | -------------------- | -------------------------------- | ------------------------------- |
-| **Announcement Banner** | `.navbanner`         | `#3c2d89` (deep purple)          | White text on purple            |
+| **Announcement Banner** | `.navbanner`         | `#f891ff` (CLARITY+ pink)        | Dark text (`#281350`) on pink   |
 | **Navigation**          | `.navbar7_component` | `#ffffff`                        | Sticky, shadow on scroll        |
 | **Hero**                | `.new_hero`          | White/light gradient             | Email capture + dashboard image |
 | **Social Proof Logos**  | logo carousel        | White                            | Trusted by 3,000+ clients       |

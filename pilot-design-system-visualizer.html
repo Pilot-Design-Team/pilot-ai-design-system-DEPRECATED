@@ -1491,6 +1491,7 @@
       <div class="ng-label">Visual Style</div>
       <a class="nl" href="#shadows"><span class="nl-dot"></span>Drop Shadows</a>
       <a class="nl" href="#backgrounds"><span class="nl-dot"></span>Backgrounds</a>
+      <a class="nl" href="#section-bg"><span class="nl-dot"></span>Section Backgrounds</a>
       <a class="nl" href="#icons"><span class="nl-dot"></span>Icons</a>
       <a class="nl" href="#photography"><span class="nl-dot"></span>Photography</a>
       <a class="nl" href="#animations"><span class="nl-dot"></span>Animations</a>
@@ -1499,6 +1500,7 @@
       <a class="nl" href="#css-vars"><span class="nl-dot"></span>CSS Variables</a>
       <a class="nl" href="#page-sections"><span class="nl-dot"></span>Page Sections</a>
       <a class="nl" href="#integrations"><span class="nl-dot"></span>Integrations</a>
+      <a class="nl" href="#utilities"><span class="nl-dot"></span>Utility Classes</a>
     </nav>
 
     <!-- MAIN -->
@@ -1906,8 +1908,8 @@
             <tbody>
               <tr>
                 <td><code>300</code></td>
-                <td>Light / modifier text in mixed-weight headlines (Euclid Light)</td>
-                <td><span class="badge b-yellow">Low</span></td>
+                <td>Light / modifier text in mixed-weight headlines (Euclid Light) — <strong>migrate to 400</strong></td>
+                <td><span class="badge b-red">Legacy</span></td>
               </tr>
               <tr>
                 <td><code>400</code></td>
@@ -1916,8 +1918,8 @@
               </tr>
               <tr>
                 <td><code>500</code></td>
-                <td>Mid-emphasis (utility classes only)</td>
-                <td><span class="badge b-yellow">Rare</span></td>
+                <td>Mid-emphasis (utility classes only) — <strong>migrate to 600</strong></td>
+                <td><span class="badge b-red">Legacy</span></td>
               </tr>
               <tr>
                 <td><code>600</code></td>
@@ -2081,6 +2083,70 @@
               <button class="btn btn-p" onclick="return false;" style="font-family:var(--font-mono);text-transform:uppercase;letter-spacing:2px;font-size:12px;font-weight:700;padding:14px 28px;border-radius:var(--r-pill);">SEE HOW IT WORKS →</button>
             </div>
           </div>
+        </div>
+
+        <div class="sub">
+          <div class="sub-title">Font Size Scale — Semantic Tiers</div>
+          <p style="font-family:var(--font-body);font-size:15px;color:var(--p-black);line-height:1.6;margin-bottom:16px;max-width:680px;">Font sizes are organized into semantic tiers. Pick the right tier for your content type; the exact size within a tier depends on context and emphasis.</p>
+
+          <div class="callout c-info"><span class="ci-icon">ℹ</span><span>All sizes use <strong>Euclid Circular B</strong> unless otherwise noted. Eyebrow and button text use <strong>Space Mono</strong>.</span></div>
+
+          <!-- Display Tier -->
+          <div style="margin-top:20px;margin-bottom:6px;font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:1.2px;color:var(--p-pilot);">Display Tier — hero headlines, stat callouts</div>
+          <table class="dt" style="margin-bottom:20px;">
+            <thead><tr><th>Size</th><th>px</th><th>Line Height</th><th>Notes</th></tr></thead>
+            <tbody>
+              <tr><td><code>4.5rem</code></td><td>72</td><td>—</td><td>Maximum display</td></tr>
+              <tr><td><code>4rem</code></td><td>64</td><td>120%</td><td>XL stat numbers</td></tr>
+              <tr><td><code>3.75rem</code></td><td>60</td><td>107%</td><td>Hero headlines</td></tr>
+              <tr><td><code>3rem</code></td><td>48</td><td>115%</td><td>Standard H1</td></tr>
+            </tbody>
+          </table>
+
+          <!-- Heading Tier -->
+          <div style="margin-bottom:6px;font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:1.2px;color:var(--p-pilot);">Heading Tier — section titles, card headers</div>
+          <table class="dt" style="margin-bottom:20px;">
+            <thead><tr><th>Size</th><th>px</th><th>Line Height</th><th>Notes</th></tr></thead>
+            <tbody>
+              <tr><td><code>2.5rem</code></td><td>40</td><td>115%</td><td>Section headings (H2)</td></tr>
+              <tr><td><code>2rem</code></td><td>32</td><td>125%</td><td>Card titles (H3)</td></tr>
+              <tr><td><code>1.75rem</code></td><td>28</td><td>—</td><td>Subsection headers</td></tr>
+              <tr><td><code>1.5rem</code></td><td>24</td><td>125%</td><td>Small headers (H4)</td></tr>
+            </tbody>
+          </table>
+
+          <!-- Subheading Tier -->
+          <div style="margin-bottom:6px;font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:1.2px;color:var(--p-pilot);">Subheading Tier — intro text, large body, pull quotes</div>
+          <table class="dt" style="margin-bottom:20px;">
+            <thead><tr><th>Size</th><th>px</th><th>Line Height</th><th>Notes</th></tr></thead>
+            <tbody>
+              <tr><td><code>1.375rem</code></td><td>22</td><td>1.9rem</td><td>Feature descriptions</td></tr>
+              <tr><td><code>1.25rem</code></td><td>20</td><td>1.875rem</td><td>Large body / footer titles</td></tr>
+              <tr><td><code>1.125rem</code></td><td>18</td><td>1.9rem</td><td>Hero form inputs</td></tr>
+            </tbody>
+          </table>
+
+          <!-- Body Tier -->
+          <div style="margin-bottom:6px;font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:1.2px;color:var(--p-pilot);">Body Tier — paragraphs, descriptions, UI text</div>
+          <table class="dt" style="margin-bottom:20px;">
+            <thead><tr><th>Size</th><th>px</th><th>Line Height</th><th>Notes</th></tr></thead>
+            <tbody>
+              <tr><td><code>1rem</code></td><td>16</td><td>1.5–1.75rem</td><td>Default body</td></tr>
+              <tr><td><code>0.9rem</code></td><td>14.4</td><td>—</td><td>Compact body</td></tr>
+              <tr><td><code>0.875rem</code></td><td>14</td><td>135%</td><td>Small body / meta</td></tr>
+            </tbody>
+          </table>
+
+          <!-- Caption Tier -->
+          <div style="margin-bottom:6px;font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:1.2px;color:var(--p-pilot);">Caption Tier — labels, legal, fine print</div>
+          <table class="dt">
+            <thead><tr><th>Size</th><th>px</th><th>Line Height</th><th>Notes</th></tr></thead>
+            <tbody>
+              <tr><td><code>0.8125rem</code></td><td>13</td><td>135%</td><td>Fine print, footer legal</td></tr>
+              <tr><td><code>0.8rem</code></td><td>12.8</td><td>120%</td><td>Inline labels</td></tr>
+              <tr><td><code>0.75rem</code></td><td>12</td><td>—</td><td>Eyebrow text, small caps</td></tr>
+            </tbody>
+          </table>
         </div>
 
         <div class="sub">
@@ -3215,7 +3281,7 @@
           <div class="pv-head"><span>Nav Preview</span></div>
           <div style="background:#f3f5fa;border-radius:0 0 var(--r-lg) var(--r-lg);overflow:hidden">
             <div style="background:#f891ff;height:50px;display:flex;align-items:center;justify-content:center">
-              <span style="font-size:13px;font-weight:600;color:#fff">🎉 New: AI-powered bookkeeping is here →</span>
+              <span style="font-size:13px;font-weight:600;color:#281350">🎉 New: AI-powered bookkeeping is here →</span>
             </div>
             <div
               style="background:#fff;padding:0 24px;height:60px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 2px 8px rgba(0,0,0,.05)">
@@ -3253,7 +3319,7 @@
             </tr>
             <tr>
               <td>Banner text</td>
-              <td><code>#ffffff</code> — white, weight 600</td>
+              <td><code>#281350</code> — dark purple (PROFIT), weight 600</td>
             </tr>
             <tr>
               <td>Banner height</td>
@@ -3403,6 +3469,270 @@
   <span class="tp">background-size</span>: <span class="th">12px 12px</span>;
 }</pre>
         </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════
+     SECTION BACKGROUND COLORS
+     ═══════════════════════════════════════ -->
+      <section class="sec" id="section-bg">
+        <span class="sec-tag">Visual Style</span>
+        <h2 class="sec-title">Section Background Colors</h2>
+        <p class="sec-desc">Section backgrounds create visual rhythm and signal content tone. Background color choice is <strong>not decorative</strong> — it follows the warm↔cool spectrum used for photography and visual direction.</p>
+
+        <!-- Content Spectrum -->
+        <div class="sub">
+          <div class="sub-title">The Content Spectrum</div>
+          <p style="font-family:var(--font-body);font-size:15px;color:var(--p-black);line-height:1.6;margin-bottom:16px;max-width:680px;">Background tints map to where content sits on the people↔software spectrum:</p>
+
+          <div class="spectrum" style="margin-bottom:24px;">
+            <span class="sp-lbl">WARM<br><span style="font-weight:400;text-transform:none;font-family:var(--font-body);font-size:10px;">people · relationships</span></span>
+            <span class="sp-dot"></span>
+            <span class="sp-lbl" style="text-align:center;">NEUTRAL<br><span style="font-weight:400;text-transform:none;font-family:var(--font-body);font-size:10px;">balanced</span></span>
+            <span class="sp-dot"></span>
+            <span class="sp-lbl" style="text-align:right;">COOL<br><span style="font-weight:400;text-transform:none;font-family:var(--font-body);font-size:10px;">tech · software · data</span></span>
+          </div>
+
+          <table class="dt">
+            <thead>
+              <tr>
+                <th>Position</th>
+                <th>Tint</th>
+                <th style="width:80px;">Color</th>
+                <th>Signal</th>
+                <th>Use When</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="badge b-yellow">Warm</span></td>
+                <td><strong>Access</strong></td>
+                <td><div style="width:36px;height:20px;border-radius:4px;background:#FCF3D6;border:1px solid #e0e0e0;"></div></td>
+                <td>Human, relationships, SMB</td>
+                <td>Testimonials, team, founder stories, SMB content</td>
+              </tr>
+              <tr>
+                <td><span class="badge b-purple">Neutral</span></td>
+                <td><strong>Clarity</strong></td>
+                <td><div style="width:36px;height:20px;border-radius:4px;background:#F8EDFF;border:1px solid #e0e0e0;"></div></td>
+                <td>Balanced, brand-neutral</td>
+                <td>General features, balanced product + people</td>
+              </tr>
+              <tr>
+                <td><span class="badge b-purple">Neutral</span></td>
+                <td><strong>Highlight</strong></td>
+                <td><div style="width:36px;height:20px;border-radius:4px;background:#DECEFF;border:1px solid #e0e0e0;"></div></td>
+                <td>Curiosity, exploration</td>
+                <td>Product walkthroughs, "what's changed" moments</td>
+              </tr>
+              <tr>
+                <td><span class="badge b-blue">Cool</span></td>
+                <td><strong>Trust</strong></td>
+                <td><div style="width:36px;height:20px;border-radius:4px;background:#E7F9FF;border:1px solid #e0e0e0;"></div></td>
+                <td>Tech, software, data</td>
+                <td>Platform demos, AI features, startup content</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="callout c-info">
+            <span class="ci-icon">ℹ</span>
+            <span><strong>Highlight</strong> (<code>#DECEFF</code>) carries special meaning from the Pilot product — it signals "something changed, take a look." Intentionally neither red nor green, it invites exploration without alarm.</span>
+          </div>
+        </div>
+
+        <!-- Approved Section Backgrounds -->
+        <div class="sub">
+          <div class="sub-title">Approved Section Backgrounds</div>
+          <p style="font-family:var(--font-body);font-size:15px;color:var(--p-black);line-height:1.6;margin-bottom:16px;max-width:680px;">Only these colors may be used as full-section backgrounds. All other colors are restricted to accents, borders, or inline elements.</p>
+
+          <!-- Visual swatches -->
+          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:10px;margin-bottom:24px;">
+            <div style="border-radius:var(--r-md);overflow:hidden;border:1px solid var(--p-border);">
+              <div style="height:56px;background:#ffffff;border-bottom:1px solid #e0e0e0;"></div>
+              <div style="background:#fff;padding:8px 9px;"><span style="font-family:var(--font-body);font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--p-profit);display:block;">White</span><span style="font-size:10.5px;color:var(--p-gray-mid);">#ffffff</span></div>
+            </div>
+            <div style="border-radius:var(--r-md);overflow:hidden;border:1px solid var(--p-border);">
+              <div style="height:56px;background:#f3f5fa;"></div>
+              <div style="background:#fff;padding:8px 9px;"><span style="font-family:var(--font-body);font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--p-profit);display:block;">Gray</span><span style="font-size:10.5px;color:var(--p-gray-mid);">--gray · #f3f5fa</span></div>
+            </div>
+            <div style="border-radius:var(--r-md);overflow:hidden;border:1px solid var(--p-border);">
+              <div style="height:56px;background:#f6f3ff;"></div>
+              <div style="background:#fff;padding:8px 9px;"><span style="font-family:var(--font-body);font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--p-profit);display:block;">Margin</span><span style="font-size:10.5px;color:var(--p-gray-mid);">#f6f3ff</span></div>
+            </div>
+            <div style="border-radius:var(--r-md);overflow:hidden;border:1px solid var(--p-border);">
+              <div style="height:56px;background:#FCF3D6;"></div>
+              <div style="background:#fff;padding:8px 9px;"><span style="font-family:var(--font-body);font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--p-profit);display:block;">Access</span><span style="font-size:10.5px;color:var(--p-gray-mid);">#FCF3D6</span></div>
+            </div>
+            <div style="border-radius:var(--r-md);overflow:hidden;border:1px solid var(--p-border);">
+              <div style="height:56px;background:#E7F9FF;"></div>
+              <div style="background:#fff;padding:8px 9px;"><span style="font-family:var(--font-body);font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--p-profit);display:block;">Trust</span><span style="font-size:10.5px;color:var(--p-gray-mid);">#E7F9FF</span></div>
+            </div>
+            <div style="border-radius:var(--r-md);overflow:hidden;border:1px solid var(--p-border);">
+              <div style="height:56px;background:#FBEDFF;"></div>
+              <div style="background:#fff;padding:8px 9px;"><span style="font-family:var(--font-body);font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--p-profit);display:block;">Clarity</span><span style="font-size:10.5px;color:var(--p-gray-mid);">#FBEDFF</span></div>
+            </div>
+            <div style="border-radius:var(--r-md);overflow:hidden;border:1px solid var(--p-border);">
+              <div style="height:56px;background:#DECEFF;"></div>
+              <div style="background:#fff;padding:8px 9px;"><span style="font-family:var(--font-body);font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--p-profit);display:block;">Highlight</span><span style="font-size:10.5px;color:var(--p-gray-mid);">#DECEFF</span></div>
+            </div>
+            <div style="border-radius:var(--r-md);overflow:hidden;border:1px solid var(--p-border);">
+              <div style="height:56px;background:#281350;"></div>
+              <div style="background:#fff;padding:8px 9px;"><span style="font-family:var(--font-body);font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--p-profit);display:block;">Profit</span><span style="font-size:10.5px;color:var(--p-gray-mid);">#281350</span></div>
+            </div>
+            <div style="border-radius:var(--r-md);overflow:hidden;border:1px solid var(--p-border);">
+              <div style="height:56px;background:#3c2d89;"></div>
+              <div style="background:#fff;padding:8px 9px;"><span style="font-family:var(--font-body);font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--p-profit);display:block;">Deep Purple</span><span style="font-size:10.5px;color:var(--p-gray-mid);">--purple--x-d89 · #3c2d89</span></div>
+            </div>
+          </div>
+
+          <div class="callout c-warn">
+            <span class="ci-icon">⚠</span>
+            <span>Colors <strong>not</strong> approved as section backgrounds: any vibrant/+ accent (Access+, Trust+, Clarity+/Pink), any functional color, any gray darker than <code>#f3f5fa</code>. <strong>Pink (<code>#f891ff</code>)</strong> is an accent color only — never a full section background.</span>
+          </div>
+        </div>
+
+        <!-- Section Separation Rules -->
+        <div class="sub">
+          <div class="sub-title">Section Separation Rules</div>
+          <p style="font-family:var(--font-body);font-size:15px;color:var(--p-black);line-height:1.6;margin-bottom:16px;max-width:680px;">Background color changes and pin lines are <strong>both</strong> tools for visual separation. Use one or the other — the choice depends on how different the content is.</p>
+
+          <table class="dt">
+            <thead>
+              <tr>
+                <th>Content Shift</th>
+                <th>Separation Method</th>
+                <th>Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Same topic, subsections</strong></td>
+                <td>Pin line (<code>border-bottom: 1px solid #e0e0e0</code>)</td>
+                <td>Feature list items within one section</td>
+              </tr>
+              <tr>
+                <td><strong>Different topic</strong></td>
+                <td>Background color change</td>
+                <td>"How It Works" → "Case Studies"</td>
+              </tr>
+              <tr>
+                <td><strong>Major shift</strong></td>
+                <td>Background color change + increased padding</td>
+                <td>Content sections → CTA block</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="callout c-info">
+            <span class="ci-icon">ℹ</span>
+            <span>There is no strict rule against adjacent sections sharing a background — <strong>pin lines can do the separation work.</strong> The goal is visual rhythm, not rigid alternation.</span>
+          </div>
+        </div>
+
+        <!-- Dark Background Usage -->
+        <div class="sub">
+          <div class="sub-title">Dark Background Usage</div>
+          <p style="font-family:var(--font-body);font-size:15px;color:var(--p-black);line-height:1.6;margin-bottom:16px;max-width:680px;">Two dark backgrounds are approved, each with a different feel:</p>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px;">
+            <!-- Profit -->
+            <div style="border-radius:var(--r-md);overflow:hidden;">
+              <div style="background:#281350;padding:28px 24px;min-height:120px;display:flex;flex-direction:column;justify-content:flex-end;">
+                <p style="font-family:var(--font-body);font-size:20px;font-weight:600;color:#fff;margin-bottom:4px;">Profit</p>
+                <p style="font-family:var(--font-mono);font-size:10px;color:#c8b6fc;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">#281350 — Deepest purple</p>
+                <p style="font-family:var(--font-body);font-size:12px;color:rgba(255,255,255,.7);line-height:1.5;">Maximum authority and certainty. Used for heroes, manifesto statements, primary CTAs, and the footer.</p>
+              </div>
+            </div>
+            <!-- Deep Purple -->
+            <div style="border-radius:var(--r-md);overflow:hidden;">
+              <div style="background:#3c2d89;padding:28px 24px;min-height:120px;display:flex;flex-direction:column;justify-content:flex-end;">
+                <p style="font-family:var(--font-body);font-size:20px;font-weight:600;color:#fff;margin-bottom:4px;">Deep Purple</p>
+                <p style="font-family:var(--font-mono);font-size:10px;color:#c8b6fc;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">#3c2d89 — Slightly lighter, warmer</p>
+                <p style="font-family:var(--font-body);font-size:12px;color:rgba(255,255,255,.7);line-height:1.5;">Secondary dark sections, testimonial blocks, dark accents, footer.</p>
+              </div>
+            </div>
+          </div>
+
+          <table class="dt">
+            <thead>
+              <tr>
+                <th>Form</th>
+                <th>Description</th>
+                <th>Use</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Full-bleed</strong></td>
+                <td>Entire section background is dark, edge to edge</td>
+                <td>Heroes, manifesto statements, immersive brand moments</td>
+              </tr>
+              <tr>
+                <td><strong>Contained block</strong></td>
+                <td>Rounded container (<code>border-radius: 1rem</code>) with dark bg, inside a light section</td>
+                <td>CTA blocks, callout boxes</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Text & Button Behavior on Backgrounds -->
+        <div class="sub">
+          <div class="sub-title">Text &amp; Button Behavior on Backgrounds</div>
+          <table class="dt">
+            <thead>
+              <tr>
+                <th>Background</th>
+                <th>Text Color</th>
+                <th>Button Style</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>White / light tints</td>
+                <td><code>#3f3c3d</code> (Pilot Black)</td>
+                <td>Purple filled or purple outline</td>
+              </tr>
+              <tr>
+                <td>Warm / cool / neutral tints</td>
+                <td><code>#3f3c3d</code> (Pilot Black)</td>
+                <td>Purple filled or purple outline</td>
+              </tr>
+              <tr>
+                <td>Profit (<code>#281350</code>)</td>
+                <td><code>#fff</code> headings · <code>#c8b6fc</code> secondary</td>
+                <td>Purple filled or white outline</td>
+              </tr>
+              <tr>
+                <td>Deep Purple (<code>#3c2d89</code>)</td>
+                <td><code>#fff</code> headings · <code>#c8b6fc</code> secondary</td>
+                <td>Purple filled or white outline</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="callout c-info" style="margin-top:14px;">
+            <span class="ci-icon">💡</span>
+            <span>On dark purple backgrounds, use <code>#c8b6fc</code> for secondary text (descriptions, subheads) instead of pure white to maintain the purple atmosphere. Reserve white for headings and primary text.</span>
+          </div>
+        </div>
+
+        <!-- Page Flow Example -->
+        <div class="sub">
+          <div class="sub-title">Example Page Flow</div>
+          <p style="font-family:var(--font-body);font-size:15px;color:var(--p-black);line-height:1.6;margin-bottom:16px;max-width:680px;">A page is not locked to one end of the spectrum. Background tints should follow shifts between people-forward and tech-forward content:</p>
+          <div class="pv">
+            <div class="pv-head"><span>Example Section Flow</span></div>
+            <div class="pv-body" style="padding:0;">
+              <div style="background:#281350;padding:14px 20px;color:#fff;font-family:var(--font-body);font-size:13px;font-weight:600;">Hero <span style="font-weight:400;color:#c8b6fc;margin-left:8px;font-size:11px;">Profit — dark purple</span></div>
+              <div style="background:#E7F9FF;padding:14px 20px;color:var(--p-black);font-family:var(--font-body);font-size:13px;font-weight:600;border-top:1px solid rgba(0,0,0,.06);">Product Demo <span style="font-weight:400;color:var(--p-gray-mid);margin-left:8px;font-size:11px;">Trust — cyan (tech-forward)</span></div>
+              <div style="background:#FCF3D6;padding:14px 20px;color:var(--p-black);font-family:var(--font-body);font-size:13px;font-weight:600;border-top:1px solid rgba(0,0,0,.06);">Testimonials <span style="font-weight:400;color:var(--p-gray-mid);margin-left:8px;font-size:11px;">Access — cream (people-forward)</span></div>
+              <div style="background:#ffffff;padding:14px 20px;color:var(--p-black);font-family:var(--font-body);font-size:13px;font-weight:600;border-top:1px solid #e0e0e0;">Feature Grid <span style="font-weight:400;color:var(--p-gray-mid);margin-left:8px;font-size:11px;">White + pin lines</span></div>
+              <div style="background:#281350;padding:14px 20px;color:#fff;font-family:var(--font-body);font-size:13px;font-weight:600;border-top:1px solid rgba(255,255,255,.1);">CTA Block <span style="font-weight:400;color:#c8b6fc;margin-left:8px;font-size:11px;">Profit — dark purple</span></div>
+              <div style="background:#281350;padding:14px 20px;color:#fff;font-family:var(--font-body);font-size:13px;font-weight:600;border-top:1px solid rgba(255,255,255,.1);border-radius:0 0 var(--r-md) var(--r-md);">Footer <span style="font-weight:400;color:#c8b6fc;margin-left:8px;font-size:11px;">Profit — dark purple</span></div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -3968,8 +4298,8 @@
             <tr>
               <td><strong>Announcement Banner</strong></td>
               <td><code>.navbanner</code></td>
-              <td><code>#3c2d89</code></td>
-              <td>White text on deep purple, 50px tall</td>
+              <td><code>#f891ff</code> <span class="badge b-green" style="margin-left:4px;">Canonical</span></td>
+              <td>Dark text on pink (CLARITY+), 50px tall</td>
             </tr>
             <tr>
               <td><strong>Navigation</strong></td>
@@ -4099,6 +4429,133 @@
             </tr>
           </tbody>
         </table>
+      </section>
+
+      <!-- ═══════════════════════════════════════
+     UTILITY CLASSES
+     ═══════════════════════════════════════ -->
+      <section class="sec" id="utilities">
+        <span class="sec-tag">Reference</span>
+        <h2 class="sec-title">Utility Classes</h2>
+        <p class="sec-desc">Spacing scale, text colors, and background colors available as utility classes. Component patterns for common interactive elements.</p>
+
+        <!-- Spacing Utilities -->
+        <div class="sub">
+          <div class="sub-title">Margin Bottom</div>
+          <table class="dt">
+            <thead><tr><th>Class</th><th>Value</th></tr></thead>
+            <tbody>
+              <tr><td><code>margin-bottom-0</code></td><td><code>0</code></td></tr>
+              <tr><td><code>margin-bottom-0-5rem</code></td><td><code>0.5rem</code> (8px)</td></tr>
+              <tr><td><code>margin-bottom-1rem</code></td><td><code>1rem</code> (16px)</td></tr>
+              <tr><td><code>margin-bottom-1-5rem</code></td><td><code>1.5rem</code> (24px)</td></tr>
+              <tr><td><code>margin-bottom-2rem</code></td><td><code>2rem</code> (32px)</td></tr>
+              <tr><td><code>margin-bottom-2-5rem</code></td><td><code>2.5rem</code> (40px)</td></tr>
+              <tr><td><code>margin-bottom-3rem</code></td><td><code>3rem</code> (48px)</td></tr>
+              <tr><td><code>margin-bottom-4rem</code></td><td><code>4rem</code> (64px)</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="sub">
+          <div class="sub-title">Margin Top</div>
+          <table class="dt">
+            <thead><tr><th>Class</th><th>Value</th></tr></thead>
+            <tbody>
+              <tr><td><code>margin-top-1rem</code></td><td><code>1rem</code> (16px)</td></tr>
+              <tr><td><code>margin-top-1-5rem</code></td><td><code>1.5rem</code> (24px)</td></tr>
+              <tr><td><code>margin-top-2rem</code></td><td><code>2rem</code> (32px)</td></tr>
+              <tr><td><code>margin-top-3rem</code></td><td><code>3rem</code> (48px)</td></tr>
+              <tr><td><code>margin-top-4rem</code></td><td><code>4rem</code> (64px)</td></tr>
+              <tr><td><code>margin-top-6rem</code></td><td><code>6rem</code> (96px)</td></tr>
+              <tr><td><code>margin-top-8rem</code></td><td><code>8rem</code> (128px)</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="sub">
+          <div class="sub-title">Padding</div>
+          <table class="dt">
+            <thead><tr><th>Class</th><th>Value</th></tr></thead>
+            <tbody>
+              <tr><td><code>padding-top-0</code></td><td><code>0</code></td></tr>
+              <tr><td><code>padding-top-3rem</code></td><td><code>3rem</code></td></tr>
+              <tr><td><code>padding-top-4rem</code></td><td><code>4rem</code></td></tr>
+              <tr><td><code>padding-bottom-2rem</code></td><td><code>2rem</code></td></tr>
+              <tr><td><code>padding-bottom-4rem</code></td><td><code>4rem</code></td></tr>
+              <tr><td><code>padding-bottom-8rem</code></td><td><code>8rem</code></td></tr>
+              <tr><td><code>padding-tb-5rem</code></td><td><code>5rem</code> top + bottom</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Text Color Utilities -->
+        <div class="sub">
+          <div class="sub-title">Text Color Classes</div>
+          <table class="dt">
+            <thead><tr><th>Class</th><th>Color</th><th style="width:60px;">Swatch</th></tr></thead>
+            <tbody>
+              <tr><td><code>text-color-purple</code></td><td><code>#5f2ee5</code></td><td><div style="width:28px;height:16px;border-radius:3px;background:#5f2ee5;"></div></td></tr>
+              <tr><td><code>text-color-dark-purple</code></td><td><code>#3c2d89</code></td><td><div style="width:28px;height:16px;border-radius:3px;background:#3c2d89;"></div></td></tr>
+              <tr><td><code>text-color-dark-purple-281</code></td><td><code>#281350</code></td><td><div style="width:28px;height:16px;border-radius:3px;background:#281350;"></div></td></tr>
+              <tr><td><code>text-color-white</code></td><td><code>#ffffff</code></td><td><div style="width:28px;height:16px;border-radius:3px;background:#ffffff;border:1px solid #e0e0e0;"></div></td></tr>
+              <tr><td><code>text-color-black</code></td><td><code>#3f3c3d</code></td><td><div style="width:28px;height:16px;border-radius:3px;background:#3f3c3d;"></div></td></tr>
+              <tr><td><code>text-color-gray</code></td><td><code>#999</code></td><td><div style="width:28px;height:16px;border-radius:3px;background:#999;"></div></td></tr>
+              <tr><td><code>text-color-blue</code></td><td><code>#4f9bf3</code></td><td><div style="width:28px;height:16px;border-radius:3px;background:#4f9bf3;"></div></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Background Color Utilities -->
+        <div class="sub">
+          <div class="sub-title">Background Color Classes</div>
+          <table class="dt">
+            <thead><tr><th>Class</th><th>Color</th><th style="width:60px;">Swatch</th></tr></thead>
+            <tbody>
+              <tr><td><code>bg-color-white</code></td><td><code>#ffffff</code></td><td><div style="width:28px;height:16px;border-radius:3px;background:#ffffff;border:1px solid #e0e0e0;"></div></td></tr>
+              <tr><td><code>bg-color-purple</code></td><td><code>#5f2ee5</code></td><td><div style="width:28px;height:16px;border-radius:3px;background:#5f2ee5;"></div></td></tr>
+              <tr><td><code>bg-color-dark-purple-281</code></td><td><code>#281350</code></td><td><div style="width:28px;height:16px;border-radius:3px;background:#281350;"></div></td></tr>
+              <tr><td><code>bg-color-royal-purple</code></td><td><code>#3c2d89</code></td><td><div style="width:28px;height:16px;border-radius:3px;background:#3c2d89;"></div></td></tr>
+              <tr><td><code>bg-color-medium-purple</code></td><td><code>#825beb</code></td><td><div style="width:28px;height:16px;border-radius:3px;background:#825beb;"></div></td></tr>
+              <tr><td><code>bg-color-light-purple-f2edff</code></td><td><code>#f2edff</code></td><td><div style="width:28px;height:16px;border-radius:3px;background:#f2edff;"></div></td></tr>
+              <tr><td><code>bg-color-light-blue</code></td><td><code>#e7f9ff</code></td><td><div style="width:28px;height:16px;border-radius:3px;background:#e7f9ff;"></div></td></tr>
+              <tr><td><code>bg-color-buttercream</code></td><td><code>#fcf3d6</code></td><td><div style="width:28px;height:16px;border-radius:3px;background:#fcf3d6;"></div></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Component Patterns -->
+        <div class="sub">
+          <div class="sub-title">Component Patterns</div>
+
+          <div style="margin-bottom:20px;">
+            <div style="font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:1.2px;color:var(--p-pilot);margin-bottom:10px;">Animated Arrow Link</div>
+            <a href="#" onclick="return false" style="display:inline-flex;align-items:center;gap:0.5rem;color:#5f2ee5;font-family:var(--font-mono);text-transform:uppercase;text-decoration:none;transition:gap 0.2s ease;font-size:13px;font-weight:700;letter-spacing:1px;" onmouseover="this.style.gap='1rem'" onmouseout="this.style.gap='0.5rem'">LEARN MORE <span>→</span></a>
+            <p style="font-family:var(--font-body);font-size:12px;color:var(--p-gray-mid);margin-top:8px;">Gap expands from <code>0.5rem</code> to <code>1rem</code> on hover. Purple, Space Mono, uppercase.</p>
+          </div>
+
+          <div style="margin-bottom:20px;">
+            <div style="font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:1.2px;color:var(--p-pilot);margin-bottom:10px;">Hover-Raise Effect</div>
+            <div style="display:inline-block;background:#fff;border-radius:0.5rem;padding:16px 24px;box-shadow:16px 16px 40px rgba(54,46,134,0.05);transition:transform 0.2s ease;cursor:pointer;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='translateY(0)'">
+              <p style="font-family:var(--font-body);font-size:14px;font-weight:600;color:var(--p-profit);margin-bottom:2px;">Hover me</p>
+              <p style="font-family:var(--font-body);font-size:12px;color:var(--p-gray-mid);">translateY(-4px) on hover</p>
+            </div>
+          </div>
+
+          <div>
+            <div style="font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:1.2px;color:var(--p-pilot);margin-bottom:10px;">Max-Character Constraints</div>
+            <table class="dt">
+              <thead><tr><th>Class</th><th>Max Width</th><th>Usage</th></tr></thead>
+              <tbody>
+                <tr><td><code>max-char-18</code></td><td><code>18ch</code></td><td>Tight headlines</td></tr>
+                <tr><td><code>max-char-20</code></td><td><code>20ch</code></td><td>Short headlines</td></tr>
+                <tr><td><code>max-char-21</code></td><td><code>21ch</code></td><td>Hero headlines</td></tr>
+                <tr><td><code>max-char-42</code></td><td><code>42ch</code></td><td>Subheadings</td></tr>
+                <tr><td><code>max-char-56</code></td><td><code>56ch</code></td><td>Body text blocks</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
       </section>
 
     </main>
