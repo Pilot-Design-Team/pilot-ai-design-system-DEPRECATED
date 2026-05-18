@@ -16,3 +16,14 @@ Log of significant changes to the design system. Each entry is max 5 bullet poin
 4. **Default to pin lines, not cards.** Use a 1px border to separate grid content. Only reach for a card when you need elevation or a distinct background.
 
 5. **Stock photography library is now linked** directly from the visualizer's Photography section — no more digging through Drive.
+
+---
+
+## May 18, 2026 (evening)
+*Author: Maebellyne Ventura*
+
+1. **Animation rules are now fully documented.** Four approved speeds (0.1s–0.5s), two approved easing curves, and explicit rules per page type. No scroll-triggered entrances, no parallax, no bounce — ever.
+
+2. **"Backgrounds" renamed to "Decorative Patterns."** These are overlays on section colors, not backgrounds themselves. New guidance on which section colors they layer over (Profit = best, warm/cool tints = avoid).
+
+3. **Forbidden animation patterns listed.** No fade-in on scroll, no scale on hover, no typewriter effects, no page transitions. This is a deliberate brand choice for reading speed and clarity.
