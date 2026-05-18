@@ -526,6 +526,128 @@ standard. Only use the "+" variants for accents, and sparingly.
 | `#281350 at 5%` | Dark purple    | ~5%     | Section backgrounds        |
 | `#f891ff1a`     | Pink           | ~10%    | `--pilot-pink-10`          |
 
+### Section Background Colors
+
+Section backgrounds create visual rhythm and signal content tone. Background
+color choice is **not decorative** — it follows the same warm↔cool spectrum used
+for photography and visual direction.
+
+#### The Content Spectrum
+
+Background tints map to where content sits on the people↔software spectrum:
+
+| Spectrum Position | Background Tint | Hex | Signal | Use When |
+| --- | --- | --- | --- | --- |
+| **Warm** (people) | Access | `#FCF3D6` | Human, relationships, SMB | Testimonials, team, founder stories, SMB content |
+| **Neutral** | Clarity | `#F8EDFF` | Balanced, brand-neutral | General features, balanced product + people |
+| **Neutral** | Highlight | `#DECEFF` | Curiosity, exploration | Product walkthroughs, "what's changed" moments |
+| **Cool** (tech) | Trust | `#E7F9FF` | Tech, software, data | Platform demos, AI features, startup content |
+
+> [!IMPORTANT]
+> **Highlight** (`#DECEFF`) carries special meaning from the Pilot product — it
+> signals "something changed, take a look." It is intentionally neither red nor
+> green, inviting exploration without alarm. When used as a section background on
+> marketing pages, it signals curiosity and discovery.
+
+#### Approved Section Backgrounds
+
+Only these colors may be used as full-section backgrounds:
+
+| Background | CSS Variable / Value | Role |
+| --- | --- | --- |
+| **White** | `--white` / `#ffffff` | Default. Breathing room. |
+| **Light neutral** | `--light--light-5fa` / `#f3f5fa` | Subtle separation without strong tone |
+| **Pale periwinkle** | `--pale-periwinkle` / `#f6f3ff` | Ultra-light purple, brand-neutral |
+| **Access (warm)** | `--buttery-cream` / `#fcf3d6` | People-forward, warm content |
+| **Trust (cool)** | `--pilot-cyan` / `#e7f9ff` | Tech-forward, cool content |
+| **Clarity (neutral)** | `--pastel-violet` / `#fbedff` | Balanced, brand center |
+| **Highlight (neutral)** | `#DECEFF` | Curiosity, discovery, product moments |
+| **Dark purple (Profit)** | `--pilot-dark-purple` / `#281350` | Hero, manifesto, CTA, brand authority |
+| **Deep purple** | `--purple--x-d89` / `#3c2d89` | Secondary dark sections, testimonial blocks, footer |
+
+Colors **not** approved as section backgrounds: any vibrant/+ accent (Access+,
+Trust+, Clarity+/Pink), any functional color, any gray darker than `#f3f5fa`.
+
+> [!NOTE]
+> **Pink (`#f891ff` / Clarity+)** is an accent color only — used for nav banners,
+> gradient accents, and visual flourishes that signal AI, magic, or delight. It
+> is **never** used as a full section background.
+
+#### Photography and Visual Direction
+
+The background tint reinforces the full visual direction for a section:
+
+| Content Tone | Background | Photography | Typography Accent |
+| --- | --- | --- | --- |
+| **80% People** | Access (cream) | Natural light, warm, human | La Belle Aurore |
+| **50/50** | White / Clarity / Highlight | Balance product UI + human imagery | Standard |
+| **80% Tech** | Trust (cyan) | Product screenshots, data visuals | Space Mono |
+
+#### Section Separation Rules
+
+Background color changes and pin lines are **both** tools for visual separation.
+Use one or the other — the choice depends on how different the content is:
+
+- **Same topic, subsections:** Pin line (`border-bottom: 1px solid #e0e0e0`).
+  Adjacent sections can share a background when a pin line separates them.
+- **Different topic:** Background color change. E.g., "How It Works" → "Case
+  Studies" — these are different enough to warrant a different background.
+- **Major shift:** Background color change AND increased section padding.
+  E.g., content sections → CTA block.
+
+There is no strict rule against adjacent sections sharing a background — **pin
+lines can do the separation work.** The goal is visual rhythm, not a rigid
+alternation pattern.
+
+#### Background tints can shift within a single page
+
+A page is not locked to one end of the spectrum. If a page has both
+people-forward sections (testimonials, team) and tech-forward sections (product
+demo, AI features), the tinted backgrounds should follow those shifts:
+
+```
+Hero (dark purple)
+  → Product demo section (Trust / cyan)
+  → Testimonials (Access / cream)
+  → Feature grid (white + pin lines)
+  → CTA (dark purple block)
+  → Footer (dark purple)
+```
+
+#### Dark Background Usage
+
+Two dark backgrounds are approved, each with a different feel:
+
+- **Profit** (`#281350`) — deepest purple. Maximum authority and certainty.
+  Used for heroes, manifesto statements, primary CTAs, and the footer.
+- **Deep Purple** (`#3c2d89`) — slightly lighter, slightly warmer. Used for
+  secondary dark sections, testimonial blocks, and dark accents.
+
+Both appear in two forms:
+
+- **Full-bleed:** The entire section background is dark, edge to edge.
+  Used for heroes, manifesto statements, and immersive brand moments.
+- **Contained block:** A rounded container (`border-radius: 1rem`) with a dark
+  background, sitting inside a white or light section. Used for CTA
+  blocks and callout boxes.
+
+Both patterns are approved. Full-bleed creates immersion; contained blocks
+create contrast and visual weight within a lighter page.
+
+#### Text and Button Behavior on Backgrounds
+
+| Background | Text Color | Button Style |
+| --- | --- | --- |
+| White / light tints | `--pilot-black` (`#3f3c3d`) | `.new_btn` (purple filled) or `.is-purple-outline` |
+| Warm / cool / neutral tints | `--pilot-black` (`#3f3c3d`) | `.new_btn` (purple filled) or `.is-purple-outline` |
+| Profit (`#281350`) | `--white` / `--purple--3-30-6fc` | `.new_btn` (purple filled) or `.is-white-outline` |
+| Deep Purple (`#3c2d89`) | `--white` / `--purple--3-30-6fc` | `.new_btn` (purple filled) or `.is-white-outline` |
+
+> [!TIP]
+> On dark purple backgrounds, use `--purple--3-30-6fc` (`#c8b6fc`) for secondary
+> text (descriptions, subheads) instead of pure white to maintain the purple
+> atmosphere. Reserve `--white` for headings and primary text.
+
 ---
 
 ## 4. Border Radius
@@ -943,7 +1065,7 @@ promotional text with a CTA link in Space Mono uppercase.
 ```css
 .nav-banner {
   background-color: var(--pilot-pink); /* #f891ff */
-  color: #fff;
+  color: #281350; /* PROFIT — dark text on pink */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -956,7 +1078,7 @@ promotional text with a CTA link in Space Mono uppercase.
 }
 
 .nav-banner_text-wrap {
-  color: var(--white);
+  color: var(--pilot-dark-purple); /* #281350 */
 }
 
 /* CTA link inside banner — Space Mono, uppercase, underlined */
@@ -1556,7 +1678,7 @@ The homepage (`/`) is a Webflow-built page with these major sections in order:
 
 | Section                 | Class                | Background                       | Key Feature                     |
 | ----------------------- | -------------------- | -------------------------------- | ------------------------------- |
-| **Announcement Banner** | `.navbanner`         | `#3c2d89` (deep purple)          | White text on purple            |
+| **Announcement Banner** | `.navbanner`         | `#f891ff` (CLARITY+ pink)        | Dark text (`#281350`) on pink   |
 | **Navigation**          | `.navbar7_component` | `#ffffff`                        | Sticky, shadow on scroll        |
 | **Hero**                | `.new_hero`          | White/light gradient             | Email capture + dashboard image |
 | **Social Proof Logos**  | logo carousel        | White                            | Trusted by 3,000+ clients       |
