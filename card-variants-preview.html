@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pilot Card Variants — Preview</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/euclid-circular-b" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --pilot-black: #3f3c3d;
+      --pilot-dark-purple: #281350;
+      --white: #ffffff;
+      --purple--1-primary-ee5: #5f2ee5;
+      --purple--2-beb: #825beb;
+      --purple--3-30-6fc: #c8b6fc;
+      --purple--x-d89: #3c2d89;
+      --light--light-5fa: #f3f5fa;
+      --light--f8f8f8: #f8f8f8;
+      --light--light-purple-afd: #e3dafd;
+      --gray-light: #e0e0e0;
+      --dark-gray-363: #656363;
+      --pale-periwinkle: #f6f3ff;
+      --pilot-pink: #f891ff;
+      --pilot-cyan: #e7f9ff;
+      --buttery-cream: #fcf3d6;
+      --font-body: 'Euclid Circular B', 'DM Sans', system-ui, sans-serif;
+      --font-mono: 'Space Mono', monospace;
+    }
+
+    html { font-size: 16px; }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--pilot-black);
+      background: var(--pilot-dark-purple);
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Header */
+    .page-header {
+      padding: 3rem 3rem 2rem;
+      max-width: 1208px;
+      margin: 0 auto;
+    }
+    .page-header h1 {
+      color: var(--white);
+      font-size: 2.5rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    .page-header p {
+      color: var(--purple--3-30-6fc);
+      font-size: 1.125rem;
+      line-height: 1.6;
+      max-width: 600px;
+    }
+
+    /* Section */
+    .section {
+      max-width: 1208px;
+      margin: 0 auto;
+      padding: 2rem 3rem;
+    }
+    .section-title {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--pilot-pink);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .section-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: rgba(255,255,255,0.1);
+    }
+
+    .section-label {
+      font-family: var(--font-mono);
+      font-size: 0.6875rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--purple--3-30-6fc);
+      margin-bottom: 0.75rem;
+      opacity: 0.7;
+    }
+
+    /* Card grid */
+    .card-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+    .card-grid.three-col {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    /* Card wrapper — shows bg context */
+    .card-context {
+      border-radius: 1rem;
+      padding: 2rem;
+      position: relative;
+    }
+    .card-context.on-white {
+      background: var(--white);
+    }
+    .card-context.on-gray {
+      background: var(--light--light-5fa);
+    }
+    .card-context.on-purple {
+      background: var(--pilot-dark-purple);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .card-context.on-light-purple {
+      background: var(--pale-periwinkle);
+    }
+
+    /* ═══════════════════════════════════════
+       CANONICAL CARD VARIANTS
+       ═══════════════════════════════════════ */
+
+    /* 1. card-white */
+    .card-white {
+      background-color: var(--white);
+      border-radius: 0.5rem;
+      width: 100%;
+      padding: 2.5rem;
+    }
+
+    /* 2. card-gray */
+    .card-gray {
+      background-color: var(--light--light-5fa);
+      border-radius: 0.5rem;
+      width: 100%;
+      padding: 2.5rem;
+    }
+
+    /* 3. card-white-shadow */
+    .card-white-shadow {
+      background-color: var(--white);
+      border-radius: 0.75rem;
+      padding: 1.5rem 2rem;
+      box-shadow: 16px 16px 40px rgba(54, 46, 134, 0.05);
+    }
+
+    /* 4. blog-card */
+    .blog-card {
+      background-color: var(--white);
+      border-radius: 0.625rem;
+      flex-direction: column;
+      min-height: 100%;
+      transition: all 0.3s;
+      display: flex;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 0 1px rgba(101, 99, 99, 0.16), 0 4px 8px rgba(62, 60, 61, 0.08);
+    }
+    .blog-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 0 1px rgba(101, 99, 99, 0.16), 0 8px 24px rgba(62, 60, 61, 0.12);
+    }
+    .blog-card__image {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      background: linear-gradient(135deg, var(--purple--1-primary-ee5), var(--pilot-pink));
+    }
+    .blog-card__bottom {
+      padding: 1.75rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .blog-card__category {
+      color: var(--purple--1-primary-ee5);
+      font-size: 0.8125rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    .blog-card__title {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: var(--pilot-dark-purple);
+      line-height: 1.4;
+      margin-bottom: 0.75rem;
+    }
+    .blog-card__meta {
+      font-size: 0.8125rem;
+      color: var(--dark-gray-363);
+      margin-top: auto;
+      padding-top: 1rem;
+    }
+
+    /* 5. testimonial-card */
+    .testimonial-card {
+      background-color: var(--white);
+      text-align: center;
+      letter-spacing: -0.01em;
+      border-radius: 1rem;
+      flex-flow: column;
+      justify-content: center;
+      align-items: center;
+      padding: 2.5rem 2rem;
+      font-family: var(--font-mono);
+      font-size: 1.125rem;
+      line-height: 1.65;
+      display: flex;
+    }
+    .testimonial-card .quote-mark {
+      font-size: 3rem;
+      color: var(--purple--x-d89);
+      line-height: 1;
+      margin-bottom: 0.75rem;
+    }
+    .testimonial-card .quote-text {
+      margin-bottom: 1.5rem;
+      color: var(--pilot-dark-purple);
+    }
+    .testimonial-card .quote-author {
+      font-family: var(--font-body);
+      font-size: 0.875rem;
+      color: var(--dark-gray-363);
+    }
+    .testimonial-card .quote-author strong {
+      color: var(--pilot-dark-purple);
+      font-weight: 600;
+    }
+
+    /* ═══════════════════════════════════════
+       DEPRECATED CARD VARIANTS
+       ═══════════════════════════════════════ */
+
+    .deprecated-badge {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 0.5625rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      background: rgba(206, 24, 54, 0.1);
+      color: #ce1836;
+      padding: 0.25rem 0.625rem;
+      border-radius: 999px;
+      margin-bottom: 0.75rem;
+    }
+
+    .canonical-badge {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 0.5625rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      background: rgba(95, 46, 229, 0.1);
+      color: var(--purple--1-primary-ee5);
+      padding: 0.25rem 0.625rem;
+      border-radius: 999px;
+      margin-bottom: 0.75rem;
+    }
+
+    /* card-large (deprecated) */
+    .card-large-demo {
+      background-color: #fff;
+      border: 1px solid #e0e0e0;
+      padding: 2.5rem;
+    }
+
+    /* card-small (deprecated) */
+    .card-small-demo {
+      background-color: #fff;
+      border: 1px solid #e0e0e0;
+      border-radius: 4px;
+      padding: 2rem;
+    }
+
+    /* promo-card (deprecated) */
+    .promo-card-demo {
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 2.5rem;
+      box-shadow: 0 0 1px rgba(101, 99, 99, 0.16), 0 4px 8px rgba(62, 60, 61, 0.08);
+    }
+
+    /* story-card (deprecated) */
+    .story-card-demo {
+      border: 0.5px solid #eff0f3;
+      border-radius: 5px;
+      padding: 2.5rem;
+      box-shadow: 0 8px 16px rgba(62, 60, 61, 0.08);
+    }
+
+    /* ═══════════════════════════════════════
+       CONTENT STYLING
+       ═══════════════════════════════════════ */
+
+    .card-name {
+      font-family: var(--font-mono);
+      font-size: 0.6875rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--purple--1-primary-ee5);
+      margin-bottom: 0.5rem;
+    }
+    .card-heading {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--pilot-dark-purple);
+      margin-bottom: 0.5rem;
+      line-height: 1.3;
+    }
+    .card-body {
+      font-size: 0.9375rem;
+      line-height: 1.6;
+      color: var(--dark-gray-363);
+    }
+    .card-spec {
+      margin-top: 1rem;
+      font-family: var(--font-mono);
+      font-size: 0.6875rem;
+      color: var(--dark-gray-363);
+      line-height: 1.8;
+      opacity: 0.6;
+    }
+
+    /* Stat inside shadow card */
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 600;
+      color: var(--purple--1-primary-ee5);
+      line-height: 1;
+      margin-bottom: 0.25rem;
+    }
+    .stat-label {
+      font-size: 0.875rem;
+      color: var(--dark-gray-363);
+    }
+
+    /* Divider */
+    .section-divider {
+      border: none;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      margin: 1rem 3rem 2rem;
+      max-width: calc(1208px - 6rem);
+    }
+
+    /* Footer */
+    .page-footer {
+      text-align: center;
+      padding: 3rem;
+      color: rgba(255,255,255,0.3);
+      font-size: 0.75rem;
+      font-family: var(--font-mono);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page-header">
+    <h1>Card Variants</h1>
+    <p>Visual reference for canonical vs. deprecated card styles. All rendered with actual Pilot brand tokens.</p>
+  </div>
+
+  <!-- ═══ CANONICAL ═══ -->
+  <div class="section">
+    <div class="section-title">Canonical — Use These</div>
+  </div>
+
+  <!-- 1. card-white -->
+  <div class="section">
+    <div class="card-grid">
+      <div class="card-context on-gray">
+        <div class="section-label">On gray background</div>
+        <div class="card-white">
+          <span class="canonical-badge">Canonical</span>
+          <div class="card-name">.card-white</div>
+          <div class="card-heading">White Content Card</div>
+          <div class="card-body">Default card for general content. Clean white background with subtle rounding. Use on gray or purple section backgrounds for contrast.</div>
+          <div class="card-spec">bg: #fff · radius: 0.5rem · padding: 4rem · shadow: none</div>
+        </div>
+      </div>
+
+      <!-- 2. card-gray -->
+      <div class="card-context on-white">
+        <div class="section-label">On white background</div>
+        <div class="card-gray">
+          <span class="canonical-badge">Canonical</span>
+          <div class="card-name">.card-gray</div>
+          <div class="card-heading">Gray Content Card</div>
+          <div class="card-body">Alternate card for sections on white backgrounds. Provides visual separation without borders or shadows.</div>
+          <div class="card-spec">bg: #f3f5fa · radius: 0.5rem · padding: 4rem · shadow: none</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. card-white-shadow -->
+  <div class="section">
+    <div class="card-grid three-col">
+      <div class="card-context on-light-purple">
+        <div class="section-label">On light purple</div>
+        <div class="card-white-shadow" style="text-align:center;">
+          <span class="canonical-badge">Canonical</span>
+          <div class="card-name">.card-white-shadow</div>
+          <div class="stat-number">7,000+</div>
+          <div class="stat-label">Clients served</div>
+          <div class="card-spec">radius: 0.75rem · shadow: purple 5%</div>
+        </div>
+      </div>
+      <div class="card-context on-light-purple">
+        <div class="section-label">Stat variant</div>
+        <div class="card-white-shadow" style="text-align:center;">
+          <div class="stat-number">$2B+</div>
+          <div class="stat-label">Revenue managed</div>
+        </div>
+      </div>
+      <div class="card-context on-light-purple">
+        <div class="section-label">Horizontal variant</div>
+        <div class="card-white-shadow" style="display:flex;align-items:center;gap:1rem;text-align:left;">
+          <div style="width:40px;height:40px;border-radius:8px;background:var(--purple--1-primary-ee5);flex-shrink:0;"></div>
+          <div>
+            <div style="font-weight:600;font-size:0.9375rem;color:var(--pilot-dark-purple);">QuickBooks Integration</div>
+            <div style="font-size:0.8125rem;color:var(--dark-gray-363);">Sync in real-time</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. blog-card -->
+  <div class="section">
+    <div class="card-grid three-col">
+      <div class="card-context on-gray" style="padding:1.5rem;">
+        <div class="section-label">Blog / Resource Card</div>
+        <div class="blog-card" style="cursor:pointer;">
+          <div class="blog-card__image"></div>
+          <div class="blog-card__bottom">
+            <div>
+              <div class="blog-card__category">Bookkeeping</div>
+              <div class="blog-card__title">How to Choose the Right Accounting Software for Your Startup</div>
+            </div>
+            <div class="blog-card__meta">Jane Smith · May 2026</div>
+          </div>
+        </div>
+      </div>
+      <div class="card-context on-gray" style="padding:1.5rem;">
+        <div class="section-label">Hover to see effect ↗</div>
+        <div class="blog-card" style="cursor:pointer;">
+          <div class="blog-card__image" style="background:linear-gradient(135deg, #281350, #5f2ee5);"></div>
+          <div class="blog-card__bottom">
+            <div>
+              <div class="blog-card__category">Tax</div>
+              <div class="blog-card__title">R&D Tax Credits: A Complete Guide for Startups</div>
+            </div>
+            <div class="blog-card__meta">Pilot Team · Apr 2026</div>
+          </div>
+        </div>
+      </div>
+      <div class="card-context on-gray" style="padding:1.5rem;">
+        <div class="section-label">Variant with image</div>
+        <div class="blog-card" style="cursor:pointer;">
+          <div class="blog-card__image" style="background:linear-gradient(135deg, var(--buttery-cream), var(--pilot-pink));"></div>
+          <div class="blog-card__bottom">
+            <div>
+              <div class="blog-card__category">CFO Services</div>
+              <div class="blog-card__title">When Should Your Startup Hire a CFO?</div>
+            </div>
+            <div class="blog-card__meta">Pilot Team · Mar 2026</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. testimonial-card -->
+  <div class="section">
+    <div class="card-grid">
+      <div class="card-context on-purple">
+        <div class="section-label" style="color:rgba(255,255,255,0.5);">On dark background</div>
+        <div class="testimonial-card">
+          <div class="quote-mark">"</div>
+          <div class="quote-text">Pilot has been transformative for our finance operations. We finally have clarity.</div>
+          <div class="quote-author"><strong>Sarah Chen</strong> · CEO, TechCo</div>
+        </div>
+      </div>
+      <div class="card-context on-light-purple">
+        <div class="section-label">On light purple</div>
+        <div class="testimonial-card">
+          <div class="quote-mark">"</div>
+          <div class="quote-text">The best accounting partner a startup could ask for.</div>
+          <div class="quote-author"><strong>Marcus Johnson</strong> · Founder, GrowthLab</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- ═══ DEPRECATED ═══ -->
+  <div class="section">
+    <div class="section-title" style="color:#ce1836;">Deprecated — Do Not Use</div>
+  </div>
+
+  <div class="section">
+    <div class="card-grid">
+      <div class="card-context on-white">
+        <div class="card-large-demo">
+          <span class="deprecated-badge">Deprecated</span>
+          <div class="card-name" style="color:#ce1836;">.card-large</div>
+          <div class="card-heading">Large Bordered Card</div>
+          <div class="card-body">Has a gray border instead of shadow or radius. No border-radius at all. Migrate to <code>.card-white</code>.</div>
+          <div class="card-spec">border: 1px solid #e0e0e0 · no radius · padding: 3.75rem</div>
+        </div>
+      </div>
+      <div class="card-context on-white">
+        <div class="card-small-demo">
+          <span class="deprecated-badge">Deprecated</span>
+          <div class="card-name" style="color:#ce1836;">.card-small</div>
+          <div class="card-heading">Small Bordered Card</div>
+          <div class="card-body">Tiny 4px radius with gray border. Migrate to <code>.card-white</code> or <code>.card-white-shadow</code>.</div>
+          <div class="card-spec">border: 1px solid #e0e0e0 · radius: 4px · padding: 40px</div>
+        </div>
+      </div>
+      <div class="card-context on-white">
+        <div class="promo-card-demo">
+          <span class="deprecated-badge">Deprecated</span>
+          <div class="card-name" style="color:#ce1836;">.promo-card</div>
+          <div class="card-heading">Promo Card</div>
+          <div class="card-body">Uses non-standard 10px radius and gray shadow. Migrate to <code>.card-white-shadow</code>.</div>
+          <div class="card-spec">radius: 10px · shadow: gray · padding: 3.25rem 4.5rem</div>
+        </div>
+      </div>
+      <div class="card-context on-white">
+        <div class="story-card-demo">
+          <span class="deprecated-badge">Deprecated</span>
+          <div class="card-name" style="color:#ce1836;">.story-card</div>
+          <div class="card-heading">Story / Case Study Card</div>
+          <div class="card-body">Non-standard 5px radius, gray shadow. Migrate to <code>.card-white-shadow</code>.</div>
+          <div class="card-spec">radius: 5px · shadow: gray · border: 0.5px solid #eff0f3</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    Pilot Design System · Card Variants Preview · May 2026
+  </div>
+
+</body>
+</html>
