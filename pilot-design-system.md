@@ -40,13 +40,13 @@ All variables are defined in `:root` and used throughout the Webflow CSS:
   --purple--3-cfd: #f0ecfd; /* Very light purple tint */
 
   /* Light / Background Colors */
-  --light--light-5fa: #f3f5fa; /* Primary page background tint */
+  --light--light-5fa: #f3f5fa; /* Legacy — no longer approved for section/card backgrounds */
   --light--purple-f2edff: #f2edff;
   --light--f8f8f8: #f8f8f8;
   --light--blue-gray-afc: #f9fafc;
   --light--light-ef5: #edeef5;
   --light--light-purple-afd: #e3dafd;
-  --gray: #f3f5fa;
+  --gray: #f3f5fa; /* Legacy — not for section/card backgrounds */
   --gray-999: #999;
   --gray-light: #e0e0e0;
   --dark-gray-363: #656363;
@@ -484,7 +484,7 @@ standard. Only use the "+" variants for accents, and sparingly.
 | Dark gray           | `--dark-gray-363`        | `#656363` | Secondary text, nav links             |
 | Medium gray         | `--gray-999`             | `#999`    | Placeholder text, muted UI            |
 | Light gray (border) | `--gray-light`           | `#e0e0e0` | Input borders, dividers, card borders |
-| Light background    | `--light--light-5fa`     | `#f3f5fa` | Section backgrounds                   |
+| Light background    | `--light--light-5fa`     | `#f3f5fa` | ⚠️ **Deprecated for section/card backgrounds** |
 | Lighter background  | `--light--f8f8f8`        | `#f8f8f8` | Card backgrounds                      |
 | Lightest background | `--light--blue-gray-afc` | `#f9fafc` | Partner sections                      |
 | Off-white           | —                        | `#fafafa` | Card backgrounds                      |
@@ -556,7 +556,6 @@ Only these colors may be used as full-section backgrounds:
 | Background | CSS Variable / Value | Role |
 | --- | --- | --- |
 | **White** | `--white` / `#ffffff` | Default. Breathing room. |
-| **Light neutral** | `--light--light-5fa` / `#f3f5fa` | Subtle separation without strong tone |
 | **Pale periwinkle** | `--pale-periwinkle` / `#f6f3ff` | Ultra-light purple, brand-neutral |
 | **Access (warm)** | `--buttery-cream` / `#fcf3d6` | People-forward, warm content |
 | **Trust (cool)** | `--pilot-cyan` / `#e7f9ff` | Tech-forward, cool content |
@@ -566,7 +565,7 @@ Only these colors may be used as full-section backgrounds:
 | **Deep purple** | `--purple--x-d89` / `#3c2d89` | Secondary dark sections, testimonial blocks, footer |
 
 Colors **not** approved as section backgrounds: any vibrant/+ accent (Access+,
-Trust+, Clarity+/Pink), any functional color, any gray darker than `#f3f5fa`.
+Trust+, Clarity+/Pink), any functional color, **any gray including `#f3f5fa`**.
 
 > [!NOTE]
 > **Pink (`#f891ff` / Clarity+)** is an accent color only — used for nav banners,
@@ -661,7 +660,7 @@ create contrast and visual weight within a lighter page.
 | `16px`                    | Chat/message images                                               |
 | `20px` / `20px 20px 60px` | Section shapes                                                    |
 | `1rem` (16px)             | Card `.card-rounded`, `.cta` section                              |
-| `0.5rem` (8px)            | `.card-white`, `.card-gray`                                       |
+| `0.5rem` (8px)            | `.card-white`                                                     |
 | `0.75rem` (12px)          | Nav mega-menu icon links                                          |
 | `1.5rem` (24px)           | Medium pill-shaped elements                                       |
 | `2rem` (32px)             | Larger pills                                                      |
@@ -1361,12 +1360,6 @@ promotional text with a CTA link in Space Mono uppercase.
   padding: 4rem;
 }
 
-.card-gray {
-  background-color: var(--light--light-5fa); /* #f3f5fa */
-  border-radius: 0.5rem;
-  width: 100%;
-  padding: 4rem;
-}
 
 .card-gray-light {
   background-color: var(--light--f8f8f8); /* #f8f8f8 */
@@ -1961,7 +1954,7 @@ Drive folder.
 - **Dark Purple `#281350`**: Dark section backgrounds, input text, strong brand
   moments
 - **`#3c2d89`**: Secondary dark accents, testimonial marks, deep purple sections
-- **`#f3f5fa`**: Standard light section background
+- ~~**`#f3f5fa`**~~: ⚠️ **Deprecated** — no longer approved for section/card backgrounds
 - **`#f9fafc`**: Partner/trust section background (slightly blue-tinted)
 - **White `#ffffff`**: Default card and page background
 
@@ -2575,13 +2568,13 @@ feel more approachable.
   --purple--x-c70: #473c70; /* Muted dark purple */
   --purple--3-cfd: #f0ecfd; /* Very light purple tint */
 
-  --light--light-5fa: #f3f5fa; /* Primary section background */
+  --light--light-5fa: #f3f5fa; /* Legacy — not for section/card backgrounds */
   --light--purple-f2edff: #f2edff;
   --light--f8f8f8: #f8f8f8;
   --light--blue-gray-afc: #f9fafc;
   --light--light-ef5: #edeef5;
   --light--light-purple-afd: #e3dafd;
-  --gray: #f3f5fa;
+  --gray: #f3f5fa; /* Legacy — not for section/card backgrounds */
   --gray-999: #999;
   --gray-light: #e0e0e0;
   --dark-gray-363: #656363;
@@ -2798,17 +2791,15 @@ Character-based max-width classes for controlling heading line length. These use
 ## 38. Canonical Card Variants
 
 The live site currently contains over 15 distinct card styles. For new
-implementations, **only use these 5 canonical variants**:
+implementations, **only use these 3 canonical variants**:
 
 ### Canonical Variants
 
 | Card                     | Background | Radius     | Shadow        | Usage                                           |
 | ------------------------ | ---------- | ---------- | ------------- | ----------------------------------------------- |
 | **`.card-white`**        | White      | `0.5rem`   | None          | Default card for general content                |
-| **`.card-gray`**         | `#f3f5fa`  | `0.5rem`   | None          | Alternate card for sections on white background |
 | **`.card-white-shadow`** | White      | `0.75rem`  | Purple subtle | Elevated or featured items                      |
 | **`.blog-card`**         | Image+Text | `0.625rem` | Standard      | CMS and resource content                        |
-| **`.testimonial-card`**  | Varies     | `1rem`     | None          | Centered quotes, Space Mono font                |
 
 ```css
 /* 1. card-white */
@@ -2819,15 +2810,7 @@ implementations, **only use these 5 canonical variants**:
   padding: 4rem; /* Modifiers available for padding */
 }
 
-/* 2. card-gray */
-.card-gray {
-  background-color: var(--light--light-5fa);
-  border-radius: 0.5rem;
-  width: 100%;
-  padding: 4rem;
-}
-
-/* 3. card-white-shadow */
+/* 2. card-white-shadow */
 .card-white-shadow {
   background-color: var(--white);
   border-radius: 0.75rem;
