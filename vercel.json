@@ -1,5 +1,5 @@
 {
-  "rewrites": [
-    { "source": "/", "destination": "/pilot-design-system-visualizer.html" }
+  "redirects": [
+    { "source": "/", "destination": "/marketing", "statusCode": 302 }
   ]
 }
