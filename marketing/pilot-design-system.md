@@ -1,6 +1,7 @@
 # Pilot.com Design System Reference
 
 > **Last updated:** May 2026\
+> **Authors:** Mike Glezos, Maebellyne Ventura\
 > Extracted from https://www.pilot.com and the official Pilot Brand & Marketing
 > Design System document.
 
