@@ -22,7 +22,13 @@ That folder contains:
 
 ### AI Agents
 
-**To use this design system in your project**, clone this repo and point your agent to:
+**To use this design system in your project**, clone this repo:
+
+```
+git clone https://github.com/Pilot-Design-Team/design-pilot-com.git
+```
+
+Then point your agent to:
 
 ```
 marketing/pilot-design-system.md

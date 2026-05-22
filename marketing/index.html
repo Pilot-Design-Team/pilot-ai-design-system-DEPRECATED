@@ -118,15 +118,15 @@
     }
 
     .tb-mark {
-      width: 30px;
-      height: 30px;
+      width: 36px;
+      height: 36px;
       background: var(--p-pilot);
-      border-radius: 7px;
+      border-radius: 8px;
       display: flex;
       align-items: center;
       justify-content: center;
       font-family: var(--font-body);
-      font-size: 13px;
+      font-size: 15.6px;
       font-weight: 700;
       color: #fff;
       flex-shrink: 0;
@@ -149,7 +149,7 @@
 
     .tb-title {
       color: rgba(255, 255, 255, .55);
-      font-size: 13px;
+      font-size: 14px;
     }
 
     .tb-spacer {
@@ -160,13 +160,14 @@
       position: relative;
     }
 
-    .tb-search svg {
+    .tb-search svg.srch-icon {
       position: absolute;
       left: 9px;
       top: 50%;
       transform: translateY(-50%);
       color: rgba(255, 255, 255, .4);
       pointer-events: none;
+      z-index: 2;
     }
 
     #srch {
@@ -189,7 +190,119 @@
     #srch:focus {
       background: rgba(255, 255, 255, .15);
       border-color: rgba(255, 255, 255, .4);
-      width: 250px;
+      width: 300px;
+    }
+
+    /* ── SEARCH RESULTS DROPDOWN ── */
+    #srch-results {
+      display: none;
+      position: absolute;
+      top: calc(100% + 6px);
+      right: 0;
+      width: 360px;
+      max-height: 420px;
+      overflow-y: auto;
+      background: #fff;
+      border: 1px solid var(--p-border);
+      border-radius: var(--r-md);
+      box-shadow: 0 12px 40px rgba(40, 19, 80, .18);
+      z-index: 2000;
+    }
+
+    #srch-results::-webkit-scrollbar { width: 4px; }
+    #srch-results::-webkit-scrollbar-thumb { background: var(--p-border); border-radius: 4px; }
+
+    #srch-results.open { display: block; }
+
+    .sr-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 10px 14px;
+      cursor: pointer;
+      border-bottom: 1px solid #f0f0f5;
+      transition: background .1s;
+      text-decoration: none;
+    }
+
+    .sr-item:last-child { border-bottom: none; }
+    .sr-item:hover, .sr-item.sr-active { background: rgba(89, 49, 220, .05); }
+
+    .sr-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--p-pilot);
+      flex-shrink: 0;
+      margin-top: 6px;
+      opacity: .5;
+    }
+
+    .sr-item:hover .sr-dot, .sr-item.sr-active .sr-dot { opacity: 1; }
+
+    .sr-body { flex: 1; min-width: 0; }
+
+    .sr-section {
+      font-family: var(--font-body);
+      font-size: 9px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: var(--p-gray-pale);
+      display: block;
+      margin-bottom: 1px;
+    }
+
+    .sr-title {
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--p-profit);
+      display: block;
+      line-height: 1.3;
+    }
+
+    .sr-title mark {
+      background: var(--p-highlight);
+      color: var(--p-profit);
+      border-radius: 2px;
+      padding: 0 1px;
+    }
+
+    .sr-snippet {
+      font-size: 11px;
+      color: var(--p-gray-mid);
+      display: block;
+      margin-top: 2px;
+      line-height: 1.4;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .sr-snippet mark {
+      background: var(--p-highlight);
+      color: var(--p-profit);
+      border-radius: 2px;
+      padding: 0 1px;
+    }
+
+    .sr-empty {
+      padding: 20px 14px;
+      text-align: center;
+      color: var(--p-gray-pale);
+      font-size: 13px;
+    }
+
+    .sr-count {
+      padding: 6px 14px;
+      font-size: 10px;
+      font-weight: 600;
+      color: var(--p-gray-pale);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-bottom: 1px solid #f0f0f5;
+      background: var(--p-bg);
     }
 
     #mob-btn {
@@ -1454,11 +1567,12 @@
     <span class="tb-title">Marketing AI Design System - Version 1.1</span>
     <div class="tb-spacer"></div>
     <div class="tb-search">
-      <svg width="13" height="13" viewBox="0 0 16 16" fill="none">
+      <svg class="srch-icon" width="13" height="13" viewBox="0 0 16 16" fill="none">
         <circle cx="6.5" cy="6.5" r="5" stroke="currentColor" stroke-width="1.5" />
         <path d="M10.5 10.5L14 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
       </svg>
       <input id="srch" type="text" placeholder="Search…" autocomplete="off">
+      <div id="srch-results"></div>
     </div>
     <button id="mob-btn" aria-label="Menu">
       <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -1474,6 +1588,7 @@
       <a class="nl" href="#intro"><span class="nl-dot"></span>Intro</a>
       <div class="ng-label">Overview</div>
       <a class="nl" href="#quick-ref"><span class="nl-dot"></span>Quick Reference</a>
+      <a class="nl" href="#how-to-use"><span class="nl-dot"></span>How to Use</a>
       <a class="nl" href="#philosophy"><span class="nl-dot"></span>Brand Philosophy</a>
       <a class="nl" href="#design-system-md"><span class="nl-dot"></span>DesignSystem.md</a>
       <div class="ng-label">Foundations</div>
@@ -1582,6 +1697,34 @@
             </tr>
           </tbody>
         </table>
+      </section>
+
+      <!-- ═══════════════════════════════════════
+     HOW TO USE
+     ═══════════════════════════════════════ -->
+      <section class="sec" id="how-to-use">
+        <span class="sec-tag">Overview</span>
+        <h2 class="sec-title">How to Use</h2>
+        <p class="sec-desc">Use the Pilot marketing AI design system with your favorite AI vibe coding tool. It includes definitions, brand guidelines, fonts, icons, and logos. You can build marketing websites, decks, assets, ad creative, landing pages, micro-sites, and more!</p>
+        <div style="font-size: 14.5px; line-height: 1.75; color: var(--p-gray-mid); max-width: 620px; margin-bottom: 28px;">
+          <ol style="padding-left: 20px; margin: 0;">
+            <li style="margin-bottom: 8px;">Design with <strong>Claude Code</strong> or <strong>Antigravity IDE</strong>.</li>
+            <li style="margin-bottom: 8px;">Clone the design system repo: <a href="https://github.com/Pilot-Design-Team/design-pilot-com" target="_blank" style="color: var(--p-pilot); text-decoration: none; border-bottom: 1px solid rgba(89,49,220,.3);">github.com/Pilot-Design-Team/design-pilot-com</a></li>
+            <li style="margin-bottom: 8px;">Commit and push the changes to GitHub.</li>
+            <li>Publish the project to Vercel.</li>
+          </ol>
+        </div>
+
+        <div class="sub">
+          <div class="sub-title">Starter Prompt</div>
+          <div class="cb">
+            <div class="cb-head">
+              <span class="cb-lang">Prompt</span>
+              <button class="cp-btn" onclick="cpCode(this)">Copy</button>
+            </div>
+            <pre style="white-space: pre-wrap; word-wrap: break-word; color: #c8b6fc;">Use the Pilot design system. Clone the repo https://github.com/Pilot-Design-Team/design-pilot-com and review ReadMe.md before starting. When I prompt you to build, use only the existing patterns, components, layouts, and visual treatments in the design system. Do not create new UI patterns, components, layouts, or visual treatments. Follow the structure, behavior, and visual language already established.</pre>
+          </div>
+        </div>
       </section>
 
       <!-- ═══════════════════════════════════════
@@ -4617,11 +4760,148 @@
 
     // ── SEARCH ──
     const srch = document.getElementById('srch');
-    srch.addEventListener('input', () => {
-      const q = srch.value.trim().toLowerCase();
-      secs.forEach(s => {
-        s.classList.toggle('hidden', q && !s.textContent.toLowerCase().includes(q));
+    const srchResults = document.getElementById('srch-results');
+    let srchIndex = [];
+    let srchActiveIdx = -1;
+
+    // Build search index from sections
+    function buildSearchIndex() {
+      srchIndex = [];
+      secs.forEach(sec => {
+        const tag = sec.querySelector('.sec-tag');
+        const title = sec.querySelector('.sec-title');
+        const category = tag ? tag.textContent.trim() : '';
+        const sectionTitle = title ? title.textContent.trim() : '';
+        if (!sectionTitle) return;
+
+        // Add the section itself
+        const desc = sec.querySelector('.sec-desc');
+        srchIndex.push({
+          category,
+          title: sectionTitle,
+          snippet: desc ? desc.textContent.trim().slice(0, 120) : '',
+          el: sec
+        });
+
+        // Add subsections
+        sec.querySelectorAll('.sub-title').forEach(sub => {
+          srchIndex.push({
+            category,
+            title: sub.textContent.trim(),
+            snippet: sectionTitle,
+            el: sub
+          });
+        });
+
+        // Add table rows with meaningful content
+        sec.querySelectorAll('.dt tbody tr').forEach(row => {
+          const cells = row.querySelectorAll('td');
+          if (cells.length >= 2) {
+            const label = cells[0].textContent.trim();
+            const value = cells[1].textContent.trim();
+            if (label.length > 2 && label.length < 80) {
+              srchIndex.push({
+                category,
+                title: label,
+                snippet: value.slice(0, 100),
+                el: row
+              });
+            }
+          }
+        });
       });
+    }
+    buildSearchIndex();
+
+    function highlightMatch(text, query) {
+      if (!query) return text;
+      const esc = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      return text.replace(new RegExp('(' + esc + ')', 'gi'), '<mark>$1</mark>');
+    }
+
+    function renderResults(query) {
+      srchActiveIdx = -1;
+      if (!query) {
+        srchResults.classList.remove('open');
+        srchResults.innerHTML = '';
+        return;
+      }
+
+      const q = query.toLowerCase();
+      const matches = srchIndex.filter(item =>
+        item.title.toLowerCase().includes(q) ||
+        item.snippet.toLowerCase().includes(q) ||
+        item.category.toLowerCase().includes(q)
+      ).slice(0, 20);
+
+      if (matches.length === 0) {
+        srchResults.innerHTML = '<div class="sr-empty">No results for "' + query + '"</div>';
+        srchResults.classList.add('open');
+        return;
+      }
+
+      let html = '<div class="sr-count">' + matches.length + ' result' + (matches.length !== 1 ? 's' : '') + '</div>';
+      matches.forEach((m, i) => {
+        html += '<div class="sr-item" data-idx="' + i + '">' +
+          '<span class="sr-dot"></span>' +
+          '<div class="sr-body">' +
+            '<span class="sr-section">' + m.category + '</span>' +
+            '<span class="sr-title">' + highlightMatch(m.title, query) + '</span>' +
+            (m.snippet ? '<span class="sr-snippet">' + highlightMatch(m.snippet, query) + '</span>' : '') +
+          '</div>' +
+        '</div>';
+      });
+
+      srchResults.innerHTML = html;
+      srchResults.classList.add('open');
+
+      // Attach click handlers
+      srchResults.querySelectorAll('.sr-item').forEach((item, i) => {
+        item.addEventListener('click', () => {
+          const target = matches[i].el;
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          // Brief highlight flash
+          target.style.transition = 'background .3s';
+          target.style.background = 'rgba(89, 49, 220, .08)';
+          setTimeout(() => { target.style.background = ''; }, 1500);
+          srchResults.classList.remove('open');
+          srch.blur();
+        });
+      });
+    }
+
+    srch.addEventListener('input', () => {
+      renderResults(srch.value.trim());
+    });
+
+    srch.addEventListener('keydown', (e) => {
+      const items = srchResults.querySelectorAll('.sr-item');
+      if (!items.length) return;
+
+      if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        srchActiveIdx = Math.min(srchActiveIdx + 1, items.length - 1);
+        items.forEach((it, i) => it.classList.toggle('sr-active', i === srchActiveIdx));
+        items[srchActiveIdx].scrollIntoView({ block: 'nearest' });
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        srchActiveIdx = Math.max(srchActiveIdx - 1, 0);
+        items.forEach((it, i) => it.classList.toggle('sr-active', i === srchActiveIdx));
+        items[srchActiveIdx].scrollIntoView({ block: 'nearest' });
+      } else if (e.key === 'Enter' && srchActiveIdx >= 0) {
+        e.preventDefault();
+        items[srchActiveIdx].click();
+      } else if (e.key === 'Escape') {
+        srchResults.classList.remove('open');
+        srch.blur();
+      }
+    });
+
+    // Close results when clicking outside
+    document.addEventListener('click', e => {
+      if (!srch.contains(e.target) && !srchResults.contains(e.target)) {
+        srchResults.classList.remove('open');
+      }
     });
 
     // ── COPY COLOR SWATCH ──
