@@ -25,7 +25,7 @@ That folder contains:
 **To use this design system in your project**, clone this repo:
 
 ```
-git clone https://github.com/Pilot-Design-Team/design-pilot-com.git
+git clone https://github.com/Pilot-Design-Team/pilot-ai-design-system-marketing-public
 ```
 
 Then point your agent to:
