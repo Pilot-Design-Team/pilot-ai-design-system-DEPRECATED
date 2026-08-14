@@ -1,6 +1,0 @@
-{
-  "trailingSlash": true,
-  "redirects": [
-    { "source": "/", "destination": "/marketing/", "statusCode": 302 }
-  ]
-}
