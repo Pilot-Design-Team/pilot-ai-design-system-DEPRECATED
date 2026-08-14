@@ -1,6 +1,6 @@
 # Pilot.com Design System Reference
 
-> **Last updated:** May 2026\
+> **Version 1.2** · **Last updated:** August 2026\
 > **Authors:** Mike Glezos, Maebellyne Ventura\
 > Extracted from https://www.pilot.com and the official Pilot Brand & Marketing
 > Design System document.
@@ -2892,3 +2892,266 @@ Known deviations from the design system on the live pilot.com site:
 | `growth-fund-recipients.html` | 2        | Reduce to 1 |
 | `integrations-stripe.html`    | 2        | Reduce to 1 |
 | `tax-calendar.html`           | 2        | Reduce to 1 |
+
+---
+
+## 40. AI Design Tells (Don’ts)
+
+AI tells are patterns that make it obvious an agent is overusing the same
+design choices everywhere. These rules are distilled from
+[Impeccable](https://impeccable.style/)
+([Github](https://github.com/pbakaus/impeccable)) and reconciled with Pilot's
+brand rules.
+
+> **Source:** Impeccable by Paul Bakaus (Apache 2.0) — a design skill for AI
+> coding agents plus a 59-rule deterministic detector for AI-generated frontend
+> design.
+
+### What an AI Tell Is
+
+Every model was trained on the same SaaS templates. Skip the guidance and you
+get the same handful of tells on every project: Inter for everything,
+purple-to-blue gradients, cards nested in cards, gray text on colored
+backgrounds, the rounded-square icon tile above every heading.
+
+**A tell is not "ugly."** Almost every item below is individually defensible —
+some are genuinely tasteful in isolation. What makes it a tell is that it was
+*reached for by reflex* rather than decided. The tell is not the element; the
+tell is that the element is the same on every generated page.
+
+Hey humans, run these two tests:
+
+1. **First reaction** — Did you decide this, or was it just the first thing AI
+   spat out? Reaching for a default when the axis was free means you were not
+   deciding. Recognizing that means *rewriting* the element, not softening it.
+2. **AI aesthetic** — Does this feel intentionally designed, or does it look
+   like AI made it? If someone could guess your aesthetic from the category
+   alone, or from category-plus-avoidance, rework until neither answer is
+   obvious.
+
+**The brief wins.** A pinned aesthetic, a documented brand token, or an
+explicit Pilot rule overrides anything in this section. Your own habit does
+not. Everything below is a *category default*, not a ban — except the two items
+marked as outright bans.
+
+**Severity legend:** ❌ Hard no · ⚠️ Advisory (context can legitimately earn it)
+
+---
+
+### Layout & Containers
+
+| Tell | Why it reads as AI | Do instead |
+| --- | --- | --- |
+| ❌ **Side-tab accent border** | Thick colored border on one side of a card — the single most recognizable tell of AI-generated UI | Remove it, or use a subtler accent. Never a colored `border-left`/`border-right` above 1px on cards, list items, callouts, or alerts |
+| ❌ **Border accent on rounded element** | A thick accent border fights the rounded corners it sits on | Drop the border or drop the radius |
+| ❌ **Nested cards** | Cards inside cards = visual noise and false depth | Flatten. Use spacing, typography, and dividers. **Nested cards are always wrong** |
+| ❌ **Card-grid page scaffold** | Same-size cards of icon + heading + text *as the page structure* — the universal generated feature section | Cards are the lazy container. Vary the structure; let content dictate form |
+| ❌ **Icon tile stacked above heading** | The small rounded-square icon container above a heading is the universal AI feature-card template | Side-by-side icon and heading, or let the icon sit in flow with no container |
+| ❌ **Hero-metric template** | Big number, small label, supporting stats, accent — a generated arrangement, not a decision | Only when the metric is the actual story |
+| ❌ **Monotonous spacing** | One spacing value everywhere — no rhythm, no grouping | Tight groups, generous separations. More space *above* a heading than below it |
+| ⚠️ **Numbered section labels** | `01 / 02 / 03` riding beside every heading is AI editorial scaffolding — a page numbering its own chapters | Only when the sequence itself carries information the reader needs |
+| ❌ **Unnecessary modal** | A modal for a task needing neither interruption nor protected focus | Inline it |
+
+---
+
+### Typography
+
+| Tell | Why it reads as AI | Do instead |
+| --- | --- | --- |
+| ❌ **Overused fonts** | Each wave of AI UI converges on the same faces | See the banned-face list below. For Pilot: **only** Euclid Circular B, Space Mono, La Belle Aurore (§2) |
+| ❌ **Flat type hierarchy** | Sizes too close together — no visual hierarchy | Fewer sizes, more contrast. Aim for ≥ **1.25 ratio** between steps |
+| ❌ **Kicker / eyebrow above heading** | Impeccable's one **outright ban** — no brief earns it back. Generated kickers never earn their place | The heading carries its own weight. ⚠️ **Pilot exception:** the documented `.eyebrow` (§24) survives, but only as a deliberate choice — never scaffolding above every section |
+| ❌ **Hero eyebrow / pill chip** | Tiny uppercase tracked label (or the same shape as a pill chip) above an oversized hero headline = default AI SaaS hero | Integrate the kicker into the headline, or run it as a breadcrumb |
+| ❌ **Italic serif display headline** | Oversized italic serif as the hero — reads as taste in isolation, but is now the universal AI-startup landing hero | Set roman, or use a non-serif display face. Editorial register may legitimately want this |
+| ❌ **Oversized hero headline** | A *full-sentence* headline at display size eats the entire viewport | A punchy one- or two-word headline at that size is fine. Set long headlines smaller, or tighten the copy |
+| ❌ **Crushed letter spacing** | Tracking pulled past the point characters keep their own shapes | Tighten optically, not destructively. **Floor: `-0.04em`** (Pilot's tightest documented value is `-0.03em`, §15) |
+| ❌ **Monospace as costume** | Mono used to signal "technical" rather than for code, data, or measurement | ⚠️ **Pilot exception:** Space Mono carries labels, buttons, and eyebrows (§24). Its existing limit is the guard — use sparingly, never for long body text |
+| ❌ **System display face** | Impact, Arial Black, or the platform sans as the display voice of an own-world page | Source and self-host a real face. The closest installed font is a failure, not a fallback |
+| ❌ **Emoji / unicode as icons** | Glyphs standing in for an icon system | Icons are drawn — from a real library or authored SVG, one consistent stroke and weight. Pilot: use the icon library (§28) |
+| ❌ **All-caps body text** | Long uppercase passages destroy word shape | Reserve uppercase for short labels and headings |
+
+#### Banned Faces (Impeccable's overused list)
+
+**Older monoculture:** Inter · Roboto · Open Sans · Lato · Montserrat · Arial ·
+Helvetica
+
+**Newer monoculture (the AI-skill / Vercel / GitHub default wave):** Fraunces ·
+Instrument Sans · Instrument Serif · Geist (Sans/Mono) · Mona Sans · Plus
+Jakarta Sans · Space Grotesk · Recoleta
+
+**Training-data display defaults — naming one means you stopped looking:**
+Playfair Display · Cormorant · Lora · Crimson · Newsreader · Syne · IBM Plex ·
+Inter-as-display · DM Sans · DM Serif · Outfit
+
+> A *subject association* is never a reason to pick one of these. Books wanting
+> a serif, bookshops wanting hand-lettering, and tech wanting a mono are exactly
+> the associations the list exists to break.
+
+---
+
+### Color & Light
+
+| Tell | Why it reads as AI | Do instead |
+| --- | --- | --- |
+| ❌ **AI color palette** | Purple/violet gradients and cyan-on-dark are the most recognizable tells of generated UI | ⚠️ **Pilot exception:** purple is a brand token, not a reflex. Use only the named §25 gradient pairs — never the AI-default purple→blue or violet→cyan ramps |
+| ❌ **Cream / beige palette** | Warm cream has become the default "tasteful" AI surface, reached for by reflex | Pilot has no cream ground. Use §3 section backgrounds |
+| ❌ **Gradient text** | Decorative rather than meaningful — especially on headings and metrics | Solid colors for text. Emphasis comes from **weight or size** |
+| ❌ **Glowing shadow accents** | A zero-offset chromatic halo (box- or text-shadow) on any background, or any colored blurred shadow on a dark background — the default "cool" look of generated UI | Shadows carry **an offset and a soft blur**. A zero-offset colored halo is decoration, not depth. Pilot's purple shadows are compliant (§27) |
+| ❌ **Radial-gradient background halo** | A saturated radial wash fading to transparent on a dark page — the same tell drawn with a gradient instead of a shadow | ⚠️ **Pilot exception:** the ambient gradients in §25, but only as composed layouts on light grounds. Never an accent haze behind a hero |
+| ❌ **Decorative radial spotlight glow** | Low-opacity accent-colored radial gradient dropped behind a hero as a "spotlight" — the translucent cousin of the halo | Let the surface stand on its own, or light it with a deliberate material accent |
+| ❌ **Hard offset shadows** | `box-shadow: 4px 4px 0` outside a genuinely neobrutalist world. The zero-blur block shadow is a costume, not a depth system | Pilot: purple, blur 50–100px, opacity 10–20% (§27) |
+| ❌ **Glass / blur as decoration** | Backdrop-filter reached for as a look rather than as a specific effect | Use it when the effect is the point |
+| ❌ **Gray text on colored background** | Washes out; also a contrast failure | A darker shade of the background hue, or white/near-white |
+| ⚠️ **Hairline border + wide diffuse shadow** | A recurring generated-UI signature | Commit to one — a defined edge *or* a soft elevation, not both |
+| ⚠️ **Repeating-gradient stripes** | Surface decoration by reflex | A deliberate texture, or leave the surface plain |
+| ⚠️ **Decorative grid-line background** | Hairline linear-gradient layers tiled on a fixed pixel cell | Reserve grid overlays for actual canvas, map, blueprint, or measurement surfaces |
+
+---
+
+### Motion
+
+| Tell | Why it reads as AI | Do instead |
+| --- | --- | --- |
+| ❌ **Bounce or elastic easing** | Dated and tacky. Real objects decelerate smoothly | Exponential ease-out (`ease-out-quart` / `quint` / `expo`). Already banned in §14 |
+| ❌ **Pulsing status dot** | Decorative simulation of liveness | Reserve pulse for indicators tied to genuinely live, changing data. A static indicator with a clear label is honest and calmer |
+| ❌ **Auto-scrolling marquee** | Demands attention it has not earned and hides half its content at any moment | ⚠️ **Pilot exception:** the homepage logo carousel (§14) only, and it must pause under `prefers-reduced-motion` |
+| ❌ **Layout property animation** | Animating `width`/`height`/`padding`/`margin` causes layout thrash | `transform` and `opacity`, or `grid-template-rows` for height |
+| ❌ **Scattered effects** | One identical entrance on every section is not motion design | **One authored moment**, orchestrated. Exponential ease-out from an already-visible default |
+| ❌ **Content hidden at rest** | Reveal handlers that gate existence rather than enhance entrance — when they fail, the page ships invisible | Content visible by default; JS enhances the entrance |
+| ⚠️ **Decorative blinking cursor** | A blinking caret animated into a hero simulates typing where no input exists — the dev-tool aesthetic as decoration | Real editable fields draw their own caret. Already covered by §14's typewriter ban |
+| ⚠️ **Image hover transform** | Scaling or rotating an image on hover is a generated-UI signature | Let imagery sit still. Already banned in §14 (scale on hover) |
+
+---
+
+### Imagery
+
+| Tell | Why it reads as AI | Do instead |
+| --- | --- | --- |
+| ⚠️ **Shape-assembled illustration** | A large inline SVG building a pictorial scene from a pile of primitives reads as placeholder clip art | Real artwork, a photograph, or a deliberately drawn graphic. Icons, logos, and data graphics are fine *at their scale* |
+| ❌ **Broken / placeholder image** | `<img>` with empty, missing, or placeholder `src` ships as a broken-image box | Real images, generated assets, or remove the tag |
+| ❌ **Chrome standing in for content** | Sparklines, progress rings, and soft-shadowed rounded rectangles used as filler | Author the real content. Gradients, glass, and generic icon tiles where an authored asset belongs are the gap wearing chrome |
+
+Pilot's own photography rules (§29) already close most of this: real people in
+real situations, no heavily retouched "aspirational" stock, and the governing
+question — *"which photo seems more true?"*
+
+---
+
+### Copy
+
+| Tell | Why it reads as AI | Do instead |
+| --- | --- | --- |
+| ❌ **Marketing buzzwords** | Generic SaaS phrases are instant AI tells | A specific verb and noun that says what the product literally does. Full list below |
+| ❌ **Aphoristic cadence** | Three or more sections landing on a short rebuttal (`"X. No Y."` / `"X. Just Y."`) or a manufactured contrast (`"Not a feature. A platform."`) | Once is fine — **the pattern is the tell**. Write in the product's own voice |
+| ⚠️ **Em-dash overuse** | Em-dash saturation is an AI cadence tell | Advisory only — humans use em-dashes legitimately. Fires at **≥ 8 dashes** *and* a density near **1 per 500 characters** of body text. Prefer commas, colons, periods, parentheses |
+| ⚠️ **"Theater" framing** | Dismissing something as "X theater" is a generated-copy tic | Say plainly what the thing does or does not do |
+
+#### Banned Phrases (Impeccable's buzzword list)
+
+```
+streamline your · empower your · supercharge your · unleash your
+unleash the power · leverage the power · harness the power
+built for the modern · trusted by leading · trusted by the world
+best-in-class · industry-leading · world-class · enterprise-grade
+next-generation · cutting-edge · transform your business
+revolutionize · game-changer · game changing · mission-critical
+best of breed · future-proof · seamless experience · seamlessly integrate
+drive engagement · drive growth · drive results
+```
+
+**Copy floor:** controls name their action; errors name the problem *and* the
+recovery.
+
+---
+
+### The Craft Floor
+
+Impeccable's quality floor — these are checks on the **built result**, not on
+intent. Read the computed values; do not trust the stylesheet.
+
+| Check | Bar |
+| --- | --- |
+| **Contrast** | Body and placeholder text ≥ 4.5:1, large text ≥ 3:1. On colored surfaces, tint secondary text from that hue — **never gray** |
+| **Depth** | Shadows carry an offset *and* a soft blur |
+| **Spacing** | Tight groups, generous separation, more space above a heading than below it |
+| **Type** | Body measure **65–75ch**, display max **6rem**, tracking floor **-0.04em**, line-height ≥ 1.3 (1.5–1.7 for body), balanced headings, obvious scale and weight steps |
+| **Text size** | Body ≥ 14px (16px ideal). Functional/interactive text ≥ 11px — *being on the type ramp does not exempt a value here* |
+| **Motion** | One authored moment. Exponential ease-out from an already-visible default. Honor `prefers-reduced-motion` (§14) |
+| **States** | Hover, disabled, loading, error, empty — plus real content, working controls, responsive composition, keyboard focus |
+| **Headings** | No skipped levels (h1 → h3). One `<h1>` per page (§34) |
+| **Overflow** | Nothing wider than its container. No positioned child clipped by an `overflow: hidden` ancestor |
+| **Coverage** | Every brief requirement present and findable within seconds |
+---
+
+### The Three AI Clusters
+
+Generated interfaces cluster around three looks regardless of subject. All are
+legitimate *when the brief calls for them*. Landing in one where the brief left
+the aesthetic free means the self-check failed:
+
+1. **Warm cream ground**, high-contrast serif display, terracotta or signal-red
+   accent
+2. **Near-black** with one neon accent and glowing edges
+3. **Broadsheet-editorial** hairlines, italic display serif, small tracked mono
+   labels
+
+Pilot's system sits outside all three — which is the point. Drifting toward any
+of them is drift away from the brand.
+
+---
+
+### Pre-Ship Tell Checklist
+
+Run this on anything an AI tool produced for pilot.com:
+
+- [ ] No colored side-tab borders on cards
+- [ ] No cards inside cards
+- [ ] No rounded-square icon tiles above headings
+- [ ] Fonts are Euclid Circular B / Space Mono / La Belle Aurore only
+- [ ] Type scale steps have ≥ 1.25 contrast; tracking never below `-0.04em`
+- [ ] Eyebrows are deliberate, not on every section
+- [ ] No gradient text
+- [ ] Every gradient is a named §25 pair
+- [ ] Every shadow is purple, offset, blur 50–100px, opacity 10–20%
+- [ ] No zero-offset glows, no spotlight haze behind heroes
+- [ ] Spacing varies — tight groups, generous separations
+- [ ] Motion is one authored moment; §14 Forbidden Patterns all clear
+- [ ] No buzzwords from the banned-phrase list
+- [ ] No `"X. Not Y."` cadence repeated across sections
+- [ ] Selection, caret, scrollbars, and focus rings are themed
+- [ ] Contrast ≥ 4.5:1; no gray text on colored backgrounds
+- [ ] Real imagery, no broken `src`, no shape-assembled hero SVGs
+- [ ] **Guessability test:** could someone name the aesthetic from the category
+      alone? If yes, rework
+
+---
+
+### Self-Audit: What This Rule Set Changed Here
+
+These rules were run against Pilot's own design system visualizer
+(`marketing/index.html`). A rule set that exempts the document stating it is
+not a rule set. The detector reported **781 findings; 95 remain.** What
+changed:
+
+| Finding | Count | Fix |
+| --- | --- | --- |
+| **`undersized-ui-text`** + **`tiny-text`** — 8–11.5px labels, table headers, and nav items | 519 | Raised every value to a 12px floor. Being on the type ramp does not exempt a legibility failure |
+| **`low-contrast`** — `--p-gray-pale: #999` on white is 2.85:1 | 141 | Darkened to `#6e6e6e` (5.1:1), clearing WCAG AA |
+| **`kicker-above-heading`** — a section tag above all 26 headings | 25 | Removed. 26 identical kickers is scaffolding, not a brand element — the sidebar already names the group. Kept in the DOM for the search index, hidden from the page |
+| **`skipped-heading`** — `h2` → `h4` in the card examples | 1 | Promoted to `h3` |
+| **`dark-glow`** — a "Purple Glow `0 0 60px`" swatch in the shadow scale | — | Marked as a tell. It is a zero-offset halo and was never in § 27 — visualizer drift, not brand |
+| **Overused font** — `DM Sans` in the `--font-body` fallback stack | — | Dropped from the stack |
+| **Browser surfaces** — no `::selection`, `caret-color`, focus ring, underline offset, or tabular numerals; `outline: none` in three places | — | All themed from the palette |
+| **Non-purple shadows** — `rgba(0,0,0,…)` on the mobile drawer and a nav example | 2 | Converted to purple, per § 27 |
+| **Hover lift** — a `-4px` card lift | 1 | Reduced to `-2px`, per § 14 |
+| **`em-dash-overuse`** — 195 em-dashes | 1 | Not changed. Advisory, and this is a long reference document — exactly the case the rule's density gate exists to spare |
+
+Of the 95 that remain, every one is either a **documented Pilot brand
+conflict** — 36 `ai-color-palette` (purple headings), 2 `kicker-above-heading`
+and the `all-caps-body` / `wide-tracking` counts (the documented § 24 eyebrow
+style) — or a **deliberate anti-example** in the *See It — Tells vs. Pilot*
+comparisons. Waive the file rather than editing the examples:
+
+```bash
+npx impeccable ignores add-file "marketing/index.html" --reason "Contains deliberate anti-examples (§40)"
+```

@@ -1,4 +1,4 @@
-# Pilot Marketing AI Design System — Version 1.1
+# Pilot Marketing AI Design System — Version 1.2
 
 **Pilot's marketing AI design system for humans & AI where the `pilot-design-system.md` file is the source of truth.**
 
@@ -111,6 +111,7 @@ When building with AI tools, enforce these constraints:
 6. **La Belle Aurore limit** — Maximum 4 words, never used for body text
 7. **PROFIT as background, not fill** — `#281350` is never used as a circle fill
 8. **Circles must be mathematically perfect** — `aspect-ratio: 1; border-radius: 50%`
+9. **No AI tells** — Run the checklist in **pilot-design-system.md § 40 "AI Design Tells (Don’ts)"** on anything an AI tool produced. It catalogs the ~30 tells that mark a page as machine-generated (side-tab borders, nested cards, icon tiles above headings, gradient text, zero-offset glows, bounce easing, buzzword copy) and resolves the cases where those rules collide with Pilot's own brand tokens.
 
 ---
 
