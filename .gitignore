@@ -21,3 +21,9 @@ node_modules/
 # Build artifacts
 dist/
 .vercel/
+
+# Licensed fonts — never commit to this public repo.
+# Euclid Circular B is licensed to Pilot and may not be redistributed.
+# Internal folks: drop the purchased files into marketing/fonts/ and Git
+# will ignore them. See marketing/fonts/README.md.
+marketing/fonts/EuclidCircularB-*

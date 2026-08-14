@@ -80,6 +80,14 @@ All variables are defined in `:root` and used throughout the Webflow CSS:
 
 Three primary font families are used, all self-hosted via Webflow CDN:
 
+> **Font hosting rule.** Euclid Circular B is licensed to Pilot. Serve it only
+> from Pilot's own licensed files or Pilot-controlled hosting. **Never load it
+> from a third-party font CDN** (`cdnfonts.com` and similar host commercial
+> faces without the foundry's permission): it puts the licence at risk and
+> makes the brand depend on someone else's uptime. Never commit the files to a
+> public repository — that is redistribution. Space Mono and La Belle Aurore
+> are openly licensed and may be served from Google Fonts.
+
 #### Primary: Euclid Circular B (Web Alternative: Poppins)
 
 **Euclid B Circular is our default. The web-friendly alternative is Poppins.**

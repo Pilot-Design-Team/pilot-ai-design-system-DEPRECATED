@@ -33,7 +33,7 @@ git clone git@github.com:Pilot-Design-Team/marketing-website-design-system.git
 cd marketing-website-design-system
 ```
 
-Fonts, icons, and logos are included — no install step needed.
+Icons and logos are included, along with Space Mono and La Belle Aurore. Add Euclid Circular B yourself — see [fonts/README.md](./fonts/README.md).
 
 ### 2. Open the visual preview
 
@@ -68,6 +68,38 @@ Reference fonts locally from the `fonts/` directory:
 ```
 
 Copy the CSS variable block from **pilot-design-system.md § CSS Variables** into your project's `:root`.
+
+---
+
+## Using This With Your Agent
+
+Point your coding agent at the repo and it has everything it needs:
+
+```
+https://github.com/Pilot-Design-Team/pilot-ai-design-system-marketing-public
+```
+
+Or clone it and reference the file directly:
+
+```bash
+git clone https://github.com/Pilot-Design-Team/pilot-ai-design-system-marketing-public.git
+```
+
+Then tell your agent:
+
+> Follow the Pilot marketing design system in `marketing/pilot-design-system.md`.
+> Obey the vibecoding rules and § 40 AI Design Tells before you write any UI.
+
+**Your agent does not need the font files.** It needs the rules — the face
+names, the `@font-face` block, the weights, the scale — and all of that is text
+in `pilot-design-system.md`. The agent will write correct Pilot code either way.
+
+The font *files* only matter when you want the result to render in Euclid on
+your own screen. Space Mono and La Belle Aurore are in the repo. Euclid Circular
+B is licensed to Pilot and is not redistributed publicly, so drop your copy into
+`fonts/` — see [fonts/README.md](./fonts/README.md). Git is configured to ignore
+it, so you cannot commit it by mistake. Without it, everything still works and
+falls back to the system sans.
 
 ---
 
@@ -117,9 +149,9 @@ When building with AI tools, enforce these constraints:
 
 ## Assets
 
-All assets are committed directly to this repo. Cloning automatically brings them down — no install step required.
+All assets except the licensed Euclid font are committed directly to this repo. Cloning automatically brings them down — no install step required.
 
-- **fonts/** — Brand typefaces: Euclid Circular B (Regular + Semibold, woff/woff2), Space Mono (Regular/Bold/Italic), La Belle Aurore
+- **fonts/** — Space Mono (Regular/Bold/Italic) and La Belle Aurore ship here. **Euclid Circular B is licensed to Pilot and is not redistributed in the public repo** — see [fonts/README.md](./fonts/README.md) to add your copy. Never load it from a third-party font CDN
 - **logos/** — Full logos and lettermarks in SVG + PNG, across black/purple/white color variants
 - **icons/** — Icon system assets in key color and alternate color variants (see `icons.md` for the full specification)
 - **images/** — Marketing design reference images
